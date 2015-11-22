@@ -1,5 +1,9 @@
 # GeneticAlgorithms-py
 
+# Style:
+  - See: [PEP 0008](https://www.python.org/dev/peps/pep-0008/)
+  - See also: [Thoughbot Guides](https://github.com/thoughtbot/guides)
+
 ## Setup:
 
 Python provides a package manager similar to RubyGems, NPM, Cargo etc., called
