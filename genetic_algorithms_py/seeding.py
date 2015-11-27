@@ -1,6 +1,6 @@
 from genetic_algorithms_py import random_vector
 
-def pool(initial_vector, size):
+def pool(size):
     return list(
             map(
                 (lambda x:
