@@ -9,14 +9,14 @@ def test_it_should_return_a_mutated_string():
     assert len(mutated_string) == 3
 
 def test_it_should_mutate_a_pool_returning_n_strings():
-    seeding_pool = seeding.pool(2)
+    seeding_pool = seeding.pool(2, 8)
     pool = reproduction.reproduce((lambda x: int(x, 2) ** 2), seeding_pool)
     crossed_over = crossover.crossover(pool)
     asserted_pool = mutation.mutate_pool(crossed_over)
     assert len(asserted_pool) == 2
 
 def test_it_should_mutate_a_pool_returning_n_strings():
-    seeding_pool = seeding.pool(2)
+    seeding_pool = seeding.pool(2, 8)
     pool = reproduction.reproduce((lambda x: int(x, 2) ** 2), seeding_pool)
     crossed_over = crossover.crossover(pool)
     asserted_pool = mutation.mutate_pool(crossed_over)

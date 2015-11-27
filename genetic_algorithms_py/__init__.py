@@ -2,8 +2,8 @@ import mutation
 import seeding
 import reproduction
 import crossover
-def __init__(black_box, iterations):
-    seeding_pool = seeding.pool(8)
+def __init__(black_box, iterations, bit_size):
+    seeding_pool = seeding.pool(8, bit_size)
     final_pool = _aux(seeding_pool, black_box, 0, iterations)
     print seeding_pool
     print final_pool
