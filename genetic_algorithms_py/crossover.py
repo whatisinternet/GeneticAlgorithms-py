@@ -16,7 +16,7 @@ def _cross(seedling):
     b_start = b[0:index]
     b_end = b[index:]
     a = a_start + b_end
-    b = b_start + a_end
+    b = a_end + b_start
     return [a,b]
 
 def _pair_up(pool):
