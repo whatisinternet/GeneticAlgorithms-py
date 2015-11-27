@@ -8,4 +8,6 @@ setup(name='genetic_algorithms_py',
         author_email='joshteeter@gmail.com',
         license='MIT',
         packages=['genetic_algorithms_py'],
+        test_suite='nose.collector',
+        tests_require=['nose'],
         zip_safe=False)
