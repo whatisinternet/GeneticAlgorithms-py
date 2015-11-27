@@ -8,7 +8,6 @@ def test_it_should_return_an_array_of_size_2():
     seeding_pool = seeding.pool(2)
     pool = reproduction.reproduce((lambda x: int(x, 2) ** 2), seeding_pool)
     asserted_pool = crossover.crossover(pool)
-    print asserted_pool
     assert len(asserted_pool) == 2
 
 def test_it_should_return_an_array_of_strings():
