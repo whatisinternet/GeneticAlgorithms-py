@@ -5,12 +5,12 @@ from genetic_algorithms_py import reproduction
 
 def test_it_should_return_an_array_of_size_8():
     seeding_pool = seeding.pool(8)
-    asserted_pool = reproduction.reproduce((lambda x: int(x, 2) ** 2), seeding_pool, '11111111')
+    asserted_pool = reproduction.reproduce((lambda x: int(x, 2) ** 2), seeding_pool)
     assert len(asserted_pool) == 8
 
 def test_it_should_return_an_array_of_strings():
     seeding_pool = seeding.pool(8)
-    asserted_pool = reproduction.reproduce((lambda x: int(x, 2) ** 2), seeding_pool, '11111111')
+    asserted_pool = reproduction.reproduce((lambda x: int(x, 2) ** 2), seeding_pool)
     for asserted in asserted_pool:
         assert isinstance( asserted, str )
 
@@ -54,3 +54,10 @@ def test__total_fitness():
     dictionary = reproduction._build_dictionary((lambda x: int(x, 2) ** 2), seeding_pool)
     asserted_total = reproduction._total_fitness(dictionary)
     assert isinstance(asserted_total, int)
+
+def test__select_child():
+    seeding_pool = seeding.pool(8)
+    dictionary = reproduction._build_dictionary((lambda x: int(x, 2) ** 2), seeding_pool)
+    total_fitness = reproduction._total_fitness(dictionary)
+    asseted_child = reproduction._select_child(dictionary, total_fitness)
+    assert isinstance(asseted_child, str)
