@@ -4,28 +4,73 @@
   - See: [PEP 0008](https://www.python.org/dev/peps/pep-0008/)
   - See also: [Thoughbot Guides](https://github.com/thoughtbot/guides)
 
-## Setup:
+# Install Python
 
-Python provides a package manager similar to RubyGems, NPM, Cargo etc., called
-PIP. To get started with this project you will need to install PIP
+[Instructions here](https://www.python.org/)
 
-### Installation of PIP:
-#### Instructions can be found here: https://pip.pypa.io/en/stable/installing/
-- Windows users may run into issues with some PIP packages as they require a
-  POSIX system
+# Install PIP (the python package manager):
 
-## Testing
+[Instructions here](https://pip.pypa.io/en/stable/installing/)
 
-To get started with testing this project please install Nose. The documentation
-on testing in Python can be found [here](http://python-packaging.readthedocs.org/en/latest/testing.html).
-
-### Running the tests
+# Running:
 
 ```shell
-  $ nosetests
-  .
-  ----------------------------------------------------------------------
-  Ran 1 test in 0.009s
-
-  OK
+    python example.py
 ```
+# Redirecting output
+```shell
+    python example.py > test.txt
+```
+
+# Testing:
+
+### Install nose (requires PIP)
+
+```shell
+    [sudo] pip install nose
+```
+### Running the tests:
+
+```shell
+   nosetests
+```
+
+with coverage information
+
+```shell
+    nosetests --with-coverage --cover-html
+```
+
+## Automatic testing during development
+
+Install Ruby 2.2.3, bundler, guard, and guard shell
+
+- [Ruby instructions](https://www.ruby-lang.org/en/)
+
+- To install bundler
+```shell
+    gem install bundler
+```
+
+- To install guard and guard shell
+```shell
+    bundle install
+```
+
+- Running guard
+```
+    guard
+```
+
+## Notes:
+
+All example functions are implemented as lambda functions that are passed into the genetic algorithm function. To see an example see `example.py`. To define your own:
+
+```python
+    def x_2():
+        print '-------------------------'
+        print 'Blackbox: x^2'
+        black_box = (lambda x: int(x, 2) ** 2)
+        genetic_algorithms_py.__init__(black_box, iterations, bit_size)
+````
+
