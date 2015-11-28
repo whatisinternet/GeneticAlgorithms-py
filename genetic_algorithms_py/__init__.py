@@ -10,10 +10,14 @@ def __init__(black_box, iterations, bit_size):
     return final_pool
 
 def _aux(seed, black_box, depth, max_iterations):
+    print '\n', depth, 'Seed       ', seed
     if depth == max_iterations:
         return seed
     else:
         pool = reproduction.reproduce(black_box, seed)
+        print ' reproduction ',  pool
         crossed_over = crossover.crossover(pool)
+        print ' crossover    ',  crossed_over
         mutated = mutation.mutate_pool(crossed_over)
+        print ' mutated      ',  mutated
         return _aux(mutated, black_box, depth + 1, max_iterations)
