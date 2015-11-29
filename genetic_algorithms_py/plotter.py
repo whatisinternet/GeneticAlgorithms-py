@@ -12,6 +12,7 @@ def save_fitnesses(data):
 def chart(target, function_name = "test"):
     f = open('./fitness_data.csv','r')
     data = f.readlines()
+    fig = plt.figure()
 
     for i in data:
         split_input = i.split(",")
@@ -26,7 +27,8 @@ def chart(target, function_name = "test"):
     plt.grid(True)
     plt.show()
 
-    plt.savefig("{a}.png".format(a=function_name))
+
+    fig.savefig("{a}.png".format(a=function_name))
 
 
 
