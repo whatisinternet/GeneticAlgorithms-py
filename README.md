@@ -12,6 +12,12 @@
 
 [Instructions here](https://pip.pypa.io/en/stable/installing/)
 
+## Install dependencies
+
+```shell
+    pip install -r requirements.txt
+```
+
 # Running:
 
 ```shell

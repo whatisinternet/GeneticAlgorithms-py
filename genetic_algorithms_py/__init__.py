@@ -2,8 +2,11 @@ import mutation
 import seeding
 import reproduction
 import crossover
+import plotter
+import os
 
 def __init__(black_box, iterations, bit_size, target = None):
+    os.remove('./fitness_data.csv')
     if target == None:
         target = reduce( lambda x, y: x + y ** 2, range(bit_size))
 
@@ -11,6 +14,7 @@ def __init__(black_box, iterations, bit_size, target = None):
     final_pool = _aux(seeding_pool, black_box, 0, iterations, target)
     print seeding_pool
     print final_pool
+    _debug_chart(target)
     return final_pool
 
 
@@ -26,3 +30,9 @@ def _aux(seed, black_box, depth, max_iterations, target):
         mutated = mutation.mutate_pool(crossed_over)
         print ' mutated      ',  mutated
         return _aux(mutated, black_box, depth + 1, max_iterations, target)
+
+def _debug_chart(target):
+    f = open('./debug','r')
+    debug = f.readline()
+    if debug  == "True\n":
+        plotter.chart(target)

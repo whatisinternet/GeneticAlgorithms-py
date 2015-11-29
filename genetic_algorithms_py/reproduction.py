@@ -1,14 +1,22 @@
 import seeding
 import random
+import plotter
 
-def reproduce( objective_function, current_pool ):
+def reproduce(objective_function, current_pool, target = None):
     sorted_pool = _sort_dictionary(_build_dictionary( objective_function, current_pool ))
+    _debug_chart(target, sorted_pool)
     total_fitness = _total_fitness(sorted_pool)
     return list(map((lambda x: _select_child(sorted_pool, total_fitness)),
         range(len(sorted_pool))))
 
 
 # private ---
+def _debug_chart(target, sorted_pool):
+    f = open('./debug','r')
+    debug = f.readline()
+    if debug  == "True\n":
+        plotter.save_fitnesses(sorted_pool)
+
 def _build_dictionary( objective_function, current_pool ):
     return list(map((lambda x: {'seed': x, 'weight': objective_function(x)}),
         current_pool))
