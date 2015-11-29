@@ -5,7 +5,8 @@ import crossover
 import plotter
 import os
 
-def __init__(black_box, iterations, bit_size, target = None):
+def __init__(black_box, iterations, bit_size,
+        target = None, function_name = None):
     _remove_fitness_data()
 
     if target == None:
@@ -16,7 +17,7 @@ def __init__(black_box, iterations, bit_size, target = None):
     print seeding_pool
     print final_pool, state
     if _is_debugging():
-        _debug_chart(target)
+        _debug_chart(target, function_name)
     return final_pool
 
 
@@ -35,8 +36,8 @@ def _aux(seed, black_box, depth, max_iterations, target):
         print ' mutated      ',  mutated
         return _aux(mutated, black_box, depth + 1, max_iterations, target)
 
-def _debug_chart(target):
-    plotter.chart(target)
+def _debug_chart(target, function_name):
+    plotter.chart(target, function_name)
 
 def _is_debugging():
     f = open('./debug','r')

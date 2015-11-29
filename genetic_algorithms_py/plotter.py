@@ -13,15 +13,17 @@ def chart(target, function_name = "test"):
     f = open('./fitness_data.csv','r')
     data = f.readlines()
 
-    x = []
-    y = []
     for i in data:
         split_input = i.split(",")
-        x.append(int(split_input[0]))
-        y.append(int(split_input[1].strip()) / 100)
+        y = (int(split_input[0]))
+        x = (int(split_input[1].strip()) / 100)
+        plt.scatter(x,y, color="#085DAD", label=y, alpha=0.3, edgecolors='none')
 
-    plt.scatter(x,y)
+    plt.scatter(target,0, color="red", label=y, alpha=0.3, edgecolors='none')
 
+    plt.axes().set_ylabel("Value")
+    plt.axes().set_xlabel("Fitness")
+    plt.grid(True)
     plt.show()
 
     plt.savefig("{a}.png".format(a=function_name))
