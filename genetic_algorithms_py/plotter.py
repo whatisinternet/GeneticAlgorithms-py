@@ -16,10 +16,10 @@ def chart(target, function_name = "test"):
     for i in data:
         split_input = i.split(",")
         y = (int(split_input[0]))
-        x = (int(split_input[1].strip()) / 100)
+        x = (int(split_input[1].strip()))
         plt.scatter(x,y, color="#085DAD", label=y, alpha=0.3, edgecolors='none')
 
-    plt.scatter(target,0, color="red", label=y, alpha=0.3, edgecolors='none')
+    plt.axhline(int(target,2), color="red")
 
     plt.axes().set_ylabel("Value")
     plt.axes().set_xlabel("Fitness")
