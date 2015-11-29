@@ -6,22 +6,26 @@ import plotter
 import os
 
 def __init__(black_box, iterations, bit_size, target = None):
-    os.remove('./fitness_data.csv')
+    _remove_fitness_data()
+
     if target == None:
         target = reduce( lambda x, y: x + y ** 2, range(bit_size))
 
     seeding_pool = seeding.pool(8, bit_size)
-    final_pool = _aux(seeding_pool, black_box, 0, iterations, target)
+    final_pool, state = _aux(seeding_pool, black_box, 0, iterations, target)
     print seeding_pool
-    print final_pool
-    _debug_chart(target)
+    print final_pool, state
+    if _is_debugging():
+        _debug_chart(target)
     return final_pool
 
 
 def _aux(seed, black_box, depth, max_iterations, target):
     print '\n', depth, 'Seed       ', seed
-    if depth == max_iterations or target in seed:
-        return seed
+    if depth == max_iterations:
+        return seed, "NOT FOUND!"
+    elif target in seed:
+        return seed, "FOUND!"
     else:
         pool = reproduction.reproduce(black_box, seed)
         print ' reproduction ',  pool
@@ -32,7 +36,19 @@ def _aux(seed, black_box, depth, max_iterations, target):
         return _aux(mutated, black_box, depth + 1, max_iterations, target)
 
 def _debug_chart(target):
+    plotter.chart(target)
+
+def _is_debugging():
     f = open('./debug','r')
     debug = f.readline()
     if debug  == "True\n":
-        plotter.chart(target)
+        return True
+    else:
+        return False
+
+def _remove_fitness_data():
+    if _is_debugging():
+        try:
+            os.remove('./fitness_data.csv')
+        except OSError:
+            pass

@@ -9,7 +9,7 @@ def save_fitnesses(data):
     for i in range(len(x)):
         f.write("{a},{b}\n".format(a=x[i], b=y[i]))
 
-def chart(target):
+def chart(target, function_name = "test"):
     f = open('./fitness_data.csv','r')
     data = f.readlines()
 
@@ -24,7 +24,7 @@ def chart(target):
 
     plt.show()
 
-    plt.savefig('tests.png')
+    plt.savefig("{a}.png".format(a=function_name))
 
 
 
