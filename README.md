@@ -30,6 +30,9 @@
 
 # Testing:
 
+*Set debug to false by modifying the debug file in the root directory contain
+any string other than True*
+
 ### Install nose (requires PIP)
 
 ```shell
@@ -66,6 +69,17 @@ Install Ruby 2.2.3, bundler, guard, and guard shell
 - Running guard
 ```
     guard
+```
+# Charting / Debugging:
+
+*Set debug to True by modifying the debug file in the root directory contain
+the string True*
+
+Charts will be generated, and charts will be displayed. Pressing enter is
+required to continue each objective function.
+
+```shell
+    python example.py
 ```
 
 ## Notes:
