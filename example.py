@@ -20,14 +20,14 @@ def x_2():
     print 'Blackbox: x^2'
     black_box = (lambda x: int(x, 2) ** 2)
     genetic_algorithms_py.__init__(black_box, iterations, bit_size, target, "X^2")
-    print 'Blackbox: deJongSphere'
+    print 'Blackbox: deJongSphere', target
 
 def dejong():
     print '-------------------------'
     print 'Blackbox: deJongSphere'
     black_box = (lambda x: int(x, 2) + int(target, 2) ** 2)
     genetic_algorithms_py.__init__(black_box, iterations, bit_size, target, "deJong Sphere")
-    print 'Blackbox: deJongSphere'
+    print 'Blackbox: deJongSphere', target
 
 def rosenbrock():
     print '-------------------------'
@@ -37,7 +37,7 @@ def rosenbrock():
     black_box = (lambda x: (a + int(x, 2)) ** 2 + b * (
         int(target, 2) - int(x, 2) ** 2) ** 2)
     genetic_algorithms_py.__init__(black_box, iterations, bit_size, target, "Rosenbrock Function")
-    print 'Blackbox: Rosenbrock function'
+    print 'Blackbox: Rosenbrock function', target
 
 def himmelblau():
     print '-------------------------'
@@ -45,7 +45,7 @@ def himmelblau():
     black_box = (lambda x: (((int(x, 2) ** 2) + int(target, 2) - 11) ** 2) +
             ((int(x, 2) + (int(target, 2) ** 2) - 7) ** 2))
     genetic_algorithms_py.__init__(black_box, iterations, bit_size, target, "Himmelblau Function")
-    print 'Blackbox: Himmelblau function'
+    print 'Blackbox: Himmelblau function', target
 
 x_2()
 if debug:
