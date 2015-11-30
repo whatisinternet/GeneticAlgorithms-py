@@ -14,16 +14,17 @@ iterations = 990 #Max is 990
 bit_size = 8
 target = "10101010" # MUST be set and equal to bit size
 debug = _is_debugging()
+pool_size = 16
 
 def x_2():
     print 'Blackbox: x^2 function target={target} \n'.format(target=target)
     black_box = (lambda x: int(x, 2) ** 2)
-    genetic_algorithms_py.__init__(black_box, iterations, bit_size, target, "X^2")
+    genetic_algorithms_py.__init__(black_box, iterations, bit_size, pool_size, target, "X^2")
 
 def dejong():
     print 'Blackbox: deJongSphere function target={target} \n'.format(target=target)
     black_box = (lambda x: int(x, 2) + int(target, 2) ** 2)
-    genetic_algorithms_py.__init__(black_box, iterations, bit_size, target, "deJong Sphere")
+    genetic_algorithms_py.__init__(black_box, iterations, bit_size, pool_size, target, "deJong Sphere")
 
 def rosenbrock():
     print 'Blackbox: Rosenbrock function target={target} \n'.format(target=target)
@@ -31,13 +32,13 @@ def rosenbrock():
     b = random.randrange(a, 100)
     black_box = (lambda x: (a + int(x, 2)) ** 2 + b * (
         int(target, 2) - int(x, 2) ** 2) ** 2)
-    genetic_algorithms_py.__init__(black_box, iterations, bit_size, target, "Rosenbrock Function")
+    genetic_algorithms_py.__init__(black_box, iterations, bit_size, pool_size, target, "Rosenbrock Function")
 
 def himmelblau():
     print 'Blackbox: Himmelblau function target={target} \n'.format(target=target)
     black_box = (lambda x: (((int(x, 2) ** 2) + int(target, 2) - 11) ** 2) +
             ((int(x, 2) + (int(target, 2) ** 2) - 7) ** 2))
-    genetic_algorithms_py.__init__(black_box, iterations, bit_size, target, "Himmelblau Function")
+    genetic_algorithms_py.__init__(black_box, iterations, bit_size, pool_size, target, "Himmelblau Function")
 
 x_2()
 if debug:

@@ -5,14 +5,14 @@ import crossover
 import plotter
 import os
 
-def __init__(black_box, iterations, bit_size,
+def __init__(black_box, iterations, bit_size, pool_size = 8,
         target = None, function_name = None):
     _remove_fitness_data()
 
     if target == None:
         target = reduce( lambda x, y: x + y ** 2, range(bit_size))
 
-    seeding_pool = seeding.pool(8, bit_size)
+    seeding_pool = seeding.pool(pool_size, bit_size)
     final_pool, state = _aux(seeding_pool, black_box, 0, iterations, target)
     if _is_debugging():
         print seeding_pool
