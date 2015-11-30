@@ -8,6 +8,7 @@
 
 [Instructions here](https://www.python.org/)
 
+
 # Install PIP (the python package manager):
 
 [Instructions here](https://pip.pypa.io/en/stable/installing/)
@@ -17,6 +18,11 @@
 ```shell
     pip install -r requirements.txt
 ```
+
+**Errors?**
+- If MatPlotLib fails on Linux install the following:
+  `freetype-devel, libpng-devel` and run pip again. If you still have errors you
+can install from [here](http://matplotlib.org/users/installing.html).
 
 # Running:
 
