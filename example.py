@@ -11,7 +11,7 @@ def _is_debugging():
 
 #------------------------------
 iterations = 900
-bit_size = 8
+bit_size = 64
 debug = _is_debugging()
 
 
@@ -35,14 +35,14 @@ def himmelblau():
     genetic_algorithms_py.__init__(black_box, iterations, bit_size, 2, "Himmelblau Function")
 
 
-def production():
-    print 'Blackbox: Production function'
+def something_complex():
+    print 'Blackbox: Some complex function'
     black_box = (lambda a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s: int(a, 2) +
-                 int(b, 2) +  int(f, 2) +  int(j, 2) +  int(n, 2) +  int(q, 2) +
-                 int(c, 2) +  int(g, 2) +  int(k, 2) +  int(o, 2) +  int(r, 2) +
-                 int(d, 2) +  int(h, 2) +  int(l, 2) +  int(p, 2) +  int(s, 2) +
-                 int(e, 2) +  int(i, 2) +  int(m, 2))
-    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 19, "Productuon Function")
+                 int(b, 2) *  int(f, 2) +  int(j, 2) +  int(n, 2) /  int(q, 2) +
+                 int(c, 2) /  int(g, 2) /  int(k, 2) -  int(o, 2) *  int(r, 2) +
+                 int(d, 2) -  int(h, 2) %  int(l, 2) **  int(p, 2) +  int(s, 2) +
+                 int(e, 2) +  int(i, 2) *  int(m, 2))
+    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 19, "Some Complex Function")
 
 
 dejong()
