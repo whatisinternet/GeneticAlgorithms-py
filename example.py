@@ -10,39 +10,37 @@ def _is_debugging():
         return False
 
 #------------------------------
-iterations = 990 #Max is 990
-bit_size = 8
-target = "10101010" # MUST be set and equal to bit size
+iterations = 100
+bit_size = 64
 debug = _is_debugging()
-pool_size = 16
 
-def x_2():
-    print 'Blackbox: x^2 function target={target} \n'.format(target=target)
-    black_box = (lambda x: int(x, 2) ** 2)
-    genetic_algorithms_py.__init__(black_box, iterations, bit_size, pool_size, target, "X^2")
 
 def dejong():
-    print 'Blackbox: deJongSphere function target={target} \n'.format(target=target)
-    black_box = (lambda x: int(x, 2) + int(target, 2) ** 2)
-    genetic_algorithms_py.__init__(black_box, iterations, bit_size, pool_size, target, "deJong Sphere")
+    print 'Blackbox: deJongSphere function'
+    black_box = (lambda x, y: int(x, 2) + int(y, 2) ** 2)
+    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 2, "deJong Sphere")
 
 def rosenbrock():
-    print 'Blackbox: Rosenbrock function target={target} \n'.format(target=target)
-    a = random.randrange(0, 100)
-    b = random.randrange(a, 100)
-    black_box = (lambda x: (a + int(x, 2)) ** 2 + b * (
-        int(target, 2) - int(x, 2) ** 2) ** 2)
-    genetic_algorithms_py.__init__(black_box, iterations, bit_size, pool_size, target, "Rosenbrock Function")
+    print 'Blackbox: Rosenbrock function'
+    black_box = (lambda a, b, c, x: (int(a, 2) + int(x, 2)) ** 2 + int(b, 2) * (
+        int(c, 2) - int(x, 2) ** 2) ** 2)
+    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 4, "Rosenbrock Function")
 
 def himmelblau():
-    print 'Blackbox: Himmelblau function target={target} \n'.format(target=target)
-    black_box = (lambda x: (((int(x, 2) ** 2) + int(target, 2) - 11) ** 2) +
-            ((int(x, 2) + (int(target, 2) ** 2) - 7) ** 2))
-    genetic_algorithms_py.__init__(black_box, iterations, bit_size, pool_size, target, "Himmelblau Function")
+    print 'Blackbox: Himmelblau function'
+    black_box = (lambda x, y: (((int(x, 2) ** 2) + int(y, 2) - 11) ** 2) +
+            ((int(x, 2) + (int(y, 2) ** 2) - 7) ** 2))
+    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 2, "Himmelblau Function")
 
-x_2()
-if debug:
-    raw_input()
+def production():
+    print 'Blackbox: Production function'
+    black_box = (lambda a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s: int(a, 2) +
+                 int(b, 2) +  int(f, 2) +  int(j, 2) +  int(n, 2) +  int(q, 2) +
+                 int(c, 2) +  int(g, 2) +  int(k, 2) +  int(o, 2) +  int(r, 2) +
+                 int(d, 2) +  int(h, 2) +  int(l, 2) +  int(p, 2) +  int(s, 2) +
+                 int(e, 2) +  int(i, 2) +  int(m, 2))
+    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 19, "Productuon Function")
+
 dejong()
 if debug:
     raw_input()
@@ -52,4 +50,6 @@ if debug:
 himmelblau()
 if debug:
     raw_input()
-
+production()
+if debug:
+    raw_input()
