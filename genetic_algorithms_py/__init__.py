@@ -7,39 +7,34 @@ import os
 
 
 def __init__(black_box, iterations, bit_size,
-             pool_size=8, target=None, function_name=None):
+             pool_size=8, function_name=None):
     _remove_fitness_data()
 
-    if target is None:
-        target = reduce(lambda x, y: x + y ** 2, range(bit_size))
-
     seeding_pool = seeding.pool(pool_size, bit_size)
-    final_pool, state = _aux(seeding_pool, black_box, 0, iterations, target)
+    final_pool = _aux(seeding_pool, black_box, 0, iterations, pool_size)
     if _is_debugging():
         print seeding_pool
         print final_pool, state
-        _debug_chart(target, function_name)
+        _debug_chart(pool_size, function_name)
     return final_pool
 
 
-def _aux(seed, black_box, depth, max_iterations, target):
+def _aux(seed, black_box, depth, max_iterations, pool_size):
     _format_output(['{a} Seed'.format(a=depth)] + seed)
     if depth == max_iterations:
-        return seed, "NOT FOUND!"
-    elif target in seed:
-        return seed, "FOUND!"
+        return seed
     else:
-        pool = reproduction.reproduce(black_box, seed)
+        pool = reproduction.reproduce(black_box, seed, pool_size)
         _format_output(['reproduction'] + pool)
         crossed_over = crossover.crossover(pool)
         _format_output(['crossover'] + crossed_over)
         mutated = mutation.mutate_pool(crossed_over)
         _format_output(['mutated'] + mutated)
-        return _aux(mutated, black_box, depth + 1, max_iterations, target)
+        return _aux(mutated, black_box, depth + 1, max_iterations, pool_size)
 
 
-def _debug_chart(target, function_name):
-    plotter.chart(target, function_name)
+def _debug_chart(pool_size, function_name):
+    plotter.chart(pool_size, function_name)
 
 
 def _is_debugging():
