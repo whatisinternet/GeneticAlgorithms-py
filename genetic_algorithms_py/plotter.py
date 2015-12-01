@@ -22,8 +22,6 @@ def chart(target, function_name = "test"):
         x = (int(split_input[1].strip()))
         plt.scatter(x,y, color="#085DAD", label=y, alpha=0.3, edgecolors='none')
 
-    plt.axhline(int(target,2), color="red")
-
     plt.axes().set_ylabel("Value")
     plt.axes().set_xlabel("Fitness")
     plt.grid(True)

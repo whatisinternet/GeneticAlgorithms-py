@@ -14,7 +14,7 @@ def __init__(black_box, iterations, bit_size,
     final_pool = _aux(seeding_pool, black_box, 0, iterations, pool_size)
     if _is_debugging():
         print seeding_pool
-        print final_pool, state
+        print final_pool
         _debug_chart(pool_size, function_name)
     return final_pool
 
