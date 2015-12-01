@@ -1,12 +1,12 @@
 import random
 
+
 def crossover(pool):
     crossed = map(lambda x: _cross(x), _pair_up(pool))
     return sum(crossed, [])
 
-# Private ----
 
-# TODO: REFACTOR
+# Private ----
 def _cross(seedling):
     a = seedling[0]
     b = seedling[1]
@@ -17,7 +17,8 @@ def _cross(seedling):
     b_end = b[index:]
     a = a_start + b_end
     b = a_end + b_start
-    return [a,b]
+    return [a, b]
+
 
 def _pair_up(pool):
     return list(map(lambda x: (
@@ -25,9 +26,10 @@ def _pair_up(pool):
         _select_random(pool, _rand_index(pool))),
         range(len(pool) / 2)))
 
+
 def _rand_index(collection):
     return random.randrange(0, len(collection))
 
+
 def _select_random(pool, index):
     return pool[index]
-

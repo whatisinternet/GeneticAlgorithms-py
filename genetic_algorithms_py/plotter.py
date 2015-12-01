@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import pylab
 
+
 def save_fitnesses(data):
     x = list(map(lambda x: int(x['seed'], 2), data))
     y = list(map(lambda x: x['weight'], data))
@@ -8,6 +9,7 @@ def save_fitnesses(data):
 
     for i in range(len(x)):
         f.write("{a},{b}\n".format(a=x[i], b=y[i]))
+
 
 def chart(target, function_name = "test"):
     f = open('./fitness_data.csv','r')

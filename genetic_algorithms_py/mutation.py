@@ -1,7 +1,9 @@
 import random
 
+
 def mutate_pool(pool):
     return list(map(lambda x: mutate(x), pool))
+
 
 def mutate(seed):
     iterations = random.randrange(0, len(seed))
