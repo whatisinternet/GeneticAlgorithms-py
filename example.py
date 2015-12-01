@@ -11,28 +11,29 @@ def _is_debugging():
 
 #------------------------------
 iterations = 900
-bit_size = 64
+bit_size = 16
 debug = _is_debugging()
+mutation_probability = 0.0
 
 
 def dejong():
     print 'Blackbox: deJongSphere function'
     black_box = (lambda x, y: int(x, 2) + int(y, 2) ** 2)
-    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 2, "deJong Sphere")
+    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 2, mutation_probability, "deJong Sphere")
 
 
 def rosenbrock():
     print 'Blackbox: Rosenbrock function'
     black_box = (lambda a, b, c, x: (int(a, 2) + int(x, 2)) ** 2 + int(b, 2) * (
         int(c, 2) - int(x, 2) ** 2) ** 2)
-    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 4, "Rosenbrock Function")
+    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 4, mutation_probability, "Rosenbrock Function")
 
 
 def himmelblau():
     print 'Blackbox: Himmelblau function'
     black_box = (lambda x, y: (((int(x, 2) ** 2) + int(y, 2) - 11) ** 2) +
             ((int(x, 2) + (int(y, 2) ** 2) - 7) ** 2))
-    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 2, "Himmelblau Function")
+    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 2, mutation_probability, "Himmelblau Function")
 
 
 def something_complex():
@@ -42,7 +43,7 @@ def something_complex():
                  int(c, 2) /  int(g, 2) /  int(k, 2) -  int(o, 2) *  int(r, 2) +
                  int(d, 2) -  int(h, 2) %  int(l, 2) **  int(p, 2) +  int(s, 2) +
                  int(e, 2) +  int(i, 2) *  int(m, 2))
-    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 19, "Some Complex Function")
+    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 19, mutation_probability, "Some Complex Function")
 
 
 dejong()
@@ -54,6 +55,6 @@ if debug:
 himmelblau()
 if debug:
     raw_input()
-production()
+something_complex()
 if debug:
     raw_input()

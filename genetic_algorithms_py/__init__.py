@@ -7,11 +7,11 @@ import os
 
 
 def __init__(black_box, iterations, bit_size,
-             pool_size=8, function_name=None):
+             pool_size, mutation_probability, function_name=None):
     _remove_fitness_data()
 
     seeding_pool = seeding.pool(pool_size, bit_size)
-    final_pool = _aux(seeding_pool, black_box, 0, iterations, pool_size)
+    final_pool = _aux(seeding_pool, black_box, 0, iterations, pool_size, mutation_probability)
     if _is_debugging():
         print seeding_pool
         print final_pool
@@ -19,7 +19,7 @@ def __init__(black_box, iterations, bit_size,
     return final_pool
 
 
-def _aux(seed, black_box, depth, max_iterations, pool_size):
+def _aux(seed, black_box, depth, max_iterations, pool_size, mutation_probability):
     _format_output(['{a} Seed'.format(a=depth)] + seed)
     if depth == max_iterations:
         return seed
@@ -28,9 +28,9 @@ def _aux(seed, black_box, depth, max_iterations, pool_size):
         _format_output(['reproduction'] + pool)
         crossed_over = crossover.crossover(pool)
         _format_output(['crossover'] + crossed_over)
-        mutated = mutation.mutate_pool(crossed_over)
+        mutated = mutation.mutate_pool(crossed_over, mutation_probability)
         _format_output(['mutated'] + mutated)
-        return _aux(mutated, black_box, depth + 1, max_iterations, pool_size)
+        return _aux(mutated, black_box, depth + 1, max_iterations, pool_size, mutation_probability)
 
 
 def _debug_chart(pool_size, function_name):
