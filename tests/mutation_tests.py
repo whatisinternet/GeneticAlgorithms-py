@@ -14,7 +14,7 @@ def test_it_should_return_a_mutated_string():
 
 def test_it_should_mutate_a_pool_returning_2_strings():
     seeding_pool = seeding.pool(8, range(255), 2)
-    pool = reproduction.reproduce(black_box, seeding_pool, 2, 2, 0)
+    pool = reproduction.reproduce(black_box, seeding_pool, 2, 2)
     crossed_over = crossover.crossover(pool)
     asserted_pool = mutation.mutate_pool(crossed_over, mutation_probability)
     assert len(asserted_pool) >= 2
@@ -22,7 +22,7 @@ def test_it_should_mutate_a_pool_returning_2_strings():
 
 def test_it_should_mutate_a_pool_returning_n_strings():
     seeding_pool = seeding.pool(8, range(255), 2)
-    pool = reproduction.reproduce(black_box, seeding_pool, 2, 2, 0)
+    pool = reproduction.reproduce(black_box, seeding_pool, 2, 2)
     crossed_over = crossover.crossover(pool)
     asserted_pool = mutation.mutate_pool(crossed_over, mutation_probability)
     for asserted in asserted_pool:

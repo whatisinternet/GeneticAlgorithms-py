@@ -29,32 +29,32 @@ def _aux(seed, black_box, depth, max_iterations,
     solved, pool = _is_solved(black_box, seed, pool_size, number_of_variables, target)
     if solved:
         print solved, pool
-        return pool
+        return seed
 
     for i in range(max_iterations):
         _format_output(['{a} Seed'.format(a=i)] + seed, number_of_variables)
 
-        pool = reproduction.reproduce(black_box, seed,
+        reproduction_pool = reproduction.reproduce(black_box, seed,
                                       pool_size, number_of_variables)
 
-        solved, seed = _is_solved(black_box, pool, pool_size, number_of_variables, target)
+        solved, pool = _is_solved(black_box, reproduction_pool, pool_size, number_of_variables, target)
         if solved:
-            print solved, seed
-            return pool
+            print solved, pool
+            return reproduction_pool
         _format_output(['reproduction'] + pool, number_of_variables)
 
-        crossed_over = crossover.crossover(pool)
-        solved, seed = _is_solved(black_box, crossed_over, pool_size, number_of_variables, target)
+        crossed_over = crossover.crossover(reproduction_pool)
+        solved, pool = _is_solved(black_box, crossed_over, pool_size, number_of_variables, target)
         if solved:
-            print solved, seed
-            return pool
+            print solved, pool
+            return crossed_over
         _format_output(['crossover'] + crossed_over, number_of_variables)
 
         mutated = mutation.mutate_pool(crossed_over, mutation_probability)
-        solved, seed = _is_solved(black_box, mutated, pool_size, number_of_variables, target)
+        solved, pool = _is_solved(black_box, mutated, pool_size, number_of_variables, target)
         if solved:
-            print solved, seed
-            return pool
+            print solved, pool
+            return mutated
         _format_output(['mutated'] + mutated, number_of_variables)
 
         seed = mutated
