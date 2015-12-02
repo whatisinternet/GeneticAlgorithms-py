@@ -11,7 +11,7 @@ def _is_debugging():
 
 iterations = 1000000000
 debug = _is_debugging()
-initial_pool = 2000
+initial_pool = 200
 mutation_probability = 0.001
 crossover_rate = 0.7
 carry_over = initial_pool / 2
