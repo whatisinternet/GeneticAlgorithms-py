@@ -11,6 +11,7 @@ def __init__(black_box,
              constraint_range,
              pool_size,
              mutation_probability,
+             crossover_rate,
              number_of_variables,
              target,
              function_name=None):
@@ -19,8 +20,15 @@ def __init__(black_box,
 
     seeding_pool = seeding.pool(pool_size, constraint_range, number_of_variables)
 
-    final_pool = _aux(seeding_pool, black_box, 0, iterations,
-                      mutation_probability, number_of_variables, pool_size, target)
+    final_pool = _aux(seeding_pool,
+                      black_box,
+                      0,
+                      iterations,
+                      mutation_probability,
+                      crossover_rate,
+                      number_of_variables,
+                      pool_size,
+                      target)
     if _is_debugging():
         print _final(seeding_pool)
         print _final(final_pool)
@@ -28,8 +36,15 @@ def __init__(black_box,
     return final_pool
 
 
-def _aux(seed, black_box, depth, max_iterations,
-         mutation_probability, number_of_variables, pool_size, target):
+def _aux(seed,
+         black_box,
+         depth,
+         max_iterations,
+         mutation_probability,
+         crossover_rate,
+         number_of_variables,
+         pool_size,
+         target):
 
     solved, pool = _is_solved(black_box, seed, pool_size, number_of_variables, target)
     if solved:
@@ -48,7 +63,7 @@ def _aux(seed, black_box, depth, max_iterations,
             return reproduction_pool
         _format_output(['reproduction'] + reproduction_pool, number_of_variables)
 
-        crossed_over = crossover.crossover(reproduction_pool)
+        crossed_over = crossover.crossover(reproduction_pool, crossover_rate)
         solved, pool = _is_solved(black_box, crossed_over, pool_size, number_of_variables, target)
         if solved:
             print solved, pool

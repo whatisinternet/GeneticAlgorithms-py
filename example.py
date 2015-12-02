@@ -13,6 +13,7 @@ iterations = 100
 debug = _is_debugging()
 initial_pool = 20
 mutation_probability = 0.001
+crossover_rate = 0.7
 
 '''
 Init values:
@@ -21,6 +22,7 @@ Init values:
     constraint_range
     pool_size
     mutation_probability
+    crossover_rate
     target fitness
     number_of_variables in black box
 '''
@@ -36,6 +38,7 @@ def dejong():
                                    range(65),
                                    initial_pool,
                                    mutation_probability,
+                                   crossover_rate,
                                    variables,
                                    target_fitness,
                                    "deJong Sphere")
@@ -53,6 +56,7 @@ def rosenbrock():
                                    range(0,500),
                                    initial_pool,
                                    mutation_probability,
+                                   crossover_rate,
                                    variables,
                                    target_fitness,
                                    "Rosenbrock Function")
@@ -69,6 +73,7 @@ def himmelblau():
                                    range(-500,500),
                                    initial_pool,
                                    mutation_probability,
+                                   crossover_rate,
                                    variables,
                                    target_fitness,
                                    "Himmelblau Function")
@@ -91,6 +96,7 @@ def alphabet_soup():
                                    range(-500,500),
                                    initial_pool,
                                    mutation_probability,
+                                   crossover_rate,
                                    variables,
                                    target_fitness,
                                    "alphabet Function")
