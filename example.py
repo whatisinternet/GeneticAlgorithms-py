@@ -73,13 +73,29 @@ def himmelblau():
                                    target_fitness,
                                    "Himmelblau Function")
 
+def alphabet_soup():
+    print 'Blackbox: Alphabet soup function'
+
+    black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o,
+                 p, q, r, s, t, u, v, w, x, y, z: int(a, 2) + int(b, 2) +
+                 int(c, 2) - int(d, 2) * int(e, 2) + int(f, 2) -
+                 int(g, 2) - int(h, 2) * int(i, 2) + int(j, 2) -
+                 int(k, 2) - int(l, 2) * int(m, 2) + int(n, 2) -
+                 int(o, 2) - int(p, 2) * int(q, 2) + int(s, 2) -
+                 int(t, 2) - int(u, 2) * int(v, 2) + int(w, 2) -
+                 int(x, 2) - int(y, 2) * int(z, 2))
+    target_fitness = None
+    variables = 26
+    genetic_algorithms_py.__init__(black_box,
+                                   iterations,
+                                   range(-500,500),
+                                   initial_pool,
+                                   mutation_probability,
+                                   variables,
+                                   target_fitness,
+                                   "alphabet Function")
 
 dejong()
-if debug:
-    raw_input()
 rosenbrock()
-if debug:
-    raw_input()
 himmelblau()
-if debug:
-    raw_input()
+# alphabet_soup()

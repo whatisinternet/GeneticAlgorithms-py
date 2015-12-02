@@ -6,8 +6,13 @@ import plotter
 import os
 
 
-def __init__(black_box, iterations, constraint_range,
-             pool_size, mutation_probability, number_of_variables, target,
+def __init__(black_box,
+             iterations,
+             constraint_range,
+             pool_size,
+             mutation_probability,
+             number_of_variables,
+             target,
              function_name=None):
 
     _remove_fitness_data()
@@ -41,7 +46,7 @@ def _aux(seed, black_box, depth, max_iterations,
         if solved:
             print solved, pool
             return reproduction_pool
-        _format_output(['reproduction'] + pool, number_of_variables)
+        _format_output(['reproduction'] + reproduction_pool, number_of_variables)
 
         crossed_over = crossover.crossover(reproduction_pool)
         solved, pool = _is_solved(black_box, crossed_over, pool_size, number_of_variables, target)

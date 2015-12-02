@@ -8,18 +8,18 @@ def reproduce(objective_function, current_pool,
     sorted_pool = _sort_dictionary(_build_dictionary(objective_function,
                                                      current_pool, pool_size,
                                                      number_of_variables))
-    _debug_chart(pool_size, sorted_pool)
+    _debug_chart(pool_size, sorted_pool, number_of_variables)
     total_fitness = _total_fitness(sorted_pool)
     return list(map((lambda x: _select_child(sorted_pool, total_fitness)),
                     range(len(sorted_pool))))
 
 
 # private ---
-def _debug_chart(pool_size, sorted_pool):
+def _debug_chart(pool_size, sorted_pool, number_of_variables):
     f = open('./debug', 'r')
     debug = f.readline()
     if debug == "True\n":
-        plotter.save_fitnesses(sorted_pool)
+        plotter.save_fitnesses(sorted_pool, number_of_variables)
 
 
 def _build_dictionary(objective_function, current_pool,
