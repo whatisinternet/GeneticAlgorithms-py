@@ -1,49 +1,64 @@
 import genetic_algorithms_py
-import random
+
 
 def _is_debugging():
-    f = open('./debug','r')
+    f = open('./debug', 'r')
     debug = f.readline()
-    if debug  == "True\n":
+    if debug is "True\n":
         return True
     else:
         return False
 
-#------------------------------
-iterations = 900
-bit_size = 16
+iterations = 100
 debug = _is_debugging()
-mutation_probability = 0.0
+initial_pool = 20
+mutation_probability = 0.001
 
+'''
+Init values:
+    black_box
+    iterations
+    constraint_range
+    pool_size
+    mutation_probability
+    target fitness
+    number_of_variables in black box
+'''
 
 def dejong():
     print 'Blackbox: deJongSphere function'
-    black_box = (lambda x, y: int(x, 2) + int(y, 2) ** 2)
-    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 2, mutation_probability, "deJong Sphere")
+    black_box = (lambda x, y: (reduce(
+        (lambda r, q: q + (int(x, 2) ** 2)), range(int(y, 2)), 0)))
+    genetic_algorithms_py.__init__(black_box,
+                                   iterations,
+                                   range(65),
+                                   initial_pool,
+                                   mutation_probability,
+                                   2,
+                                   111512,
+                                   "deJong Sphere")
 
 
 def rosenbrock():
     print 'Blackbox: Rosenbrock function'
-    black_box = (lambda a, b, c, x: (int(a, 2) + int(x, 2)) ** 2 + int(b, 2) * (
-        int(c, 2) - int(x, 2) ** 2) ** 2)
-    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 4, mutation_probability, "Rosenbrock Function")
+    reducer_size = 100
+    black_box = (lambda x, y, z: (reduce(
+        (lambda p, q: q + (100 * ((int(x, 2) - (int(y, 2) ** 2) ) ** 2) + (1 - int(y, 2)) ** 2)), range(int(z, 2)), 0)))
+    genetic_algorithms_py.__init__(black_box,
+                                   iterations,
+                                   range(0,500),
+                                   initial_pool,
+                                   mutation_probability,
+                                   3,
+                                   0,
+                                   "Rosenbrock Function")
 
 
 def himmelblau():
     print 'Blackbox: Himmelblau function'
-    black_box = (lambda x, y: (((int(x, 2) ** 2) + int(y, 2) - 11) ** 2) +
-            ((int(x, 2) + (int(y, 2) ** 2) - 7) ** 2))
-    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 2, mutation_probability, "Himmelblau Function")
-
-
-def something_complex():
-    print 'Blackbox: Some complex function'
-    black_box = (lambda a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s: int(a, 2) +
-                 int(b, 2) *  int(f, 2) +  int(j, 2) +  int(n, 2) /  int(q, 2) +
-                 int(c, 2) /  int(g, 2) /  int(k, 2) -  int(o, 2) *  int(r, 2) +
-                 int(d, 2) -  int(h, 2) %  int(l, 2) **  int(p, 2) +  int(s, 2) +
-                 int(e, 2) +  int(i, 2) *  int(m, 2))
-    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 19, mutation_probability, "Some Complex Function")
+    genetic_algorithms_py.__init__(black_box, iterations, bit_size, 2,
+                                   mutation_probability, initial_pool,
+                                   "Himmelblau Function")
 
 
 dejong()
@@ -52,9 +67,6 @@ if debug:
 rosenbrock()
 if debug:
     raw_input()
-himmelblau()
-if debug:
-    raw_input()
-something_complex()
-if debug:
-    raw_input()
+# himmelblau()
+# if debug:
+#     raw_input()
