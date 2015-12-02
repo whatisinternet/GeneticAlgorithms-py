@@ -13,6 +13,7 @@ def __init__(black_box,
              mutation_probability,
              crossover_rate,
              number_of_variables,
+             carry_over,
              target,
              function_name=None):
 
@@ -27,6 +28,7 @@ def __init__(black_box,
                       mutation_probability,
                       crossover_rate,
                       number_of_variables,
+                      carry_over,
                       pool_size,
                       target)
     if _is_debugging():
@@ -43,6 +45,7 @@ def _aux(seed,
          mutation_probability,
          crossover_rate,
          number_of_variables,
+         carry_over,
          pool_size,
          target):
 
@@ -55,7 +58,8 @@ def _aux(seed,
         _format_output(['{a} Seed'.format(a=i)] + seed, number_of_variables)
 
         reproduction_pool = reproduction.reproduce(black_box, seed,
-                                      pool_size, number_of_variables)
+                                      pool_size, number_of_variables,
+                                                   carry_over)
 
         solved, pool = _is_solved(black_box, reproduction_pool, pool_size, number_of_variables, target)
         if solved:

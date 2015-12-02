@@ -1,9 +1,8 @@
-import random
 import plotter
 
 
 def reproduce(objective_function, current_pool,
-              pool_size, number_of_variables):
+              pool_size, number_of_variables, carry_over):
 
     sorted_pool = _sort_dictionary(_build_dictionary(objective_function,
                                                      current_pool, pool_size,
@@ -11,7 +10,7 @@ def reproduce(objective_function, current_pool,
     _debug_chart(pool_size, sorted_pool, number_of_variables)
     total_fitness = _total_fitness(sorted_pool)
     return list(map((lambda x: _select_child(sorted_pool, total_fitness)),
-                    range(len(sorted_pool))))
+                    range(carry_over)))
 
 
 # private ---

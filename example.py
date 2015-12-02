@@ -9,11 +9,13 @@ def _is_debugging():
     else:
         return False
 
-iterations = 100
+iterations = 1000000000
 debug = _is_debugging()
-initial_pool = 20
+initial_pool = 2000
 mutation_probability = 0.001
 crossover_rate = 0.7
+carry_over = initial_pool / 2
+
 
 '''
 Init values:
@@ -23,6 +25,7 @@ Init values:
     pool_size
     mutation_probability
     crossover_rate
+    carry_over
     target fitness
     number_of_variables in black box
 '''
@@ -33,13 +36,15 @@ def dejong():
         (lambda r, q: q + (int(x, 2) ** 2)), range(int(y, 2)), 0)))
     target_fitness = None
     variables = 2
+    carry_over = 64
     genetic_algorithms_py.__init__(black_box,
                                    iterations,
-                                   range(65),
+                                   range(1165),
                                    initial_pool,
                                    mutation_probability,
                                    crossover_rate,
                                    variables,
+                                   carry_over,
                                    target_fitness,
                                    "deJong Sphere")
 
@@ -51,6 +56,7 @@ def rosenbrock():
         (lambda p, q: q + (100 * ((int(x, 2) - (int(y, 2) ** 2) ) ** 2) + (1 - int(y, 2)) ** 2)), range(int(z, 2)), 0)))
     target_fitness = None
     variables = 3
+    carry_over = 64
     genetic_algorithms_py.__init__(black_box,
                                    iterations,
                                    range(0,500),
@@ -58,6 +64,7 @@ def rosenbrock():
                                    mutation_probability,
                                    crossover_rate,
                                    variables,
+                                   carry_over,
                                    target_fitness,
                                    "Rosenbrock Function")
 
@@ -68,6 +75,7 @@ def himmelblau():
                  ((int(x, 2) + (int(y,2) ** 2) - 7) ** 2))
     target_fitness = None
     variables = 2
+    carry_over = 64
     genetic_algorithms_py.__init__(black_box,
                                    iterations,
                                    range(-500,500),
@@ -75,6 +83,7 @@ def himmelblau():
                                    mutation_probability,
                                    crossover_rate,
                                    variables,
+                                   carry_over,
                                    target_fitness,
                                    "Himmelblau Function")
 
@@ -91,6 +100,7 @@ def alphabet_soup():
                  int(x, 2) - int(y, 2) * int(z, 2))
     target_fitness = None
     variables = 26
+    carry_over = 64
     genetic_algorithms_py.__init__(black_box,
                                    iterations,
                                    range(-500,500),
@@ -98,10 +108,11 @@ def alphabet_soup():
                                    mutation_probability,
                                    crossover_rate,
                                    variables,
+                                   carry_over,
                                    target_fitness,
                                    "alphabet Function")
 
 dejong()
-rosenbrock()
-himmelblau()
+# rosenbrock()
+# himmelblau()
 # alphabet_soup()

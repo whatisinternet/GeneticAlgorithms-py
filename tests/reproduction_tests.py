@@ -8,7 +8,7 @@ black_box = (lambda x, y: int(y) + int(x) ** 2)
 
 def test_it_should_return_an_array_of_strings():
     seeding_pool = seeding.pool(8, range(255), 2)
-    asserted_pool = reproduction.reproduce(black_box, seeding_pool, 2, 2)
+    asserted_pool = reproduction.reproduce(black_box, seeding_pool, 2, 2, 2)
     for asserted in asserted_pool:
         assert isinstance(asserted, str)
 
