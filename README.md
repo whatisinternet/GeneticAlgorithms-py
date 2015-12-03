@@ -8,9 +8,21 @@
 
 [Instructions here](https://www.python.org/)
 
+
 # Install PIP (the python package manager):
 
 [Instructions here](https://pip.pypa.io/en/stable/installing/)
+
+## Install dependencies
+
+```shell
+    pip install -r requirements.txt
+```
+
+**Errors?**
+- If MatPlotLib fails on Linux install the following:
+  `freetype-devel, libpng-devel` and run pip again. If you still have errors you
+can install from [here](http://matplotlib.org/users/installing.html).
 
 # Running:
 
@@ -23,6 +35,9 @@
 ```
 
 # Testing:
+
+*Set debug to false by modifying the debug file in the root directory contain
+any string other than True*
 
 ### Install nose (requires PIP)
 
@@ -60,6 +75,17 @@ Install Ruby 2.2.3, bundler, guard, and guard shell
 - Running guard
 ```
     guard
+```
+# Charting / Debugging:
+
+*Set debug to True by modifying the debug file in the root directory contain
+the string True*
+
+Charts will be generated, and charts will be displayed. Pressing enter is
+required to continue each objective function.
+
+```shell
+    python example.py
 ```
 
 ## Notes:

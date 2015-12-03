@@ -1,10 +1,13 @@
 import random
 
-def mutate_pool(pool):
-    return list(map(lambda x: mutate(x), pool))
 
-def mutate(seed):
-    iterations = random.randrange(0, len(seed))
+def mutate_pool(pool, mutation_probability):
+    return list(map(lambda x: mutate(x, mutation_probability), pool))
+
+
+def mutate(seed, mutation_probability=0.0):
+    chance_of_mutation = random.uniform(0.0, mutation_probability)
+    iterations = int(random.randrange(0, len(seed)) * chance_of_mutation)
     listified_seed = list(seed)
     for i in range(iterations):
         index = random.randrange(0, len(seed))
