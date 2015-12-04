@@ -1,3 +1,5 @@
+import os
+import plotter
 import reproduction
 
 def _format_output(collection, number_of_variables):

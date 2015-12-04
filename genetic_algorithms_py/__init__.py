@@ -3,7 +3,6 @@ import seeding
 import reproduction
 import crossover
 import debug
-import os
 
 
 def __init__(params):
@@ -22,7 +21,7 @@ def __init__(params):
     if debug._is_debugging():
         print _final(seeding_pool)
         print _final(final_pool)
-        debug._chart(pool_size, params['function_name'])
+        debug._chart(params['pool_size'], params['function_name'])
     return final_pool
 
 
