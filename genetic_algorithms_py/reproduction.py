@@ -1,12 +1,11 @@
-import plotter
-
+import debug
 
 def reproduce(reproduction_params):
     carry_over = reproduction_params['carry_over']
 
     sorted_pool = _sort_dictionary(_build_dictionary(reproduction_params))
 
-    _debug_chart(reproduction_params, sorted_pool)
+    debug._debug_chart(reproduction_params, sorted_pool)
 
     total_fitness = _total_fitness(sorted_pool)
 
@@ -49,15 +48,5 @@ def _select_child(dictionary, total_fitness):
                                 key=lambda x: (x['weight'] / total_fitness)
                                 , reverse=True)
         return sorted_children[0]['seed']
-
-
-def _debug_chart(reproduction_params, sorted_pool):
-    pool_size = reproduction_params['pool_size']
-    number_of_variables = reproduction_params['number_of_variables']
-
-    f = open('./debug', 'r')
-    debug = f.readline()
-    if debug == "True\n":
-        plotter.save_fitnesses(sorted_pool, number_of_variables)
 
 
