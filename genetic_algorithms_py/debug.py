@@ -1,8 +1,9 @@
 import reproduction
 
 def _format_output(collection, number_of_variables):
-    joined = ",".join(collection[1:])
-    print "{a},{b}".format(a=collection[0], b=joined)
+    if not _is_debugging():
+        joined = ",".join(collection[1:])
+        print "{a},{b}".format(a=collection[0], b=joined)
 
 def _chart(pool_size, function_name):
     plotter.chart(pool_size, function_name)
