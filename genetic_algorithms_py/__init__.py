@@ -41,7 +41,7 @@ def _aux(aux_params):
             return reproduction_pool
         debug._format_output(['reproduction'] + test_params['pool'], number_of_variables)
 
-        test_params['pool'] = crossover.crossover(aux_params['pool'], aux_params['crossover_rate'])
+        test_params['pool'] = crossover.crossover(test_params)
         solved, pool = _is_solved(test_params)
         if solved:
             print solved, pool

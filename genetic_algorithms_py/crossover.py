@@ -1,16 +1,19 @@
 import random
 
 
-def crossover(pool, rate):
+def crossover(params):
+    pool = params['pool']
+    rate = params['crossover_rate']
+
     if _is_crossable(rate):
-        crossed = map(lambda x: _cross(x, rate), _pair_up(pool))
+        crossed = map(lambda x: _cross(x), _pair_up(pool))
         return sum(crossed, [])
     else:
         return pool
 
 
 # Private ----
-def _cross(seedling, rate):
+def _cross(seedling):
     a = seedling[0]
     b = seedling[1]
     index = _rand_index(a)
