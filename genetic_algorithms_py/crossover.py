@@ -1,26 +1,38 @@
 import random
 
 
-def crossover(pool, rate):
-    crossed = map(lambda x: _cross(x, rate), _pair_up(pool))
-    return sum(crossed, [])
+def crossover(params):
+    pool = params['pool']
+    rate = params['crossover_rate']
+
+    if _is_crossable(rate):
+        crossed = map(lambda x: _cross(x), _pair_up(pool))
+        return sum(crossed, [])
+    else:
+        return pool
 
 
 # Private ----
-def _cross(seedling, rate):
-    test_rate = random.uniform(0.0, 1.0)
+def _cross(seedling):
     a = seedling[0]
     b = seedling[1]
-    if test_rate <= rate:
-        index = _rand_index(a)
-        a_start = a[0:index]
-        a_end = a[index:]
-        b_start = b[0:index]
-        b_end = b[index:]
-        a = a_start + b_end
-        b = a_end + b_start
+    index = _rand_index(a)
+    a_start = a[0:index]
+    a_end = a[index:]
+    b_start = b[0:index]
+    b_end = b[index:]
+    a = a_start + b_end
+    b = a_end + b_start
     return [a, b]
 
+def _is_crossable(crossover_rate):
+    chance_of_crossover = random.uniform(0.0, 1.0)
+    if crossover_rate == 0.0:
+        return False
+    elif chance_of_crossover <= crossover_rate:
+        return True
+
+    return False
 
 def _pair_up(pool):
     return list(map(lambda x: (

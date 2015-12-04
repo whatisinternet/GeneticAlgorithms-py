@@ -2,125 +2,80 @@ import mutation
 import seeding
 import reproduction
 import crossover
-import plotter
-import os
+import debug
 
 
-def __init__(black_box,
-             iterations,
-             constraint_range,
-             pool_size,
-             mutation_probability,
-             crossover_rate,
-             number_of_variables,
-             carry_over,
-             target,
-             function_name=None):
+def __init__(params):
 
-    _remove_fitness_data()
+    debug._remove_fitness_data()
 
-    seeding_pool = seeding.pool(pool_size, constraint_range, number_of_variables)
+    seeding_pool = seeding.pool(
+        params['pool_size'],
+        params['constraint_range'],
+        params['number_of_variables'])
 
-    final_pool = _aux(seeding_pool,
-                      black_box,
-                      0,
-                      iterations,
-                      mutation_probability,
-                      crossover_rate,
-                      number_of_variables,
-                      carry_over,
-                      pool_size,
-                      target)
-    if _is_debugging():
+    params['pool'] = seeding_pool
+
+    final_pool = _aux(params)
+
+    if debug._is_debugging():
         print _final(seeding_pool)
         print _final(final_pool)
-        _debug_chart(pool_size, function_name)
+        debug._chart(params['pool_size'], params['function_name'])
     return final_pool
 
 
-def _aux(seed,
-         black_box,
-         depth,
-         max_iterations,
-         mutation_probability,
-         crossover_rate,
-         number_of_variables,
-         carry_over,
-         pool_size,
-         target):
+def _aux(aux_params):
+    number_of_variables = aux_params['number_of_variables']
 
-    solved, pool = _is_solved(black_box, seed, pool_size, number_of_variables, target)
-    if solved:
-        print solved, pool
-        return seed
+    for i in range(aux_params['iterations']):
+        seed = aux_params['pool']
+        test_params = aux_params
+        debug._format_output(['{a} Seed'.format(a=i)] + seed, number_of_variables)
 
-    for i in range(max_iterations):
-        _format_output(['{a} Seed'.format(a=i)] + seed, number_of_variables)
-
-        reproduction_pool = reproduction.reproduce(black_box, seed,
-                                      pool_size, number_of_variables,
-                                                   carry_over)
-
-        solved, pool = _is_solved(black_box, reproduction_pool, pool_size, number_of_variables, target)
+        test_params['pool'] = reproduction.reproduce(test_params)
+        solved, pool = _is_solved(test_params)
         if solved:
             print solved, pool
             return reproduction_pool
-        _format_output(['reproduction'] + reproduction_pool, number_of_variables)
+        debug._format_output(['reproduction'] + test_params['pool'], number_of_variables)
 
-        crossed_over = crossover.crossover(reproduction_pool, crossover_rate)
-        solved, pool = _is_solved(black_box, crossed_over, pool_size, number_of_variables, target)
+        test_params['pool'] = crossover.crossover(test_params)
+        solved, pool = _is_solved(test_params)
         if solved:
             print solved, pool
             return crossed_over
-        _format_output(['crossover'] + crossed_over, number_of_variables)
+        debug._format_output(['crossover'] + test_params['pool'], number_of_variables)
 
-        mutated = mutation.mutate_pool(crossed_over, mutation_probability)
-        solved, pool = _is_solved(black_box, mutated, pool_size, number_of_variables, target)
+        test_params['pool'] = mutation.mutate_pool(test_params['pool'], test_params['mutation_probability'])
+        solved, pool = _is_solved(test_params)
         if solved:
             print solved, pool
             return mutated
-        _format_output(['mutated'] + mutated, number_of_variables)
+        debug._format_output(['mutated'] + test_params['pool'], number_of_variables)
 
-        seed = mutated
-    return seed
+        aux_params['pool'] = test_params['pool']
+    return aux_params['pool']
 
-def _is_solved(black_box, current_pool, pool_size, number_of_variables, target):
-    dictionary = reproduction._build_dictionary(black_box, current_pool, pool_size, number_of_variables)
+
+def _is_solved(params):
+
+    dictionary = reproduction._build_dictionary(params)
     sorted_pool = reproduction._sort_dictionary(dictionary)
-    if _is_debugging():
+    if debug._is_debugging():
         print sorted_pool
-    if target is not None:
-        if target is 0:
-            sorted_pool = list(reversed(sorted_pool))
-            return ((sorted_pool[0]['weight'] ) == 0), sorted_pool[0]['seed']
-        else:
-            return ((sorted_pool[0]['weight']) >= target), sorted_pool[0]['seed']
+    if params['target'] is not None:
+        return _find_target(sorted_pool, params['target'])
     else:
         return False, sorted_pool[0]['seed']
 
-def _debug_chart(pool_size, function_name):
-    plotter.chart(pool_size, function_name)
-
-
-def _is_debugging():
-    f = open('./debug', 'r')
-    debug = f.readline()
-    if debug == "True\n":
-        return True
+def _find_target(sorted_pool, target):
+    if target is 0:
+        sorted_pool = list(reversed(sorted_pool))
+        return ((sorted_pool[0]['weight'] ) == 0), sorted_pool[0]['seed']
     else:
-        return False
+        return ((sorted_pool[0]['weight']) >= target), sorted_pool[0]['seed']
 
-
-def _remove_fitness_data():
-    if _is_debugging():
-        try:
-            os.remove('./fitness_data.csv')
-        except OSError:
-            pass
-
-def _format_output(collection, number_of_variables):
-    joined = ",".join(collection[1:])
-    print "{a},{b}".format(a=collection[0], b=joined)
 
 def _final(collection):
     return list(map((lambda x: int(x,2)), collection))
