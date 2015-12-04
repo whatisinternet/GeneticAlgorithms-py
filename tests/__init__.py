@@ -15,8 +15,18 @@ Init values:
     number_of_variables in black box
 '''
 
+params = {
+    'objective_function': black_box,
+    'iterations': 1,
+    'mutation_probability': 0.0,
+    "crossover_rate": 0.0,
+    "constraint_range": range(8),
+    "number_of_variables": 2,
+    "carry_over": 2,
+    "pool_size": 2,
+    "target": None,
+    "function_name": None
+    }
 
 def test_it_should_get_an_initialization_vector():
-    assert isinstance(genetic_algorithms_py.__init__(black_box, 1, range(8),
-                                                     2, 0.0, 0.0, 2, 8, None),
-                      list)
+    assert isinstance(genetic_algorithms_py.__init__(params), list)
