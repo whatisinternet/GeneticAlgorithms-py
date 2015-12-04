@@ -48,7 +48,7 @@ def _aux(aux_params):
             return crossed_over
         debug._format_output(['crossover'] + test_params['pool'], number_of_variables)
 
-        test_params['pool'] = mutation.mutate_pool(aux_params['pool'], aux_params['mutation_probability'])
+        test_params['pool'] = mutation.mutate_pool(test_params['pool'], test_params['mutation_probability'])
         solved, pool = _is_solved(test_params)
         if solved:
             print solved, pool
