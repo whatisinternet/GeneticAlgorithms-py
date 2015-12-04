@@ -29,7 +29,9 @@ def _mutate_aux(seed, iterations):
 
 def _is_mutable(mutation_probability):
     chance_of_mutation = random.uniform(0.0, 1.0)
-    if chance_of_mutation <= mutation_probability:
+    if mutation_probability == 0.0:
+        return False
+    elif chance_of_mutation <= mutation_probability:
         return True
 
     return False
