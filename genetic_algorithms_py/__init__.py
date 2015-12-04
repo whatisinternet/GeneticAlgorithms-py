@@ -29,17 +29,12 @@ def __init__(params):
 def _aux(aux_params):
     number_of_variables = aux_params['number_of_variables']
 
-    solved, pool = _is_solved(aux_params)
-    if solved:
-        print solved, pool
-        return aux_params['seed']
-
     for i in range(aux_params['iterations']):
         seed = aux_params['pool']
         test_params = aux_params
         _format_output(['{a} Seed'.format(a=i)] + seed, number_of_variables)
 
-        test_params['pool']= reproduction.reproduce(aux_params)
+        test_params['pool'] = reproduction.reproduce(test_params)
         solved, pool = _is_solved(test_params)
         if solved:
             print solved, pool
