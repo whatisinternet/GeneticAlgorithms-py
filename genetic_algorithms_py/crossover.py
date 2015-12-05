@@ -14,6 +14,8 @@ def crossover(params):
 
 # Private ----
 def _cross(seedling):
+    #cross binary strings at random index 0 to string length-1. The first half comes
+    #from the first string, second half from second string. Remainders discarded.
     a = seedling[0]
     b = seedling[1]
     index = _rand_index(a)
@@ -35,6 +37,7 @@ def _is_crossable(crossover_rate):
     return False
 
 def _pair_up(pool):
+    #pair strings at random for crossover
     return list(map(lambda x: (
         _select_random(pool, _rand_index(pool)),
         _select_random(pool, _rand_index(pool))),
@@ -42,8 +45,10 @@ def _pair_up(pool):
 
 
 def _rand_index(collection):
+    #generate random index
     return random.randrange(0, len(collection))
 
 
 def _select_random(pool, index):
+    #select a random index 0 to pool size
     return pool[index]
