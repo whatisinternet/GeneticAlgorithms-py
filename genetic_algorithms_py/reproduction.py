@@ -1,8 +1,10 @@
 import debug
 
+
+# Select next generation based on objective function's weighted random
+# selection output
 def reproduce(reproduction_params):
-    #select next generation based on objective function's weighted random selection output 
-    
+
     carry_over = reproduction_params['carry_over']
 
     sorted_pool = _sort_dictionary(_build_dictionary(reproduction_params))
@@ -17,10 +19,10 @@ def reproduce(reproduction_params):
 
 # private ---
 def _build_dictionary(dictionary_params):
-    #select next generation based on objective function's weighted random selection output
-    #build a dictionary of probabilities that binary string should be selected.
-    #The binary strings correspond 1:1 with their weight
-    
+    # Select next generation based on objective function's weighted random
+    # selection output build a dictionary of probabilities that binary string
+    # should be selected. The binary strings correspond 1:1 with their weight
+
     pool_size = dictionary_params['pool_size']
     number_of_variables = dictionary_params['number_of_variables']
     current_pool = dictionary_params['pool']
@@ -37,25 +39,23 @@ def _build_params(test, pool_size, number_of_variables):
     return map("".join, zip(*[iter(test)] * (len(test) / number_of_variables)))
 
 
+# Sort dictionary weights for quicker selection
 def _sort_dictionary(dictionary):
-    #sort dictionary weights for quicker selection
     return sorted(dictionary, key=lambda x: x['weight'], reverse=True)
 
 
+# Sum total fitness sum and output it
 def _total_fitness(dictionary):
-    #sum total fitness sum and output it
     weights = list(map((lambda x: x['weight']), dictionary))
     return reduce((lambda x, y: x+abs(y)), weights, 0)
 
 
+# Select string based on objective funstion's probability of being chosen
 def _select_child(dictionary, total_fitness):
-    #select string based on objective funstion's probability of being chosen
     if total_fitness is 0:
         return dictionary[0]['seed']
     else:
-        sorted_children = sorted(dictionary,
-                                key=lambda x: (x['weight'] / total_fitness)
-                                , reverse=True)
+        sorted_children = sorted(dictionary, key=lambda x: (x['weight'] /
+                                                            total_fitness),
+                                 reverse=True)
         return sorted_children[0]['seed']
-
-
