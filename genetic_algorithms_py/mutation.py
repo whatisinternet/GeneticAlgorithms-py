@@ -1,10 +1,12 @@
 import random
 
 
+# Mutate a string with an input probability of being mutated or not
 def mutate_pool(pool, mutation_probability):
     return list(map(lambda x: mutate(x, mutation_probability), pool))
 
 
+# Select a random bit of one of the binary strings and flip the bit
 def mutate(seed, mutation_probability=0.0):
 
     if _is_mutable(mutation_probability):
