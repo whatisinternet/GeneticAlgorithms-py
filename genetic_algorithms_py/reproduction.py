@@ -1,3 +1,4 @@
+import random
 import debug
 
 
@@ -55,7 +56,15 @@ def _select_child(dictionary, total_fitness):
     if total_fitness is 0:
         return dictionary[0]['seed']
     else:
-        sorted_children = sorted(dictionary, key=lambda x: (x['weight'] /
-                                                            total_fitness),
+        sorted_children = sorted(dictionary, key=lambda x: (x['weight']),
                                  reverse=True)
-        return sorted_children[0]['seed']
+
+        max_weight = sorted_children[0]['weight']
+        min_weight = sorted_children[-1]['weight']
+        if max_weight == min_weight:
+            return sorted_children[0]['weight']
+        else:
+            random_weight = random.randrange(min_weight, max_weight)
+            child = list(filter((lambda x: x['weight'] <= random_weight),
+                                sorted_children))
+            return child[0]['seed']
