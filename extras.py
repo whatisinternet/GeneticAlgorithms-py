@@ -17,7 +17,7 @@ crossover_rate = 0.7
 carry_over = initial_pool / 2
 
 
-def ex1():
+def ex1(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j: (abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2) + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2) * int(h, 2) + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2) + int(b, 2) * int(d, 2) + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2) * int(g, 2) + int(b, 2) * int(h, 2) + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2) + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2) + int(c, 2) * int(f, 2) + int(c, 2) * int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2) + int(c, 2) * int(j, 2) + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2) + int(d, 2) * int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2) + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2) * int(j, 2) + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2) + int(f, 2) * int(j, 2) + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2) * int(j, 2) + int(h, 2) * int(i, 2) + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2))))
     target_fitness = None
     variables = 10
@@ -32,12 +32,13 @@ def ex1():
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
+        "max": maximize,
         "function_name": "ex1"
         }
     genetic_algorithms_py.__init__(params)
 
 
-def ex2():
+def ex2(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k:(
 
   abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
@@ -59,21 +60,22 @@ def ex2():
     variables = 11
     carry_over = 64
     params = {
-         'objective_function': black_box,
-         'iterations': iterations,
-         'mutation_probability': mutation_probability,
-         "crossover_rate": crossover_rate,
-         "constraint_range": range(10),
-         "number_of_variables": variables,
-         "carry_over": carry_over,
-         "pool_size": initial_pool,
-         "target": target_fitness,
-         "function_name": "ex2"
-         }
+        'objective_function': black_box,
+        'iterations': iterations,
+        'mutation_probability': mutation_probability,
+        "crossover_rate": crossover_rate,
+        "constraint_range": range(10),
+        "number_of_variables": variables,
+        "carry_over": carry_over,
+        "pool_size": initial_pool,
+        "target": target_fitness,
+        "max": maximize,
+        "function_name": "ex2"
+        }
     genetic_algorithms_py.__init__(params)
 
 
-def ex3():
+def ex3(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l:(
 
   abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
@@ -98,21 +100,22 @@ def ex3():
     variables = 12
     carry_over = 64
     params = {
-         'objective_function': black_box,
-         'iterations': iterations,
-         'mutation_probability': mutation_probability,
-         "crossover_rate": crossover_rate,
-         "constraint_range": range(10),
-         "number_of_variables": variables,
-         "carry_over": carry_over,
-         "pool_size": initial_pool,
-         "target": target_fitness,
-         "function_name": "ex3"
-         }
+        'objective_function': black_box,
+        'iterations': iterations,
+        'mutation_probability': mutation_probability,
+        "crossover_rate": crossover_rate,
+        "constraint_range": range(10),
+        "number_of_variables": variables,
+        "carry_over": carry_over,
+        "pool_size": initial_pool,
+        "target": target_fitness,
+        "max": maximize,
+        "function_name": "ex3"
+        }
     genetic_algorithms_py.__init__(params)
 
 
-def ex4():
+def ex4(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m:(
 
   abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
@@ -140,21 +143,22 @@ def ex4():
     variables = 13
     carry_over = 64
     params = {
-         'objective_function': black_box,
-         'iterations': iterations,
-         'mutation_probability': mutation_probability,
-         "crossover_rate": crossover_rate,
-         "constraint_range": range(10),
-         "number_of_variables": variables,
-         "carry_over": carry_over,
-         "pool_size": initial_pool,
-         "target": target_fitness,
-         "function_name": "ex4"
-         }
+        'objective_function': black_box,
+        'iterations': iterations,
+        'mutation_probability': mutation_probability,
+        "crossover_rate": crossover_rate,
+        "constraint_range": range(10),
+        "number_of_variables": variables,
+        "carry_over": carry_over,
+        "pool_size": initial_pool,
+        "target": target_fitness,
+        "max": maximize,
+        "function_name": "ex4"
+        }
     genetic_algorithms_py.__init__(params)
 
 
-def ex5():
+def ex5(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n:(
         abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
          + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2) *
@@ -197,12 +201,13 @@ def ex5():
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
+        "max": maximize,
         "function_name": "ex5"
         }
     genetic_algorithms_py.__init__(params)
 
 
-def ex6():
+def ex6(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o:(
         abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
          + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2) *
@@ -249,12 +254,13 @@ def ex6():
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
+        "max": maximize,
         "function_name": "ex6"
         }
     genetic_algorithms_py.__init__(params)
 
 
-def ex7():
+def ex7(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p:(
         abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
          + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2)
@@ -305,12 +311,13 @@ def ex7():
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
+        "max": maximize,
         "function_name": "ex7"
         }
     genetic_algorithms_py.__init__(params)
 
 
-def ex8():
+def ex8(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q:(
 
         abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
@@ -366,11 +373,12 @@ def ex8():
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
+        "max": maximize,
         "function_name": "ex8"
         }
     genetic_algorithms_py.__init__(params)
 
-def ex9():
+def ex9(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r:(
 
         abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
@@ -431,6 +439,7 @@ def ex9():
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
+        "max": maximize,
         "function_name": "ex9"
         }
     genetic_algorithms_py.__init__(params)
@@ -438,7 +447,7 @@ def ex9():
 
 
 
-def ex10():
+def ex10(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s: (
 
 
@@ -505,12 +514,13 @@ def ex10():
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
+        "max": maximize,
         "function_name": "ex10"
         }
     genetic_algorithms_py.__init__(params)
 
 
-def ex11():
+def ex11(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t:(
 
         abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
@@ -582,12 +592,13 @@ def ex11():
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
+        "max": maximize,
         "function_name": "ex11"
         }
     genetic_algorithms_py.__init__(params)
 
 
-def ex12():
+def ex12(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u:(
 
         abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
@@ -665,12 +676,13 @@ def ex12():
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
+        "max": maximize,
         "function_name": "ex12"
         }
     genetic_algorithms_py.__init__(params)
 
 
-def ex13():
+def ex13(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v:(
 
 
@@ -746,20 +758,21 @@ def ex13():
     variables = 22
     carry_over = 64
     params = {
-         'objective_function': black_box,
-         'iterations': iterations,
-         'mutation_probability': mutation_probability,
-         "crossover_rate": crossover_rate,
-         "constraint_range": range(10),
-         "number_of_variables": variables,
-         "carry_over": carry_over,
-         "pool_size": initial_pool,
-         "target": target_fitness,
-         "function_name": "ex13"
-         }
+        'objective_function': black_box,
+        'iterations': iterations,
+        'mutation_probability': mutation_probability,
+        "crossover_rate": crossover_rate,
+        "constraint_range": range(10),
+        "number_of_variables": variables,
+        "carry_over": carry_over,
+        "pool_size": initial_pool,
+        "target": target_fitness,
+        "max": maximize,
+        "function_name": "ex13"
+        }
     genetic_algorithms_py.__init__(params)
 
-def ex14():
+def ex14(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w:(
 
         abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
@@ -849,12 +862,13 @@ def ex14():
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
+        "max": maximize,
         "function_name": "ex14"
         }
     genetic_algorithms_py.__init__(params)
 
 
-def ex15():
+def ex15(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x:(
         abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
         + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2)
@@ -949,11 +963,12 @@ def ex15():
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
+        "max": maximize,
         "function_name": "ex15"
         }
     genetic_algorithms_py.__init__(params)
 
-def ex16():
+def ex16(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y:(
         abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
         + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2)
@@ -1055,12 +1070,13 @@ def ex16():
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
+        "max": maximize,
         "function_name": "ex16"
         }
     genetic_algorithms_py.__init__(params)
 
 
-def ex17():
+def ex17(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z:(
         abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)+
         int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2)*
@@ -1169,11 +1185,12 @@ def ex17():
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
+        "max": maximize,
         "function_name": "ex17"
         }
     genetic_algorithms_py.__init__(params)
 
-def ex18():
+def ex18(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, a2:(
         abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
         + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2)
@@ -1291,43 +1308,83 @@ def ex18():
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
+        "max": maximize,
         "function_name": "ex18"
         }
     genetic_algorithms_py.__init__(params)
 
+print "Maximize------------------------------------------\n\n\n"
 print "EX1"
-ex1()
+ex1(True)
 print "EX2"
-ex2()
+ex2(True)
 print "EX3"
-ex3()
+ex3(True)
 print "EX4"
-ex4()
+ex4(True)
 print "EX5"
-ex5()
+ex5(True)
 print "EX6"
-ex6()
+ex6(True)
 print "EX7"
-ex7()
+ex7(True)
 print "EX8"
-ex8()
+ex8(True)
 print "EX9"
-ex9()
+ex9(True)
 print "EX10"
-ex10()
+ex10(True)
 print "EX11"
-ex11()
+ex11(True)
 print "EX12"
-ex12()
+ex12(True)
 print "EX13"
-ex13()
+ex13(True)
 print "EX14"
-ex14()
+ex14(True)
 print "EX15"
-ex15()
+ex15(True)
 print "EX16"
-ex16()
+ex16(True)
 print "EX17"
-ex17()
+ex17(True)
 print "EX18"
-ex18()
+ex18(True)
+
+print "\n\n\n\nMinimize------------------------------------------\n\n\n"
+print "EX1"
+ex1(False)
+print "EX2"
+ex2(False)
+print "EX3"
+ex3(False)
+print "EX4"
+ex4(False)
+print "EX5"
+ex5(False)
+print "EX6"
+ex6(False)
+print "EX7"
+ex7(False)
+print "EX8"
+ex8(False)
+print "EX9"
+ex9(False)
+print "EX10"
+ex10(False)
+print "EX11"
+ex11(False)
+print "EX12"
+ex12(False)
+print "EX13"
+ex13(False)
+print "EX14"
+ex14(False)
+print "EX15"
+ex15(False)
+print "EX16"
+ex16(False)
+print "EX17"
+ex17(False)
+print "EX18"
+ex18(False)
