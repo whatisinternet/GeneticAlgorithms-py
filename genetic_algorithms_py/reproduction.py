@@ -37,6 +37,8 @@ def _build_dictionary(dictionary_params):
                     current_pool))
 
 
+# Big help from: http://stackoverflow.com/questions/22571259/split-a-string-into-n-equal-parts
+# for this bit
 def _build_params(test, pool_size, number_of_variables):
     return map("".join, zip(*[iter(test)] * (len(test) / number_of_variables)))
 
