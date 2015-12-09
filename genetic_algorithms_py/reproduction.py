@@ -62,7 +62,7 @@ def _select_child(dictionary, total_fitness):
         max_weight = sorted_children[0]['weight']
         min_weight = sorted_children[-1]['weight']
         if max_weight == min_weight:
-            return sorted_children[0]['weight']
+            return sorted_children[0]['seed']
         else:
             random_weight = random.randrange(min_weight, max_weight)
             child = list(filter((lambda x: x['weight'] <= random_weight),
