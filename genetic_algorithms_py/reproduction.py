@@ -14,7 +14,8 @@ def reproduce(reproduction_params):
 
     total_fitness = _total_fitness(sorted_pool)
 
-    return list(map((lambda x: _select_child(sorted_pool, total_fitness)),
+    return list(map((lambda x: _select_child(sorted_pool, total_fitness,
+                                             reproduction_params)),
                     range(carry_over)))
 
 
@@ -52,9 +53,15 @@ def _total_fitness(dictionary):
 
 
 # Select string based on objective funstion's probability of being chosen
-def _select_child(dictionary, total_fitness):
+# TODO: Refactor -- THIS IS BAD
+def _select_child(dictionary, total_fitness, params):
+    if params['max'] == True:
+        selector = 0
+    else:
+        selector = -1
+
     if total_fitness is 0:
-        return dictionary[0]['seed']
+        return dictionary[selector]['seed']
     else:
         sorted_children = sorted(dictionary, key=lambda x: (x['weight']),
                                  reverse=True)
@@ -62,9 +69,9 @@ def _select_child(dictionary, total_fitness):
         max_weight = sorted_children[0]['weight']
         min_weight = sorted_children[-1]['weight']
         if max_weight == min_weight:
-            return sorted_children[0]['seed']
+            return sorted_children[selector]['seed']
         else:
             random_weight = random.randrange(min_weight, max_weight)
             child = list(filter((lambda x: x['weight'] <= random_weight),
                                 sorted_children))
-            return child[0]['seed']
+            return child[selector]['seed']
