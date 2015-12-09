@@ -8,6 +8,7 @@ params = {'objective_function': black_box,
           'pool': seeding.pool(8, range(255), 2),
           'pool_size': 64,
           'number_of_variables': 2,
+          'max': True,
           'carry_over': 2}
 
 
@@ -68,5 +69,5 @@ def test__total_fitness():
 def test__select_child():
     dictionary= reproduction._build_dictionary(params)
     total_fitness = reproduction._total_fitness(dictionary)
-    asseted_child = reproduction._select_child(dictionary, total_fitness)
+    asseted_child = reproduction._select_child(dictionary, total_fitness, params)
     assert isinstance(asseted_child, str)

@@ -9,6 +9,7 @@ params = {'objective_function': black_box,
           'pool_size': 8,
           'number_of_variables': 2,
           'carry_over': 2,
+          'max': True,
           'crossover_rate': 0.7}
 
 def test_it_should_return_an_array_of_size_2():

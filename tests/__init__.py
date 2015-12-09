@@ -25,8 +25,10 @@ params = {
     "carry_over": 2,
     "pool_size": 2,
     "target": None,
+    'max': True,
     "function_name": None
     }
+
 
 def test_it_should_get_an_initialization_vector():
     assert isinstance(genetic_algorithms_py.__init__(params), list)
