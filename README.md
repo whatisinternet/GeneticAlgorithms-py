@@ -27,11 +27,13 @@ can install from [here](http://matplotlib.org/users/installing.html).
 # Running:
 
 ```shell
-    python example.py
+    echo False > debug
+    python bin/example.py
 ```
 # Redirecting output
 ```shell
-    python example.py > test.txt
+    echo False > debug
+    python bin/example.py > test.txt
 ```
 
 # Testing:
@@ -47,12 +49,14 @@ any string other than True*
 ### Running the tests:
 
 ```shell
-   nosetests
+    echo False > debug
+    nosetests
 ```
 
 with coverage information
 
 ```shell
+    echo False > debug
     nosetests --with-coverage --cover-html
 ```
 
@@ -74,6 +78,7 @@ Install Ruby 2.2.3, bundler, guard, and guard shell
 
 - Running guard
 ```
+    echo False > debug
     guard
 ```
 # Charting / Debugging:
@@ -85,7 +90,9 @@ Charts will be generated, and charts will be displayed. Pressing enter is
 required to continue each objective function.
 
 ```shell
-    python example.py
+    echo True > debug
+    python bin/example.py
+    echo False > debug
 ```
 
 ## Notes:
@@ -93,10 +100,25 @@ required to continue each objective function.
 All example functions are implemented as lambda functions that are passed into the genetic algorithm function. To see an example see `example.py`. To define your own:
 
 ```python
-    def x_2():
-        print '-------------------------'
-        print 'Blackbox: x^2'
-        black_box = (lambda x: int(x, 2) ** 2)
-        genetic_algorithms_py.__init__(black_box, iterations, bit_size)
+  def dejong(maximize):
+      print 'Blackbox: deJongSphere function'
+      black_box = (lambda x, y: (reduce(
+          (lambda r, q: q + (int(x, 2) ** 2)), range(int(y, 2)), 0)))
+      target_fitness = None
+      variables = 2
+      carry_over = 64
+      params = {
+          'objective_function': black_box,
+          'iterations': 500,
+          'mutation_probability': 0.01,
+          "crossover_rate": 0.7,
+          "constraint_range": range(5),
+          "number_of_variables": variables,
+          "carry_over": carry_over,
+          "pool_size": 500,
+          "target": target_fitness,
+          "max": maximize,
+          "function_name": "deJong Sphere maximized: {a}".format(a=maximize)
+          }
+      genetic_algorithms_py.__init__(params)
 ````
-
