@@ -68,12 +68,12 @@ def _select_child(dictionary, total_fitness, params):
         sorted_children = sorted(dictionary, key=lambda x: (x['weight']),
                                  reverse=True)
 
-        max_weight = sorted_children[0]['weight']
-        min_weight = sorted_children[-1]['weight']
+        max_weight = sorted_children[0]['weight'] / total_fitness
+        min_weight = sorted_children[-1]['weight'] / total_fitness
         if max_weight == min_weight:
             return sorted_children[selector]['seed']
         else:
-            random_weight = random.randrange(min_weight, max_weight)
-            child = list(filter((lambda x: x['weight'] <= random_weight),
+            random_weight = random.uniform(min_weight, max_weight)
+            child = list(filter((lambda x: x['weight'] / total_fitness <= random_weight),
                                 sorted_children))
             return child[selector]['seed']
