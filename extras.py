@@ -37,6 +37,123 @@ def ex1():
     genetic_algorithms_py.__init__(params)
 
 
+def ex2():
+    black_box = (lambda a, b, c, d, e, f, g, h, i, j, k:(
+
+  abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
+  + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2) * int(h, 2)
+  + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2) + int(b, 2) * int(d, 2)
+  + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2) * int(g, 2) + int(b, 2) * int(h, 2)
+  + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2) + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2)
+  + int(c, 2) * int(f, 2) + int(c, 2) * int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2)
+  + int(c, 2) * int(j, 2) + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2)
+  + int(d, 2) * int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)
+  + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2) * int(j, 2)
+  + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2) + int(f, 2) * int(j, 2)
+  + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2) * int(j, 2) + int(h, 2) * int(i, 2)
+  + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2) + int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2)
+  + int(c, 2) * int(k, 2) + int(d, 2) * int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2)
+  + int(g, 2) * int(k, 2) + int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2))))
+
+    target_fitness = None
+    variables = 11
+    carry_over = 64
+    params = {
+         'objective_function': black_box,
+         'iterations': iterations,
+         'mutation_probability': mutation_probability,
+         "crossover_rate": crossover_rate,
+         "constraint_range": range(10),
+         "number_of_variables": variables,
+         "carry_over": carry_over,
+         "pool_size": initial_pool,
+         "target": target_fitness,
+         "function_name": "ex2"
+         }
+    genetic_algorithms_py.__init__(params)
+
+
+def ex3():
+    black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l:(
+
+  abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
+  + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2) * int(h, 2)
+  + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2) + int(b, 2) * int(d, 2)
+  + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2) * int(g, 2) + int(b, 2) * int(h, 2)
+  + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2) + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2)
+  + int(c, 2) * int(f, 2) + int(c, 2) * int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2)
+  + int(c, 2) * int(j, 2) + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2)
+  + int(d, 2) * int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)
+  + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2) * int(j, 2)
+  + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2) + int(f, 2) * int(j, 2)
+  + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2) * int(j, 2) + int(h, 2) * int(i, 2)
+  + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2) + int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2)
+  + int(c, 2) * int(k, 2) + int(d, 2) * int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2)
+  + int(g, 2) * int(k, 2) + int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2)
+  + int(a, 2) * int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2)
+  + int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2) * int(l, 2)
+  + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2))))
+
+    target_fitness = None
+    variables = 12
+    carry_over = 64
+    params = {
+         'objective_function': black_box,
+         'iterations': iterations,
+         'mutation_probability': mutation_probability,
+         "crossover_rate": crossover_rate,
+         "constraint_range": range(10),
+         "number_of_variables": variables,
+         "carry_over": carry_over,
+         "pool_size": initial_pool,
+         "target": target_fitness,
+         "function_name": "ex3"
+         }
+    genetic_algorithms_py.__init__(params)
+
+
+def ex4():
+    black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m:(
+
+  abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
+  + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2) * int(h, 2)
+  + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2) + int(b, 2) * int(d, 2)
+  + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2) * int(g, 2) + int(b, 2) * int(h, 2)
+  + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2) + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2)
+  + int(c, 2) * int(f, 2) + int(c, 2) * int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2)
+  + int(c, 2) * int(j, 2) + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2)
+  + int(d, 2) * int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)
+  + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2) * int(j, 2)
+  + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2) + int(f, 2) * int(j, 2)
+  + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2) * int(j, 2) + int(h, 2) * int(i, 2)
+  + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2) + int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2)
+  + int(c, 2) * int(k, 2) + int(d, 2) * int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2)
+  + int(g, 2) * int(k, 2) + int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2)
+  + int(a, 2) * int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2)
+  + int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2) * int(l, 2)
+  + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2) + int(a, 2) * int(m, 2)
+  + int(b, 2) * int(m, 2) + int(c, 2) * int(m, 2) + int(d, 2) * int(m, 2) + int(e, 2) * int(m, 2)
+  + int(f, 2) * int(m, 2) + int(g, 2) * int(m, 2) + int(h, 2) * int(m, 2) + int(i, 2) * int(m, 2)
+  + int(j, 2) * int(m, 2) + int(k, 2) * int(m, 2) + int(l, 2) * int(m, 2))))
+
+    target_fitness = None
+    variables = 13
+    carry_over = 64
+    params = {
+         'objective_function': black_box,
+         'iterations': iterations,
+         'mutation_probability': mutation_probability,
+         "crossover_rate": crossover_rate,
+         "constraint_range": range(10),
+         "number_of_variables": variables,
+         "carry_over": carry_over,
+         "pool_size": initial_pool,
+         "target": target_fitness,
+         "function_name": "ex4"
+         }
+    genetic_algorithms_py.__init__(params)
+
+
 def ex5():
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n:(
         abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
@@ -1180,6 +1297,12 @@ def ex18():
 
 print "EX1"
 ex1()
+print "EX2"
+ex2()
+print "EX3"
+ex3()
+print "EX4"
+ex4()
 print "EX5"
 ex5()
 print "EX6"
