@@ -1,4 +1,3 @@
-from nose.tools import *
 import itertools
 from genetic_algorithms_py import seeding
 from genetic_algorithms_py import reproduction
@@ -7,7 +6,7 @@ black_box = (lambda x, y: int(y) + int(x) ** 2)
 
 params = {'objective_function': black_box,
           'pool': seeding.pool(8, range(255), 2),
-          'pool_size': 8,
+          'pool_size': 64,
           'number_of_variables': 2,
           'carry_over': 2}
 
@@ -16,6 +15,13 @@ def test_it_should_return_an_array_of_strings():
     asserted_pool = reproduction.reproduce(params)
     for asserted in asserted_pool:
         assert isinstance(asserted, str)
+
+
+def test_it_should_return_an_array_of_strings_of_length_8():
+    params['carry_over'] = 32
+    for i in range(1000):
+        asserted_pool = reproduction.reproduce(params)
+        assert len(asserted_pool) == 32
 
 
 # Testing private methods NB: Wouldn't normally keep these
