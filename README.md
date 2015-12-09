@@ -28,12 +28,12 @@ can install from [here](http://matplotlib.org/users/installing.html).
 
 ```shell
     echo False > debug
-    python bin/example.py
+    python example.py
 ```
 # Redirecting output
 ```shell
     echo False > debug
-    python bin/example.py > test.txt
+    python example.py > test.txt
 ```
 
 # Testing:
@@ -91,7 +91,7 @@ required to continue each objective function.
 
 ```shell
     echo True > debug
-    python bin/example.py
+    python example.py
     echo False > debug
 ```
 
