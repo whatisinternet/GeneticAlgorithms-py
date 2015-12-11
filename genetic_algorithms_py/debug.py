@@ -23,10 +23,10 @@ def _is_debugging():
         return False
 
 
-def _remove_fitness_data():
+def _remove_fitness_data(function_name):
     if _is_debugging():
         try:
-            os.remove('./fitness_data.csv')
+            os.remove('./data/fitness_data{a}.csv'.format(a=function_name))
         except OSError:
             pass
 
@@ -45,7 +45,7 @@ def _save_fitnesses(data, number_of_variables, function_name):
                                                           number_of_variables),
                      data))
         y = list(map(lambda x: x['weight'], data))
-        f = open('./fitness_data{a}.csv'.format(a=function_name), 'a+')
+        f = open('./data/fitness_data{a}.csv'.format(a=function_name), 'a+')
 
         for i in range(len(x)):
             for xi in range(len(x[i])):

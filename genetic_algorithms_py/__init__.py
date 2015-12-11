@@ -7,7 +7,7 @@ import debug
 
 def __init__(params):
 
-    debug._remove_fitness_data()
+    debug._remove_fitness_data(params['function_name'])
 
     seeding_pool = seeding.pool(
         params['pool_size'],

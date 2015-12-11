@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 def chart(target, function_name="test"):
-    f = open('./fitness_data{a}.csv'.format(a=function_name), 'r')
+    f = open('./data/fitness_data{a}.csv'.format(a=function_name), 'r')
     data = f.readlines()
     fig = plt.figure()
 
