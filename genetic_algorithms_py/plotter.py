@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from decimal import *
 
 def chart(target, function_name="test"):
     f = open('./data/fitness_data{a}.csv'.format(a=function_name), 'r')
@@ -7,8 +8,8 @@ def chart(target, function_name="test"):
 
     for i in data:
         split_input = i.split(",")
-        y = (float(split_input[0]))
-        x = (float(split_input[1].strip()))
+        y = (Decimal(split_input[0]))
+        x = (Decimal(split_input[1].strip()))
         plt.scatter(x, y, color="#085DAD",
                     label=y, alpha=0.3, edgecolors='none')
 

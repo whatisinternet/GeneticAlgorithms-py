@@ -1,4 +1,5 @@
 from genetic_algorithms_py import encoder
+from decimal import *
 
 
 def test_encode_to_binary():
@@ -10,5 +11,5 @@ def test_encode_to_binary():
 
 def test_decode_to_float():
     asserted_float = encoder.d('1111111111111111111111111111111111111111111111100101100001001010')
-    assert isinstance(asserted_float, float) == True
+    assert isinstance(asserted_float, Decimal) == True
 

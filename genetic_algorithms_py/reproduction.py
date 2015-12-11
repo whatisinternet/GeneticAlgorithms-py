@@ -1,6 +1,7 @@
 import random
 import debug
 import encoder
+from decimal import *
 
 
 # Select next generation based on objective function's weighted random
@@ -82,7 +83,7 @@ def _select_child(dictionary, total_fitness, params):
     if max_weight == min_weight:
         return sorted_children[selector]['seed']
     else:
-        random_weight = random.uniform(min_weight, max_weight)
+        random_weight = random.uniform(float(min_weight), float(max_weight))
         child = list(filter((lambda x: x['weight'] / total_fitness <= random_weight),
                             sorted_children))
         return child[selector]['seed']
