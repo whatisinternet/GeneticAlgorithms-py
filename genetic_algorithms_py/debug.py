@@ -48,5 +48,6 @@ def _save_fitnesses(data, number_of_variables):
         f = open('./fitness_data.csv', 'a+')
 
         for i in range(len(x)):
-            print x[i][0], y[i]
-            f.write("{a},{b}\n".format(a=x[i][0], b=y[i]))
+            for xi in range(len(x[i])):
+                print x[i][xi], y[i]
+                f.write("{a},{b}\n".format(a=x[i][xi], b=y[i]))
