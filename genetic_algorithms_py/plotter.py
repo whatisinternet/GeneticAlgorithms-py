@@ -7,8 +7,8 @@ def chart(target, function_name="test"):
 
     for i in data:
         split_input = i.split(",")
-        y = (float(split_input[0]))
-        x = (float(split_input[1].strip()))
+        y = (long(split_input[0]))
+        x = (long(split_input[1].strip()))
         plt.scatter(x, y, color="#085DAD",
                     label=y, alpha=0.3, edgecolors='none')
 

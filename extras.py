@@ -33,7 +33,7 @@ def ex1(maximize):
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex1"
+        "function_name": "ex1 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
@@ -70,7 +70,7 @@ def ex2(maximize):
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex2"
+        "function_name": "ex2 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
@@ -110,7 +110,7 @@ def ex3(maximize):
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex3"
+        "function_name": "ex3 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
@@ -153,7 +153,7 @@ def ex4(maximize):
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex4"
+        "function_name": "ex4 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
@@ -202,7 +202,7 @@ def ex5(maximize):
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex5"
+        "function_name": "ex5 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
@@ -255,7 +255,7 @@ def ex6(maximize):
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex6"
+        "function_name": "ex6 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
@@ -312,7 +312,7 @@ def ex7(maximize):
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex7"
+        "function_name": "ex7 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
@@ -374,7 +374,7 @@ def ex8(maximize):
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex8"
+        "function_name": "ex8 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
@@ -440,7 +440,7 @@ def ex9(maximize):
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex9"
+        "function_name": "ex9 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
@@ -515,7 +515,7 @@ def ex10(maximize):
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex10"
+        "function_name": "ex10 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
@@ -593,7 +593,7 @@ def ex11(maximize):
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex11"
+        "function_name": "ex11 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
@@ -677,7 +677,7 @@ def ex12(maximize):
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex12"
+        "function_name": "ex12 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
@@ -768,7 +768,7 @@ def ex13(maximize):
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex13"
+        "function_name": "ex13 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
@@ -857,13 +857,13 @@ def ex14(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(-1000, 1000),
+        "constraint_range": range(-10, 100000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex14"
+        "function_name": "ex14 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
@@ -958,13 +958,13 @@ def ex15(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(-1000, 1000),
+        "constraint_range": range(-10, 100000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex15"
+        "function_name": "ex15 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
@@ -1065,13 +1065,13 @@ def ex16(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(-1000, 1000),
+        "constraint_range": range(-10, 100000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex16"
+        "function_name": "ex16 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
@@ -1180,13 +1180,13 @@ def ex17(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(-1000, 1000),
+        "constraint_range": range(-10, 1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex17"
+        "function_name": "ex17 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
@@ -1303,13 +1303,13 @@ def ex18(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(-1000, 1000),
+        "constraint_range": range(-1, 1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
         "target": target_fitness,
         "max": maximize,
-        "function_name": "ex18"
+        "function_name": "ex18 Max: {a}".format(a=maximize)
         }
     genetic_algorithms_py.__init__(params)
 
