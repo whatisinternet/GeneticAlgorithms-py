@@ -4,7 +4,7 @@ multiplier = 9681968.0
 
 def e(value):
     converted = int(value * multiplier)
-    return BitArray(int=converted, length=32).bin
+    return BitArray(int=converted, length=48).bin
 
 def d(value):
     decoded_integer = BitArray(bin=value).int
