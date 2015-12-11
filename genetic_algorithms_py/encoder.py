@@ -8,4 +8,4 @@ def e(value):
 
 def d(value):
     decoded_integer = BitArray(bin=value).int
-    return long(decoded_integer / multiplier)
+    return float(decoded_integer / multiplier)

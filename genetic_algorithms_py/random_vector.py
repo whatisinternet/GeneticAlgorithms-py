@@ -12,6 +12,6 @@ def initialization_vector(constraint_range, variables):
 # Create a random binary string 0 to max binary number of given string
 # length (ie. 1111)
 def _seed(constraint_range):
-    init_value = random.uniform(long(constraint_range[0]),
-                                long(constraint_range[-1]))
+    init_value = random.uniform(float(constraint_range[0]),
+                                float(constraint_range[-1]))
     return encoder.e(init_value)
