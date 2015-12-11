@@ -18,7 +18,7 @@ carry_over = initial_pool / 2
 
 
 def ex1(maximize):
-    black_box = (lambda a, b, c, d, e, f, g, h, i, j: (abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2) + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2) * int(h, 2) + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2) + int(b, 2) * int(d, 2) + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2) * int(g, 2) + int(b, 2) * int(h, 2) + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2) + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2) + int(c, 2) * int(f, 2) + int(c, 2) * int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2) + int(c, 2) * int(j, 2) + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2) + int(d, 2) * int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2) + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2) * int(j, 2) + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2) + int(f, 2) * int(j, 2) + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2) * int(j, 2) + int(h, 2) * int(i, 2) + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2))))
+    black_box = (lambda a, b, c, d, e, f, g, h, i, j: (abs(a * b + a * c + a * d + a * e + a * f + a * g + a * h + a * i + a * j + b * c + b * d + b * e + b * f + b * g + b * h + b * i + b * j + c * d + c * e + c * f + c * g + c * h + c * i + c * j + d * e + d * f + d * g + d * h + d * i + d * j + e * f + e * g + e * h + e * i + e * j + f * g + f * h + f * i + f * j + g * h + g * i + g * j + h * i + h * j + i * j)))
     target_fitness = None
     variables = 10
     carry_over = 64
@@ -27,7 +27,7 @@ def ex1(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -41,20 +41,20 @@ def ex1(maximize):
 def ex2(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k:(
 
-  abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
-  + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2) * int(h, 2)
-  + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2) + int(b, 2) * int(d, 2)
-  + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2) * int(g, 2) + int(b, 2) * int(h, 2)
-  + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2) + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2)
-  + int(c, 2) * int(f, 2) + int(c, 2) * int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2)
-  + int(c, 2) * int(j, 2) + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2)
-  + int(d, 2) * int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)
-  + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2) * int(j, 2)
-  + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2) + int(f, 2) * int(j, 2)
-  + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2) * int(j, 2) + int(h, 2) * int(i, 2)
-  + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2) + int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2)
-  + int(c, 2) * int(k, 2) + int(d, 2) * int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2)
-  + int(g, 2) * int(k, 2) + int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2))))
+  abs(a * b + a * c + a * d
+  + a * e + a * f + a * g + a * h
+  + a * i + a * j + b * c + b * d
+  + b * e + b * f + b * g + b * h
+  + b * i + b * j + c * d + c * e
+  + c * f + c * g + c * h + c * i
+  + c * j + d * e + d * f + d * g
+  + d * h + d * i + d * j + e * f
+  + e * g + e * h + e * i + e * j
+  + f * g + f * h + f * i + f * j
+  + g * h + g * i + g * j + h * i
+  + h * j + i * j + a * k + b * k
+  + c * k + d * k + e * k + f * k
+  + g * k + h * k + i * k + j * k)))
 
     target_fitness = None
     variables = 11
@@ -64,7 +64,7 @@ def ex2(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -78,23 +78,23 @@ def ex2(maximize):
 def ex3(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l:(
 
-  abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
-  + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2) * int(h, 2)
-  + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2) + int(b, 2) * int(d, 2)
-  + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2) * int(g, 2) + int(b, 2) * int(h, 2)
-  + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2) + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2)
-  + int(c, 2) * int(f, 2) + int(c, 2) * int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2)
-  + int(c, 2) * int(j, 2) + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2)
-  + int(d, 2) * int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)
-  + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2) * int(j, 2)
-  + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2) + int(f, 2) * int(j, 2)
-  + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2) * int(j, 2) + int(h, 2) * int(i, 2)
-  + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2) + int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2)
-  + int(c, 2) * int(k, 2) + int(d, 2) * int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2)
-  + int(g, 2) * int(k, 2) + int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2)
-  + int(a, 2) * int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2)
-  + int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2) * int(l, 2)
-  + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2))))
+  abs(a * b + a * c + a * d
+  + a * e + a * f + a * g + a * h
+  + a * i + a * j + b * c + b * d
+  + b * e + b * f + b * g + b * h
+  + b * i + b * j + c * d + c * e
+  + c * f + c * g + c * h + c * i
+  + c * j + d * e + d * f + d * g
+  + d * h + d * i + d * j + e * f
+  + e * g + e * h + e * i + e * j
+  + f * g + f * h + f * i + f * j
+  + g * h + g * i + g * j + h * i
+  + h * j + i * j + a * k + b * k
+  + c * k + d * k + e * k + f * k
+  + g * k + h * k + i * k + j * k
+  + a * l + b * l + c * l + d * l
+  + e * l + f * l + g * l + h * l
+  + i * l + j * l + k * l)))
 
     target_fitness = None
     variables = 12
@@ -104,7 +104,7 @@ def ex3(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -118,26 +118,26 @@ def ex3(maximize):
 def ex4(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m:(
 
-  abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
-  + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2) * int(h, 2)
-  + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2) + int(b, 2) * int(d, 2)
-  + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2) * int(g, 2) + int(b, 2) * int(h, 2)
-  + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2) + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2)
-  + int(c, 2) * int(f, 2) + int(c, 2) * int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2)
-  + int(c, 2) * int(j, 2) + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2)
-  + int(d, 2) * int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)
-  + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2) * int(j, 2)
-  + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2) + int(f, 2) * int(j, 2)
-  + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2) * int(j, 2) + int(h, 2) * int(i, 2)
-  + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2) + int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2)
-  + int(c, 2) * int(k, 2) + int(d, 2) * int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2)
-  + int(g, 2) * int(k, 2) + int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2)
-  + int(a, 2) * int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2)
-  + int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2) * int(l, 2)
-  + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2) + int(a, 2) * int(m, 2)
-  + int(b, 2) * int(m, 2) + int(c, 2) * int(m, 2) + int(d, 2) * int(m, 2) + int(e, 2) * int(m, 2)
-  + int(f, 2) * int(m, 2) + int(g, 2) * int(m, 2) + int(h, 2) * int(m, 2) + int(i, 2) * int(m, 2)
-  + int(j, 2) * int(m, 2) + int(k, 2) * int(m, 2) + int(l, 2) * int(m, 2))))
+  abs(a * b + a * c + a * d
+  + a * e + a * f + a * g + a * h
+  + a * i + a * j + b * c + b * d
+  + b * e + b * f + b * g + b * h
+  + b * i + b * j + c * d + c * e
+  + c * f + c * g + c * h + c * i
+  + c * j + d * e + d * f + d * g
+  + d * h + d * i + d * j + e * f
+  + e * g + e * h + e * i + e * j
+  + f * g + f * h + f * i + f * j
+  + g * h + g * i + g * j + h * i
+  + h * j + i * j + a * k + b * k
+  + c * k + d * k + e * k + f * k
+  + g * k + h * k + i * k + j * k
+  + a * l + b * l + c * l + d * l
+  + e * l + f * l + g * l + h * l
+  + i * l + j * l + k * l + a * m
+  + b * m + c * m + d * m + e * m
+  + f * m + g * m + h * m + i * m
+  + j * m + k * m + l * m)))
 
     target_fitness = None
     variables = 13
@@ -147,7 +147,7 @@ def ex4(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -160,33 +160,33 @@ def ex4(maximize):
 
 def ex5(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n:(
-        abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
-         + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2) *
-        int(h, 2) + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2) +
-        int(b, 2) * int(d, 2) + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2) *
-        int(g, 2) + int(b, 2) * int(h, 2) + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2) +
-        int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2) + int(c, 2) * int(f, 2) + int(c, 2) *
-        int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2) + int(c, 2) * int(j, 2) +
-        int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2) + int(d, 2) *
-        int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2) +
-        int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2) *
-        int(j, 2) + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2) +
-        int(f, 2) * int(j, 2) + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2) *
-        int(j, 2) + int(h, 2) * int(i, 2) + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2) +
-        int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2) + int(c, 2) * int(k, 2) + int(d, 2) *
-        int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2) + int(g, 2) * int(k, 2) +
-        int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2) + int(a, 2) *
-        int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2) +
-        int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2) *
-        int(l, 2) + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2) +
-        int(a, 2) * int(m, 2) + int(b, 2) * int(m, 2) + int(c, 2) * int(m, 2) + int(d, 2) *
-        int(m, 2) + int(e, 2) * int(m, 2) + int(f, 2) * int(m, 2) + int(g, 2) * int(m, 2) +
-        int(h, 2) * int(m, 2) + int(i, 2) * int(m, 2) + int(j, 2) * int(m, 2) + int(k, 2) *
-        int(m, 2) + int(l, 2) * int(m, 2) + int(a, 2) * int(n, 2) + int(b, 2) * int(n, 2) +
-        int(c, 2) * int(n, 2) + int(d, 2) * int(n, 2) + int(e, 2) * int(n, 2) + int(f, 2) *
-        int(n, 2) + int(g, 2) * int(n, 2) + int(h, 2) * int(n, 2) + int(i, 2) * int(n, 2) +
-        int(j, 2) * int(n, 2) + int(k, 2) * int(n, 2) + int(l, 2) * int(n, 2) + int(m, 2) *
-        int(n, 2))))
+        abs(a * b + a * c + a * d
+         + a * e + a * f + a * g + a *
+        h + a * i + a * j + b * c +
+        b * d + b * e + b * f + b *
+        g + b * h + b * i + b * j +
+        c * d + c * e + c * f + c *
+        g + c * h + c * i + c * j +
+        d * e + d * f + d * g + d *
+        h + d * i + d * j + e * f +
+        e * g + e * h + e * i + e *
+        j + f * g + f * h + f * i +
+        f * j + g * h + g * i + g *
+        j + h * i + h * j + i * j +
+        a * k + b * k + c * k + d *
+        k + e * k + f * k + g * k +
+        h * k + i * k + j * k + a *
+        l + b * l + c * l + d * l +
+        e * l + f * l + g * l + h *
+        l + i * l + j * l + k * l +
+        a * m + b * m + c * m + d *
+        m + e * m + f * m + g * m +
+        h * m + i * m + j * m + k *
+        m + l * m + a * n + b * n +
+        c * n + d * n + e * n + f *
+        n + g * n + h * n + i * n +
+        j * n + k * n + l * n + m *
+        n)))
 
     target_fitness = None
     variables = 14
@@ -196,7 +196,7 @@ def ex5(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -209,37 +209,37 @@ def ex5(maximize):
 
 def ex6(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o:(
-        abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
-         + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2) *
-        int(h, 2) + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2) +
-        int(b, 2) * int(d, 2) + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2) *
-        int(g, 2) + int(b, 2) * int(h, 2) + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2) +
-        int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2) + int(c, 2) * int(f, 2) + int(c, 2) *
-        int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2) + int(c, 2) * int(j, 2) +
-        int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2) + int(d, 2) *
-        int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2) +
-        int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2) *
-        int(j, 2) + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2) +
-        int(f, 2) * int(j, 2) + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2) *
-        int(j, 2) + int(h, 2) * int(i, 2) + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2) +
-        int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2) + int(c, 2) * int(k, 2) + int(d, 2) *
-        int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2) + int(g, 2) * int(k, 2) +
-        int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2) + int(a, 2) *
-        int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2) +
-        int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2) *
-        int(l, 2) + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2) +
-        int(a, 2) * int(m, 2) + int(b, 2) * int(m, 2) + int(c, 2) * int(m, 2) + int(d, 2) *
-        int(m, 2) + int(e, 2) * int(m, 2) + int(f, 2) * int(m, 2) + int(g, 2) * int(m, 2) +
-        int(h, 2) * int(m, 2) + int(i, 2) * int(m, 2) + int(j, 2) * int(m, 2) + int(k, 2) *
-        int(m, 2) + int(l, 2) * int(m, 2) + int(a, 2) * int(n, 2) + int(b, 2) * int(n, 2) +
-        int(c, 2) * int(n, 2) + int(d, 2) * int(n, 2) + int(e, 2) * int(n, 2) + int(f, 2) *
-        int(n, 2) + int(g, 2) * int(n, 2) + int(h, 2) * int(n, 2) + int(i, 2) * int(n, 2) +
-        int(j, 2) * int(n, 2) + int(k, 2) * int(n, 2) + int(l, 2) * int(n, 2) + int(m, 2) *
-        int(n, 2) + int(a, 2) * int(o, 2) + int(b, 2) * int(o, 2) + int(c, 2) * int(o, 2) +
-        int(d, 2) * int(o, 2) + int(e, 2) * int(o, 2) + int(f, 2) * int(o, 2) + int(g, 2) *
-        int(o, 2) + int(h, 2) * int(o, 2) + int(i, 2) * int(o, 2) + int(j, 2) * int(o, 2) +
-        int(k, 2) * int(o, 2) + int(l, 2) * int(o, 2) + int(m, 2) * int(o, 2) + int(n, 2) *
-        int(o, 2))))
+        abs(a * b + a * c + a * d
+         + a * e + a * f + a * g + a *
+        h + a * i + a * j + b * c +
+        b * d + b * e + b * f + b *
+        g + b * h + b * i + b * j +
+        c * d + c * e + c * f + c *
+        g + c * h + c * i + c * j +
+        d * e + d * f + d * g + d *
+        h + d * i + d * j + e * f +
+        e * g + e * h + e * i + e *
+        j + f * g + f * h + f * i +
+        f * j + g * h + g * i + g *
+        j + h * i + h * j + i * j +
+        a * k + b * k + c * k + d *
+        k + e * k + f * k + g * k +
+        h * k + i * k + j * k + a *
+        l + b * l + c * l + d * l +
+        e * l + f * l + g * l + h *
+        l + i * l + j * l + k * l +
+        a * m + b * m + c * m + d *
+        m + e * m + f * m + g * m +
+        h * m + i * m + j * m + k *
+        m + l * m + a * n + b * n +
+        c * n + d * n + e * n + f *
+        n + g * n + h * n + i * n +
+        j * n + k * n + l * n + m *
+        n + a * o + b * o + c * o +
+        d * o + e * o + f * o + g *
+        o + h * o + i * o + j * o +
+        k * o + l * o + m * o + n *
+        o)))
 
     target_fitness = None
     variables = 15
@@ -249,7 +249,7 @@ def ex6(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -262,41 +262,41 @@ def ex6(maximize):
 
 def ex7(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p:(
-        abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
-         + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2)
-        *int(h, 2) + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2)
-         + int(b, 2) * int(d, 2) + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2)
-        *int(g, 2) + int(b, 2) * int(h, 2) + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2)
-         + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2) + int(c, 2) * int(f, 2) + int(c, 2)
-        *int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2) + int(c, 2) * int(j, 2)
-         + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2) + int(d, 2)
-        *int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)
-         + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2)
-        *int(j, 2) + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2)
-         + int(f, 2) * int(j, 2) + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2)
-        *int(j, 2) + int(h, 2) * int(i, 2) + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2)
-         + int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2) + int(c, 2) * int(k, 2) + int(d, 2)
-        *int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2) + int(g, 2) * int(k, 2)
-         + int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2) + int(a, 2)
-        *int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2)
-         + int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2)
-        *int(l, 2) + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2)
-         + int(a, 2) * int(m, 2) + int(b, 2) * int(m, 2) + int(c, 2) * int(m, 2) + int(d, 2)
-        *int(m, 2) + int(e, 2) * int(m, 2) + int(f, 2) * int(m, 2) + int(g, 2) * int(m, 2)
-         + int(h, 2) * int(m, 2) + int(i, 2) * int(m, 2) + int(j, 2) * int(m, 2) + int(k, 2)
-        *int(m, 2) + int(l, 2) * int(m, 2) + int(a, 2) * int(n, 2) + int(b, 2) * int(n, 2)
-         + int(c, 2) * int(n, 2) + int(d, 2) * int(n, 2) + int(e, 2) * int(n, 2) + int(f, 2)
-        *int(n, 2) + int(g, 2) * int(n, 2) + int(h, 2) * int(n, 2) + int(i, 2) * int(n, 2)
-         + int(j, 2) * int(n, 2) + int(k, 2) * int(n, 2) + int(l, 2) * int(n, 2) + int(m, 2)
-        *int(n, 2) + int(a, 2) * int(o, 2) + int(b, 2) * int(o, 2) + int(c, 2) * int(o, 2)
-         + int(d, 2) * int(o, 2) + int(e, 2) * int(o, 2) + int(f, 2) * int(o, 2) + int(g, 2)
-        *int(o, 2) + int(h, 2) * int(o, 2) + int(i, 2) * int(o, 2) + int(j, 2) * int(o, 2)
-         + int(k, 2) * int(o, 2) + int(l, 2) * int(o, 2) + int(m, 2) * int(o, 2) + int(n, 2)
-        *int(o, 2) + int(a, 2) * int(p, 2) + int(b, 2) * int(p, 2) + int(c, 2) * int(p, 2)
-         + int(d, 2) * int(p, 2) + int(e, 2) * int(p, 2) + int(f, 2) * int(p, 2) + int(g, 2)
-        *int(p, 2) + int(h, 2) * int(p, 2) + int(i, 2) * int(p, 2) + int(j, 2) * int(p, 2)
-         + int(k, 2) * int(p, 2) + int(l, 2) * int(p, 2) + int(m, 2) * int(p, 2) + int(n, 2)
-        *int(p, 2) + int(o, 2) * int(p, 2))))
+        abs(a * b + a * c + a * d
+         + a * e + a * f + a * g + a
+        *h + a * i + a * j + b * c
+         + b * d + b * e + b * f + b
+        *g + b * h + b * i + b * j
+         + c * d + c * e + c * f + c
+        *g + c * h + c * i + c * j
+         + d * e + d * f + d * g + d
+        *h + d * i + d * j + e * f
+         + e * g + e * h + e * i + e
+        *j + f * g + f * h + f * i
+         + f * j + g * h + g * i + g
+        *j + h * i + h * j + i * j
+         + a * k + b * k + c * k + d
+        *k + e * k + f * k + g * k
+         + h * k + i * k + j * k + a
+        *l + b * l + c * l + d * l
+         + e * l + f * l + g * l + h
+        *l + i * l + j * l + k * l
+         + a * m + b * m + c * m + d
+        *m + e * m + f * m + g * m
+         + h * m + i * m + j * m + k
+        *m + l * m + a * n + b * n
+         + c * n + d * n + e * n + f
+        *n + g * n + h * n + i * n
+         + j * n + k * n + l * n + m
+        *n + a * o + b * o + c * o
+         + d * o + e * o + f * o + g
+        *o + h * o + i * o + j * o
+         + k * o + l * o + m * o + n
+        *o + a * p + b * p + c * p
+         + d * p + e * p + f * p + g
+        *p + h * p + i * p + j * p
+         + k * p + l * p + m * p + n
+        *p + o * p)))
 
     target_fitness = None
     variables = 16
@@ -306,7 +306,7 @@ def ex7(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -320,45 +320,45 @@ def ex7(maximize):
 def ex8(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q:(
 
-        abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
-         + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2)
-        *int(h, 2) + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2)
-         + int(b, 2) * int(d, 2) + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2)
-        *int(g, 2) + int(b, 2) * int(h, 2) + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2)
-         + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2) + int(c, 2) * int(f, 2) + int(c, 2)
-        *int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2) + int(c, 2) * int(j, 2)
-         + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2) + int(d, 2)
-        *int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)
-         + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2)
-        *int(j, 2) + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2)
-         + int(f, 2) * int(j, 2) + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2)
-        *int(j, 2) + int(h, 2) * int(i, 2) + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2)
-         + int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2) + int(c, 2) * int(k, 2) + int(d, 2)
-        *int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2) + int(g, 2) * int(k, 2)
-         + int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2) + int(a, 2)
-        *int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2)
-         + int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2)
-        *int(l, 2) + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2)
-         + int(a, 2) * int(m, 2) + int(b, 2) * int(m, 2) + int(c, 2) * int(m, 2) + int(d, 2)
-        *int(m, 2) + int(e, 2) * int(m, 2) + int(f, 2) * int(m, 2) + int(g, 2) * int(m, 2)
-         + int(h, 2) * int(m, 2) + int(i, 2) * int(m, 2) + int(j, 2) * int(m, 2) + int(k, 2)
-        *int(m, 2) + int(l, 2) * int(m, 2) + int(a, 2) * int(n, 2) + int(b, 2) * int(n, 2)
-         + int(c, 2) * int(n, 2) + int(d, 2) * int(n, 2) + int(e, 2) * int(n, 2) + int(f, 2)
-        *int(n, 2) + int(g, 2) * int(n, 2) + int(h, 2) * int(n, 2) + int(i, 2) * int(n, 2)
-         + int(j, 2) * int(n, 2) + int(k, 2) * int(n, 2) + int(l, 2) * int(n, 2) + int(m, 2)
-        *int(n, 2) + int(a, 2) * int(o, 2) + int(b, 2) * int(o, 2) + int(c, 2) * int(o, 2)
-         + int(d, 2) * int(o, 2) + int(e, 2) * int(o, 2) + int(f, 2) * int(o, 2) + int(g, 2)
-        *int(o, 2) + int(h, 2) * int(o, 2) + int(i, 2) * int(o, 2) + int(j, 2) * int(o, 2)
-         + int(k, 2) * int(o, 2) + int(l, 2) * int(o, 2) + int(m, 2) * int(o, 2) + int(n, 2)
-        *int(o, 2) + int(a, 2) * int(p, 2) + int(b, 2) * int(p, 2) + int(c, 2) * int(p, 2)
-         + int(d, 2) * int(p, 2) + int(e, 2) * int(p, 2) + int(f, 2) * int(p, 2) + int(g, 2)
-        *int(p, 2) + int(h, 2) * int(p, 2) + int(i, 2) * int(p, 2) + int(j, 2) * int(p, 2)
-         + int(k, 2) * int(p, 2) + int(l, 2) * int(p, 2) + int(m, 2) * int(p, 2) + int(n, 2)
-        *int(p, 2) + int(o, 2) * int(p, 2) + int(a, 2) * int(q, 2) + int(b, 2) * int(q, 2)
-         + int(c, 2) * int(q, 2) + int(d, 2) * int(q, 2) + int(e, 2) * int(q, 2) + int(f, 2)
-        *int(q, 2) + int(g, 2) * int(q, 2) + int(h, 2) * int(q, 2) + int(i, 2) * int(q, 2)
-         + int(j, 2) * int(q, 2) + int(k, 2) * int(q, 2) + int(l, 2) * int(q, 2) + int(m, 2)
-        *int(q, 2) + int(n, 2) * int(q, 2) + int(o, 2) * int(q, 2) + int(p, 2) * int(q, 2))))
+        abs(a * b + a * c + a * d
+         + a * e + a * f + a * g + a
+        *h + a * i + a * j + b * c
+         + b * d + b * e + b * f + b
+        *g + b * h + b * i + b * j
+         + c * d + c * e + c * f + c
+        *g + c * h + c * i + c * j
+         + d * e + d * f + d * g + d
+        *h + d * i + d * j + e * f
+         + e * g + e * h + e * i + e
+        *j + f * g + f * h + f * i
+         + f * j + g * h + g * i + g
+        *j + h * i + h * j + i * j
+         + a * k + b * k + c * k + d
+        *k + e * k + f * k + g * k
+         + h * k + i * k + j * k + a
+        *l + b * l + c * l + d * l
+         + e * l + f * l + g * l + h
+        *l + i * l + j * l + k * l
+         + a * m + b * m + c * m + d
+        *m + e * m + f * m + g * m
+         + h * m + i * m + j * m + k
+        *m + l * m + a * n + b * n
+         + c * n + d * n + e * n + f
+        *n + g * n + h * n + i * n
+         + j * n + k * n + l * n + m
+        *n + a * o + b * o + c * o
+         + d * o + e * o + f * o + g
+        *o + h * o + i * o + j * o
+         + k * o + l * o + m * o + n
+        *o + a * p + b * p + c * p
+         + d * p + e * p + f * p + g
+        *p + h * p + i * p + j * p
+         + k * p + l * p + m * p + n
+        *p + o * p + a * q + b * q
+         + c * q + d * q + e * q + f
+        *q + g * q + h * q + i * q
+         + j * q + k * q + l * q + m
+        *q + n * q + o * q + p * q)))
 
     target_fitness = None
     variables = 17
@@ -368,7 +368,7 @@ def ex8(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -381,50 +381,50 @@ def ex8(maximize):
 def ex9(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r:(
 
-        abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
-         + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2)
-        *int(h, 2) + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2)
-         + int(b, 2) * int(d, 2) + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2)
-        *int(g, 2) + int(b, 2) * int(h, 2) + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2)
-         + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2) + int(c, 2) * int(f, 2) + int(c, 2)
-        *int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2) + int(c, 2) * int(j, 2)
-         + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2) + int(d, 2)
-        *int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)
-         + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2)
-        *int(j, 2) + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2)
-         + int(f, 2) * int(j, 2) + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2)
-        *int(j, 2) + int(h, 2) * int(i, 2) + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2)
-         + int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2) + int(c, 2) * int(k, 2) + int(d, 2)
-        *int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2) + int(g, 2) * int(k, 2)
-         + int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2) + int(a, 2)
-        *int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2)
-         + int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2)
-        *int(l, 2) + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2)
-         + int(a, 2) * int(m, 2) + int(b, 2) * int(m, 2) + int(c, 2) * int(m, 2) + int(d, 2)
-        *int(m, 2) + int(e, 2) * int(m, 2) + int(f, 2) * int(m, 2) + int(g, 2) * int(m, 2)
-         + int(h, 2) * int(m, 2) + int(i, 2) * int(m, 2) + int(j, 2) * int(m, 2) + int(k, 2)
-        *int(m, 2) + int(l, 2) * int(m, 2) + int(a, 2) * int(n, 2) + int(b, 2) * int(n, 2)
-         + int(c, 2) * int(n, 2) + int(d, 2) * int(n, 2) + int(e, 2) * int(n, 2) + int(f, 2)
-        *int(n, 2) + int(g, 2) * int(n, 2) + int(h, 2) * int(n, 2) + int(i, 2) * int(n, 2)
-         + int(j, 2) * int(n, 2) + int(k, 2) * int(n, 2) + int(l, 2) * int(n, 2) + int(m, 2)
-        *int(n, 2) + int(a, 2) * int(o, 2) + int(b, 2) * int(o, 2) + int(c, 2) * int(o, 2)
-         + int(d, 2) * int(o, 2) + int(e, 2) * int(o, 2) + int(f, 2) * int(o, 2) + int(g, 2)
-        *int(o, 2) + int(h, 2) * int(o, 2) + int(i, 2) * int(o, 2) + int(j, 2) * int(o, 2)
-         + int(k, 2) * int(o, 2) + int(l, 2) * int(o, 2) + int(m, 2) * int(o, 2) + int(n, 2)
-        *int(o, 2) + int(a, 2) * int(p, 2) + int(b, 2) * int(p, 2) + int(c, 2) * int(p, 2)
-         + int(d, 2) * int(p, 2) + int(e, 2) * int(p, 2) + int(f, 2) * int(p, 2) + int(g, 2)
-        *int(p, 2) + int(h, 2) * int(p, 2) + int(i, 2) * int(p, 2) + int(j, 2) * int(p, 2)
-         + int(k, 2) * int(p, 2) + int(l, 2) * int(p, 2) + int(m, 2) * int(p, 2) + int(n, 2)
-        *int(p, 2) + int(o, 2) * int(p, 2) + int(a, 2) * int(q, 2) + int(b, 2) * int(q, 2)
-         + int(c, 2) * int(q, 2) + int(d, 2) * int(q, 2) + int(e, 2) * int(q, 2) + int(f, 2)
-        *int(q, 2) + int(g, 2) * int(q, 2) + int(h, 2) * int(q, 2) + int(i, 2) * int(q, 2)
-         + int(j, 2) * int(q, 2) + int(k, 2) * int(q, 2) + int(l, 2) * int(q, 2) + int(m, 2)
-        *int(q, 2) + int(n, 2) * int(q, 2) + int(o, 2) * int(q, 2) + int(p, 2) * int(q, 2)
-         + int(a, 2) * int(r, 2) + int(b, 2) * int(r, 2) + int(c, 2) * int(r, 2) + int(d, 2)
-        *int(r, 2) + int(e, 2) * int(r, 2) + int(f, 2) * int(r, 2) + int(g, 2) * int(r, 2)
-         + int(h, 2) * int(r, 2) + int(i, 2) * int(r, 2) + int(j, 2) * int(r, 2) + int(k, 2)
-        *int(r, 2) + int(l, 2) * int(r, 2) + int(m, 2) * int(r, 2) + int(n, 2) * int(r, 2)
-         + int(o, 2) * int(r, 2) + int(p, 2) * int(r, 2) + int(q, 2) * int(r, 2))))
+        abs(a * b + a * c + a * d
+         + a * e + a * f + a * g + a
+        *h + a * i + a * j + b * c
+         + b * d + b * e + b * f + b
+        *g + b * h + b * i + b * j
+         + c * d + c * e + c * f + c
+        *g + c * h + c * i + c * j
+         + d * e + d * f + d * g + d
+        *h + d * i + d * j + e * f
+         + e * g + e * h + e * i + e
+        *j + f * g + f * h + f * i
+         + f * j + g * h + g * i + g
+        *j + h * i + h * j + i * j
+         + a * k + b * k + c * k + d
+        *k + e * k + f * k + g * k
+         + h * k + i * k + j * k + a
+        *l + b * l + c * l + d * l
+         + e * l + f * l + g * l + h
+        *l + i * l + j * l + k * l
+         + a * m + b * m + c * m + d
+        *m + e * m + f * m + g * m
+         + h * m + i * m + j * m + k
+        *m + l * m + a * n + b * n
+         + c * n + d * n + e * n + f
+        *n + g * n + h * n + i * n
+         + j * n + k * n + l * n + m
+        *n + a * o + b * o + c * o
+         + d * o + e * o + f * o + g
+        *o + h * o + i * o + j * o
+         + k * o + l * o + m * o + n
+        *o + a * p + b * p + c * p
+         + d * p + e * p + f * p + g
+        *p + h * p + i * p + j * p
+         + k * p + l * p + m * p + n
+        *p + o * p + a * q + b * q
+         + c * q + d * q + e * q + f
+        *q + g * q + h * q + i * q
+         + j * q + k * q + l * q + m
+        *q + n * q + o * q + p * q
+         + a * r + b * r + c * r + d
+        *r + e * r + f * r + g * r
+         + h * r + i * r + j * r + k
+        *r + l * r + m * r + n * r
+         + o * r + p * r + q * r)))
 
     target_fitness = None
     variables = 18
@@ -434,7 +434,7 @@ def ex9(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -451,55 +451,55 @@ def ex10(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s: (
 
 
-        abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
-        + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2)
-        * int(h, 2) + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2)
-        + int(b, 2) * int(d, 2) + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2)
-        * int(g, 2) + int(b, 2) * int(h, 2) + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2)
-        + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2) + int(c, 2) * int(f, 2) + int(c, 2)
-        * int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2) + int(c, 2) * int(j, 2)
-        + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2) + int(d, 2)
-        * int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)
-        + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2)
-        * int(j, 2) + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2)
-        + int(f, 2) * int(j, 2) + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2)
-        * int(j, 2) + int(h, 2) * int(i, 2) + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2)
-        + int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2) + int(c, 2) * int(k, 2) + int(d, 2)
-        * int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2) + int(g, 2) * int(k, 2)
-        + int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2) + int(a, 2)
-        * int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2)
-        + int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2)
-        * int(l, 2) + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2)
-        + int(a, 2) * int(m, 2) + int(b, 2) * int(m, 2) + int(c, 2) * int(m, 2) + int(d, 2)
-        * int(m, 2) + int(e, 2) * int(m, 2) + int(f, 2) * int(m, 2) + int(g, 2) * int(m, 2)
-        + int(h, 2) * int(m, 2) + int(i, 2) * int(m, 2) + int(j, 2) * int(m, 2) + int(k, 2)
-        * int(m, 2) + int(l, 2) * int(m, 2) + int(a, 2) * int(n, 2) + int(b, 2) * int(n, 2)
-        + int(c, 2) * int(n, 2) + int(d, 2) * int(n, 2) + int(e, 2) * int(n, 2) + int(f, 2)
-        * int(n, 2) + int(g, 2) * int(n, 2) + int(h, 2) * int(n, 2) + int(i, 2) * int(n, 2)
-        + int(j, 2) * int(n, 2) + int(k, 2) * int(n, 2) + int(l, 2) * int(n, 2) + int(m, 2)
-        * int(n, 2) + int(a, 2) * int(o, 2) + int(b, 2) * int(o, 2) + int(c, 2) * int(o, 2)
-        + int(d, 2) * int(o, 2) + int(e, 2) * int(o, 2) + int(f, 2) * int(o, 2) + int(g, 2)
-        * int(o, 2) + int(h, 2) * int(o, 2) + int(i, 2) * int(o, 2) + int(j, 2) * int(o, 2)
-        + int(k, 2) * int(o, 2) + int(l, 2) * int(o, 2) + int(m, 2) * int(o, 2) + int(n, 2)
-        * int(o, 2) + int(a, 2) * int(p, 2) + int(b, 2) * int(p, 2) + int(c, 2) * int(p, 2)
-        + int(d, 2) * int(p, 2) + int(e, 2) * int(p, 2) + int(f, 2) * int(p, 2) + int(g, 2)
-        * int(p, 2) + int(h, 2) * int(p, 2) + int(i, 2) * int(p, 2) + int(j, 2) * int(p, 2)
-        + int(k, 2) * int(p, 2) + int(l, 2) * int(p, 2) + int(m, 2) * int(p, 2) + int(n, 2)
-        * int(p, 2) + int(o, 2) * int(p, 2) + int(a, 2) * int(q, 2) + int(b, 2) * int(q, 2)
-        + int(c, 2) * int(q, 2) + int(d, 2) * int(q, 2) + int(e, 2) * int(q, 2) + int(f, 2)
-        * int(q, 2) + int(g, 2) * int(q, 2) + int(h, 2) * int(q, 2) + int(i, 2) * int(q, 2)
-        + int(j, 2) * int(q, 2) + int(k, 2) * int(q, 2) + int(l, 2) * int(q, 2) + int(m, 2)
-        * int(q, 2) + int(n, 2) * int(q, 2) + int(o, 2) * int(q, 2) + int(p, 2) * int(q, 2)
-        + int(a, 2) * int(r, 2) + int(b, 2) * int(r, 2) + int(c, 2) * int(r, 2) + int(d, 2)
-        * int(r, 2) + int(e, 2) * int(r, 2) + int(f, 2) * int(r, 2) + int(g, 2) * int(r, 2)
-        + int(h, 2) * int(r, 2) + int(i, 2) * int(r, 2) + int(j, 2) * int(r, 2) + int(k, 2)
-        * int(r, 2) + int(l, 2) * int(r, 2) + int(m, 2) * int(r, 2) + int(n, 2) * int(r, 2)
-        + int(o, 2) * int(r, 2) + int(p, 2) * int(r, 2) + int(q, 2) * int(r, 2) + int(a, 2)
-        * int(s, 2) + int(b, 2) * int(s, 2) + int(c, 2) * int(s, 2) + int(d, 2) * int(s, 2)
-        + int(e, 2) * int(s, 2) + int(f, 2) * int(s, 2) + int(g, 2) * int(s, 2) + int(h, 2)
-        * int(s, 2) + int(i, 2) * int(s, 2) + int(j, 2) * int(s, 2) + int(k, 2) * int(s, 2)
-        + int(l, 2) * int(s, 2) + int(m, 2) * int(s, 2) + int(n, 2) * int(s, 2) + int(o, 2)
-        * int(s, 2) + int(p, 2) * int(s, 2) + int(q, 2) * int(s, 2) + int(r, 2) * int(s, 2))))
+        abs(a * b + a * c + a * d
+        + a * e + a * f + a * g + a
+        * h + a * i + a * j + b * c
+        + b * d + b * e + b * f + b
+        * g + b * h + b * i + b * j
+        + c * d + c * e + c * f + c
+        * g + c * h + c * i + c * j
+        + d * e + d * f + d * g + d
+        * h + d * i + d * j + e * f
+        + e * g + e * h + e * i + e
+        * j + f * g + f * h + f * i
+        + f * j + g * h + g * i + g
+        * j + h * i + h * j + i * j
+        + a * k + b * k + c * k + d
+        * k + e * k + f * k + g * k
+        + h * k + i * k + j * k + a
+        * l + b * l + c * l + d * l
+        + e * l + f * l + g * l + h
+        * l + i * l + j * l + k * l
+        + a * m + b * m + c * m + d
+        * m + e * m + f * m + g * m
+        + h * m + i * m + j * m + k
+        * m + l * m + a * n + b * n
+        + c * n + d * n + e * n + f
+        * n + g * n + h * n + i * n
+        + j * n + k * n + l * n + m
+        * n + a * o + b * o + c * o
+        + d * o + e * o + f * o + g
+        * o + h * o + i * o + j * o
+        + k * o + l * o + m * o + n
+        * o + a * p + b * p + c * p
+        + d * p + e * p + f * p + g
+        * p + h * p + i * p + j * p
+        + k * p + l * p + m * p + n
+        * p + o * p + a * q + b * q
+        + c * q + d * q + e * q + f
+        * q + g * q + h * q + i * q
+        + j * q + k * q + l * q + m
+        * q + n * q + o * q + p * q
+        + a * r + b * r + c * r + d
+        * r + e * r + f * r + g * r
+        + h * r + i * r + j * r + k
+        * r + l * r + m * r + n * r
+        + o * r + p * r + q * r + a
+        * s + b * s + c * s + d * s
+        + e * s + f * s + g * s + h
+        * s + i * s + j * s + k * s
+        + l * s + m * s + n * s + o
+        * s + p * s + q * s + r * s)))
 
     target_fitness = None
     variables = 19
@@ -509,7 +509,7 @@ def ex10(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -523,61 +523,61 @@ def ex10(maximize):
 def ex11(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t:(
 
-        abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
-        + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2)
-        * int(h, 2) + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2)
-        + int(b, 2) * int(d, 2) + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2)
-        * int(g, 2) + int(b, 2) * int(h, 2) + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2)
-        + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2) + int(c, 2) * int(f, 2) + int(c, 2)
-        * int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2) + int(c, 2) * int(j, 2)
-        + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2) + int(d, 2)
-        * int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)
-        + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2)
-        * int(j, 2) + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2)
-        + int(f, 2) * int(j, 2) + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2)
-        * int(j, 2) + int(h, 2) * int(i, 2) + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2)
-        + int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2) + int(c, 2) * int(k, 2) + int(d, 2)
-        * int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2) + int(g, 2) * int(k, 2)
-        + int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2) + int(a, 2)
-        * int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2)
-        + int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2)
-        * int(l, 2) + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2)
-        + int(a, 2) * int(m, 2) + int(b, 2) * int(m, 2) + int(c, 2) * int(m, 2) + int(d, 2)
-        * int(m, 2) + int(e, 2) * int(m, 2) + int(f, 2) * int(m, 2) + int(g, 2) * int(m, 2)
-        + int(h, 2) * int(m, 2) + int(i, 2) * int(m, 2) + int(j, 2) * int(m, 2) + int(k, 2)
-        * int(m, 2) + int(l, 2) * int(m, 2) + int(a, 2) * int(n, 2) + int(b, 2) * int(n, 2)
-        + int(c, 2) * int(n, 2) + int(d, 2) * int(n, 2) + int(e, 2) * int(n, 2) + int(f, 2)
-        * int(n, 2) + int(g, 2) * int(n, 2) + int(h, 2) * int(n, 2) + int(i, 2) * int(n, 2)
-        + int(j, 2) * int(n, 2) + int(k, 2) * int(n, 2) + int(l, 2) * int(n, 2) + int(m, 2)
-        * int(n, 2) + int(a, 2) * int(o, 2) + int(b, 2) * int(o, 2) + int(c, 2) * int(o, 2)
-        + int(d, 2) * int(o, 2) + int(e, 2) * int(o, 2) + int(f, 2) * int(o, 2) + int(g, 2)
-        * int(o, 2) + int(h, 2) * int(o, 2) + int(i, 2) * int(o, 2) + int(j, 2) * int(o, 2)
-        + int(k, 2) * int(o, 2) + int(l, 2) * int(o, 2) + int(m, 2) * int(o, 2) + int(n, 2)
-        * int(o, 2) + int(a, 2) * int(p, 2) + int(b, 2) * int(p, 2) + int(c, 2) * int(p, 2)
-        + int(d, 2) * int(p, 2) + int(e, 2) * int(p, 2) + int(f, 2) * int(p, 2) + int(g, 2)
-        * int(p, 2) + int(h, 2) * int(p, 2) + int(i, 2) * int(p, 2) + int(j, 2) * int(p, 2)
-        + int(k, 2) * int(p, 2) + int(l, 2) * int(p, 2) + int(m, 2) * int(p, 2) + int(n, 2)
-        * int(p, 2) + int(o, 2) * int(p, 2) + int(a, 2) * int(q, 2) + int(b, 2) * int(q, 2)
-        + int(c, 2) * int(q, 2) + int(d, 2) * int(q, 2) + int(e, 2) * int(q, 2) + int(f, 2)
-        * int(q, 2) + int(g, 2) * int(q, 2) + int(h, 2) * int(q, 2) + int(i, 2) * int(q, 2)
-        + int(j, 2) * int(q, 2) + int(k, 2) * int(q, 2) + int(l, 2) * int(q, 2) + int(m, 2)
-        * int(q, 2) + int(n, 2) * int(q, 2) + int(o, 2) * int(q, 2) + int(p, 2) * int(q, 2)
-        + int(e, 2) * int(t, 2) + int(f, 2) * int(t, 2) + int(g, 2) * int(t, 2) + int(h, 2)
-        * int(t, 2) + int(i, 2) * int(t, 2) + int(j, 2) * int(t, 2) + int(k, 2) * int(t, 2)
-        + int(l, 2) * int(t, 2) + int(m, 2) * int(t, 2) + int(n, 2) * int(t, 2) + int(o, 2)
-        * int(t, 2) + int(p, 2) * int(t, 2) + int(q, 2) * int(t, 2) + int(r, 2) * int(t, 2)
-        + int(s, 2) * int(t, 2) + int(a, 2) * int(r, 2) + int(b, 2) * int(r, 2) + int(c, 2)
-        * int(r, 2) + int(d, 2) * int(r, 2) + int(e, 2) * int(r, 2) + int(f, 2) * int(r, 2)
-        + int(g, 2) * int(r, 2) + int(h, 2) * int(r, 2) + int(i, 2) * int(r, 2) + int(j, 2)
-        * int(r, 2) + int(k, 2) * int(r, 2) + int(l, 2) * int(r, 2) + int(m, 2) * int(r, 2)
-        + int(n, 2) * int(r, 2) + int(o, 2) * int(r, 2) + int(p, 2) * int(r, 2) + int(q, 2)
-        * int(r, 2) + int(a, 2) * int(s, 2) + int(b, 2) * int(s, 2) + int(c, 2) * int(s, 2)
-        + int(d, 2) * int(s, 2) + int(e, 2) * int(s, 2) + int(f, 2) * int(s, 2) + int(g, 2)
-        * int(s, 2) + int(h, 2) * int(s, 2) + int(i, 2) * int(s, 2) + int(j, 2) * int(s, 2)
-        + int(k, 2) * int(s, 2) + int(l, 2) * int(s, 2) + int(m, 2) * int(s, 2) + int(n, 2)
-        * int(s, 2) + int(o, 2) * int(s, 2) + int(p, 2) * int(s, 2) + int(q, 2) * int(s, 2)
-        + int(r, 2) * int(s, 2) + int(a, 2) * int(t, 2) + int(b, 2) * int(t, 2) + int(c, 2)
-        * int(t, 2) + int(d, 2) * int(t, 2))))
+        abs(a * b + a * c + a * d
+        + a * e + a * f + a * g + a
+        * h + a * i + a * j + b * c
+        + b * d + b * e + b * f + b
+        * g + b * h + b * i + b * j
+        + c * d + c * e + c * f + c
+        * g + c * h + c * i + c * j
+        + d * e + d * f + d * g + d
+        * h + d * i + d * j + e * f
+        + e * g + e * h + e * i + e
+        * j + f * g + f * h + f * i
+        + f * j + g * h + g * i + g
+        * j + h * i + h * j + i * j
+        + a * k + b * k + c * k + d
+        * k + e * k + f * k + g * k
+        + h * k + i * k + j * k + a
+        * l + b * l + c * l + d * l
+        + e * l + f * l + g * l + h
+        * l + i * l + j * l + k * l
+        + a * m + b * m + c * m + d
+        * m + e * m + f * m + g * m
+        + h * m + i * m + j * m + k
+        * m + l * m + a * n + b * n
+        + c * n + d * n + e * n + f
+        * n + g * n + h * n + i * n
+        + j * n + k * n + l * n + m
+        * n + a * o + b * o + c * o
+        + d * o + e * o + f * o + g
+        * o + h * o + i * o + j * o
+        + k * o + l * o + m * o + n
+        * o + a * p + b * p + c * p
+        + d * p + e * p + f * p + g
+        * p + h * p + i * p + j * p
+        + k * p + l * p + m * p + n
+        * p + o * p + a * q + b * q
+        + c * q + d * q + e * q + f
+        * q + g * q + h * q + i * q
+        + j * q + k * q + l * q + m
+        * q + n * q + o * q + p * q
+        + e * t + f * t + g * t + h
+        * t + i * t + j * t + k * t
+        + l * t + m * t + n * t + o
+        * t + p * t + q * t + r * t
+        + s * t + a * r + b * r + c
+        * r + d * r + e * r + f * r
+        + g * r + h * r + i * r + j
+        * r + k * r + l * r + m * r
+        + n * r + o * r + p * r + q
+        * r + a * s + b * s + c * s
+        + d * s + e * s + f * s + g
+        * s + h * s + i * s + j * s
+        + k * s + l * s + m * s + n
+        * s + o * s + p * s + q * s
+        + r * s + a * t + b * t + c
+        * t + d * t)))
 
     target_fitness = None
     variables = 20
@@ -587,7 +587,7 @@ def ex11(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -601,67 +601,67 @@ def ex11(maximize):
 def ex12(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u:(
 
-        abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
-        + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2)
-        * int(h, 2) + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2)
-        + int(b, 2) * int(d, 2) + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2)
-        * int(g, 2) + int(b, 2) * int(h, 2) + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2)
-        + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2) + int(c, 2) * int(f, 2) + int(c, 2)
-        * int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2) + int(c, 2) * int(j, 2)
-        + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2) + int(d, 2)
-        * int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)
-        + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2)
-        * int(j, 2) + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2)
-        + int(f, 2) * int(j, 2) + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2)
-        * int(j, 2) + int(h, 2) * int(i, 2) + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2)
-        + int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2) + int(c, 2) * int(k, 2) + int(d, 2)
-        * int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2) + int(g, 2) * int(k, 2)
-        + int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2) + int(a, 2)
-        * int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2)
-        + int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2)
-        * int(l, 2) + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2)
-        + int(a, 2) * int(m, 2) + int(b, 2) * int(m, 2) + int(c, 2) * int(m, 2) + int(d, 2)
-        * int(m, 2) + int(e, 2) * int(m, 2) + int(f, 2) * int(m, 2) + int(g, 2) * int(m, 2)
-        + int(h, 2) * int(m, 2) + int(i, 2) * int(m, 2) + int(j, 2) * int(m, 2) + int(k, 2)
-        * int(m, 2) + int(l, 2) * int(m, 2) + int(a, 2) * int(n, 2) + int(b, 2) * int(n, 2)
-        + int(c, 2) * int(n, 2) + int(d, 2) * int(n, 2) + int(e, 2) * int(n, 2) + int(f, 2)
-        * int(n, 2) + int(g, 2) * int(n, 2) + int(h, 2) * int(n, 2) + int(i, 2) * int(n, 2)
-        + int(j, 2) * int(n, 2) + int(k, 2) * int(n, 2) + int(l, 2) * int(n, 2) + int(m, 2)
-        * int(n, 2) + int(a, 2) * int(o, 2) + int(b, 2) * int(o, 2) + int(c, 2) * int(o, 2)
-        + int(d, 2) * int(o, 2) + int(e, 2) * int(o, 2) + int(f, 2) * int(o, 2) + int(g, 2)
-        * int(o, 2) + int(h, 2) * int(o, 2) + int(i, 2) * int(o, 2) + int(j, 2) * int(o, 2)
-        + int(k, 2) * int(o, 2) + int(l, 2) * int(o, 2) + int(m, 2) * int(o, 2) + int(n, 2)
-        * int(o, 2) + int(a, 2) * int(p, 2) + int(b, 2) * int(p, 2) + int(c, 2) * int(p, 2)
-        + int(d, 2) * int(p, 2) + int(e, 2) * int(p, 2) + int(f, 2) * int(p, 2) + int(g, 2)
-        * int(p, 2) + int(h, 2) * int(p, 2) + int(i, 2) * int(p, 2) + int(j, 2) * int(p, 2)
-        + int(k, 2) * int(p, 2) + int(l, 2) * int(p, 2) + int(m, 2) * int(p, 2) + int(n, 2)
-        * int(p, 2) + int(o, 2) * int(p, 2) + int(a, 2) * int(q, 2) + int(b, 2) * int(q, 2)
-        + int(c, 2) * int(q, 2) + int(d, 2) * int(q, 2) + int(e, 2) * int(q, 2) + int(f, 2)
-        * int(q, 2) + int(g, 2) * int(q, 2) + int(h, 2) * int(q, 2) + int(i, 2) * int(q, 2)
-        + int(j, 2) * int(q, 2) + int(k, 2) * int(q, 2) + int(l, 2) * int(q, 2) + int(m, 2)
-        * int(q, 2) + int(n, 2) * int(q, 2) + int(o, 2) * int(q, 2) + int(p, 2) * int(q, 2)
-        + int(e, 2) * int(t, 2) + int(f, 2) * int(t, 2) + int(g, 2) * int(t, 2) + int(h, 2)
-        * int(t, 2) + int(i, 2) * int(t, 2) + int(j, 2) * int(t, 2) + int(k, 2) * int(t, 2)
-        + int(l, 2) * int(t, 2) + int(m, 2) * int(t, 2) + int(n, 2) * int(t, 2) + int(o, 2)
-        * int(t, 2) + int(p, 2) * int(t, 2) + int(q, 2) * int(t, 2) + int(r, 2) * int(t, 2)
-        + int(s, 2) * int(t, 2) + int(a, 2) * int(u, 2) + int(b, 2) * int(u, 2) + int(c, 2)
-        * int(u, 2) + int(d, 2) * int(u, 2) + int(e, 2) * int(u, 2) + int(f, 2) * int(u, 2)
-        + int(g, 2) * int(u, 2) + int(h, 2) * int(u, 2) + int(i, 2) * int(u, 2) + int(j, 2)
-        * int(u, 2) + int(k, 2) * int(u, 2) + int(l, 2) * int(u, 2) + int(m, 2) * int(u, 2)
-        + int(n, 2) * int(u, 2) + int(o, 2) * int(u, 2) + int(p, 2) * int(u, 2) + int(q, 2)
-        * int(u, 2) + int(r, 2) * int(u, 2) + int(s, 2) * int(u, 2) + int(t, 2) * int(u, 2)
-        + int(a, 2) * int(r, 2) + int(b, 2) * int(r, 2) + int(c, 2) * int(r, 2) + int(d, 2)
-        * int(r, 2) + int(e, 2) * int(r, 2) + int(f, 2) * int(r, 2) + int(g, 2) * int(r, 2)
-        + int(h, 2) * int(r, 2) + int(i, 2) * int(r, 2) + int(j, 2) * int(r, 2) + int(k, 2)
-        * int(r, 2) + int(l, 2) * int(r, 2) + int(m, 2) * int(r, 2) + int(n, 2) * int(r, 2)
-        + int(o, 2) * int(r, 2) + int(p, 2) * int(r, 2) + int(q, 2) * int(r, 2) + int(a, 2)
-        * int(s, 2) + int(b, 2) * int(s, 2) + int(c, 2) * int(s, 2) + int(d, 2) * int(s, 2)
-        + int(e, 2) * int(s, 2) + int(f, 2) * int(s, 2) + int(g, 2) * int(s, 2) + int(h, 2)
-        * int(s, 2) + int(i, 2) * int(s, 2) + int(j, 2) * int(s, 2) + int(k, 2) * int(s, 2)
-        + int(l, 2) * int(s, 2) + int(m, 2) * int(s, 2) + int(n, 2) * int(s, 2) + int(o, 2)
-        * int(s, 2) + int(p, 2) * int(s, 2) + int(q, 2) * int(s, 2) + int(r, 2) * int(s, 2)
-        + int(a, 2) * int(t, 2) + int(b, 2) * int(t, 2) + int(c, 2) * int(t, 2) + int(d, 2)
-        * int(t, 2))))
+        abs(a * b + a * c + a * d
+        + a * e + a * f + a * g + a
+        * h + a * i + a * j + b * c
+        + b * d + b * e + b * f + b
+        * g + b * h + b * i + b * j
+        + c * d + c * e + c * f + c
+        * g + c * h + c * i + c * j
+        + d * e + d * f + d * g + d
+        * h + d * i + d * j + e * f
+        + e * g + e * h + e * i + e
+        * j + f * g + f * h + f * i
+        + f * j + g * h + g * i + g
+        * j + h * i + h * j + i * j
+        + a * k + b * k + c * k + d
+        * k + e * k + f * k + g * k
+        + h * k + i * k + j * k + a
+        * l + b * l + c * l + d * l
+        + e * l + f * l + g * l + h
+        * l + i * l + j * l + k * l
+        + a * m + b * m + c * m + d
+        * m + e * m + f * m + g * m
+        + h * m + i * m + j * m + k
+        * m + l * m + a * n + b * n
+        + c * n + d * n + e * n + f
+        * n + g * n + h * n + i * n
+        + j * n + k * n + l * n + m
+        * n + a * o + b * o + c * o
+        + d * o + e * o + f * o + g
+        * o + h * o + i * o + j * o
+        + k * o + l * o + m * o + n
+        * o + a * p + b * p + c * p
+        + d * p + e * p + f * p + g
+        * p + h * p + i * p + j * p
+        + k * p + l * p + m * p + n
+        * p + o * p + a * q + b * q
+        + c * q + d * q + e * q + f
+        * q + g * q + h * q + i * q
+        + j * q + k * q + l * q + m
+        * q + n * q + o * q + p * q
+        + e * t + f * t + g * t + h
+        * t + i * t + j * t + k * t
+        + l * t + m * t + n * t + o
+        * t + p * t + q * t + r * t
+        + s * t + a * u + b * u + c
+        * u + d * u + e * u + f * u
+        + g * u + h * u + i * u + j
+        * u + k * u + l * u + m * u
+        + n * u + o * u + p * u + q
+        * u + r * u + s * u + t * u
+        + a * r + b * r + c * r + d
+        * r + e * r + f * r + g * r
+        + h * r + i * r + j * r + k
+        * r + l * r + m * r + n * r
+        + o * r + p * r + q * r + a
+        * s + b * s + c * s + d * s
+        + e * s + f * s + g * s + h
+        * s + i * s + j * s + k * s
+        + l * s + m * s + n * s + o
+        * s + p * s + q * s + r * s
+        + a * t + b * t + c * t + d
+        * t)))
 
     target_fitness = None
     variables = 21
@@ -671,7 +671,7 @@ def ex12(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -686,73 +686,73 @@ def ex13(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v:(
 
 
-        abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)+
-        int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2)*
-        int(h, 2) + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2)+
-        int(b, 2) * int(d, 2) + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2)*
-        int(g, 2) + int(b, 2) * int(h, 2) + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2)+
-        int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2) + int(c, 2) * int(f, 2) + int(c, 2)*
-        int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2) + int(c, 2) * int(j, 2)+
-        int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2) + int(d, 2)*
-        int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)+
-        int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2)*
-        int(j, 2) + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2)+
-        int(f, 2) * int(j, 2) + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2)*
-        int(j, 2) + int(h, 2) * int(i, 2) + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2)+
-        int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2) + int(c, 2) * int(k, 2) + int(d, 2)*
-        int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2) + int(g, 2) * int(k, 2)+
-        int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2) + int(a, 2)*
-        int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2)+
-        int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2)*
-        int(l, 2) + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2)+
-        int(a, 2) * int(m, 2) + int(b, 2) * int(m, 2) + int(c, 2) * int(m, 2) + int(d, 2)*
-        int(m, 2) + int(e, 2) * int(m, 2) + int(f, 2) * int(m, 2) + int(g, 2) * int(m, 2)+
-        int(h, 2) * int(m, 2) + int(i, 2) * int(m, 2) + int(j, 2) * int(m, 2) + int(k, 2)*
-        int(m, 2) + int(l, 2) * int(m, 2) + int(a, 2) * int(n, 2) + int(b, 2) * int(n, 2)+
-        int(c, 2) * int(n, 2) + int(d, 2) * int(n, 2) + int(e, 2) * int(n, 2) + int(f, 2)*
-        int(n, 2) + int(g, 2) * int(n, 2) + int(h, 2) * int(n, 2) + int(i, 2) * int(n, 2)+
-        int(j, 2) * int(n, 2) + int(k, 2) * int(n, 2) + int(l, 2) * int(n, 2) + int(m, 2)*
-        int(n, 2) + int(a, 2) * int(o, 2) + int(b, 2) * int(o, 2) + int(c, 2) * int(o, 2)+
-        int(d, 2) * int(o, 2) + int(e, 2) * int(o, 2) + int(f, 2) * int(o, 2) + int(g, 2)*
-        int(o, 2) + int(h, 2) * int(o, 2) + int(i, 2) * int(o, 2) + int(j, 2) * int(o, 2)+
-        int(k, 2) * int(o, 2) + int(l, 2) * int(o, 2) + int(m, 2) * int(o, 2) + int(n, 2)*
-        int(o, 2) + int(a, 2) * int(p, 2) + int(b, 2) * int(p, 2) + int(c, 2) * int(p, 2)+
-        int(d, 2) * int(p, 2) + int(e, 2) * int(p, 2) + int(f, 2) * int(p, 2) + int(g, 2)*
-        int(p, 2) + int(h, 2) * int(p, 2) + int(i, 2) * int(p, 2) + int(j, 2) * int(p, 2)+
-        int(k, 2) * int(p, 2) + int(l, 2) * int(p, 2) + int(m, 2) * int(p, 2) + int(n, 2)*
-        int(p, 2) + int(o, 2) * int(p, 2) + int(a, 2) * int(q, 2) + int(b, 2) * int(q, 2)+
-        int(c, 2) * int(q, 2) + int(d, 2) * int(q, 2) + int(e, 2) * int(q, 2) + int(f, 2)*
-        int(q, 2) + int(g, 2) * int(q, 2) + int(h, 2) * int(q, 2) + int(i, 2) * int(q, 2)+
-        int(j, 2) * int(q, 2) + int(k, 2) * int(q, 2) + int(l, 2) * int(q, 2) + int(m, 2)*
-        int(q, 2) + int(n, 2) * int(q, 2) + int(o, 2) * int(q, 2) + int(p, 2) * int(q, 2)+
-        int(c, 2) * int(v, 2) + int(d, 2) * int(v, 2) + int(e, 2) * int(t, 2) + int(f, 2)*
-        int(t, 2) + int(g, 2) * int(t, 2) + int(h, 2) * int(t, 2) + int(i, 2) * int(t, 2)+
-        int(j, 2) * int(t, 2) + int(k, 2) * int(t, 2) + int(l, 2) * int(t, 2) + int(m, 2)*
-        int(t, 2) + int(n, 2) * int(t, 2) + int(o, 2) * int(t, 2) + int(p, 2) * int(t, 2)+
-        int(q, 2) * int(t, 2) + int(r, 2) * int(t, 2) + int(s, 2) * int(t, 2) + int(a, 2)*
-        int(u, 2) + int(b, 2) * int(u, 2) + int(c, 2) * int(u, 2) + int(d, 2) * int(u, 2)+
-        int(e, 2) * int(u, 2) + int(f, 2) * int(u, 2) + int(g, 2) * int(u, 2) + int(h, 2)*
-        int(u, 2) + int(i, 2) * int(u, 2) + int(j, 2) * int(u, 2) + int(k, 2) * int(u, 2)+
-        int(l, 2) * int(u, 2) + int(m, 2) * int(u, 2) + int(n, 2) * int(u, 2) + int(o, 2)*
-        int(u, 2) + int(p, 2) * int(u, 2) + int(q, 2) * int(u, 2) + int(r, 2) * int(u, 2)+
-        int(s, 2) * int(u, 2) + int(t, 2) * int(u, 2) + int(a, 2) * int(v, 2) + int(b, 2)*
-        int(v, 2) + int(a, 2) * int(r, 2) + int(b, 2) * int(r, 2) + int(c, 2) * int(r, 2)+
-        int(d, 2) * int(r, 2) + int(e, 2) * int(r, 2) + int(f, 2) * int(r, 2) + int(g, 2)*
-        int(r, 2) + int(h, 2) * int(r, 2) + int(i, 2) * int(r, 2) + int(j, 2) * int(r, 2)+
-        int(k, 2) * int(r, 2) + int(l, 2) * int(r, 2) + int(m, 2) * int(r, 2) + int(n, 2)*
-        int(r, 2) + int(o, 2) * int(r, 2) + int(p, 2) * int(r, 2) + int(q, 2) * int(r, 2)+
-        int(a, 2) * int(s, 2) + int(b, 2) * int(s, 2) + int(c, 2) * int(s, 2) + int(d, 2)*
-        int(s, 2) + int(e, 2) * int(s, 2) + int(f, 2) * int(s, 2) + int(g, 2) * int(s, 2)+
-        int(h, 2) * int(s, 2) + int(i, 2) * int(s, 2) + int(j, 2) * int(s, 2) + int(k, 2)*
-        int(s, 2) + int(l, 2) * int(s, 2) + int(m, 2) * int(s, 2) + int(n, 2) * int(s, 2)+
-        int(o, 2) * int(s, 2) + int(p, 2) * int(s, 2) + int(q, 2) * int(s, 2) + int(r, 2)*
-        int(s, 2) + int(a, 2) * int(t, 2) + int(b, 2) * int(t, 2) + int(c, 2) * int(t, 2)+
-        int(d, 2) * int(t, 2) + int(e, 2) * int(v, 2) + int(f, 2) * int(v, 2) + int(g, 2)*
-        int(v, 2) + int(h, 2) * int(v, 2) + int(i, 2) * int(v, 2) + int(j, 2) * int(v, 2)+
-        int(k, 2) * int(v, 2) + int(l, 2) * int(v, 2) + int(m, 2) * int(v, 2) + int(n, 2)*
-        int(v, 2) + int(o, 2) * int(v, 2) + int(p, 2) * int(v, 2) + int(q, 2) * int(v, 2)+
-        int(r, 2) * int(v, 2) + int(s, 2) * int(v, 2) + int(t, 2) * int(v, 2) + int(u, 2)*
-        int(v, 2))))
+        abs(a * b + a * c + a * d+
+        a * e + a * f + a * g + a*
+        h + a * i + a * j + b * c+
+        b * d + b * e + b * f + b*
+        g + b * h + b * i + b * j+
+        c * d + c * e + c * f + c*
+        g + c * h + c * i + c * j+
+        d * e + d * f + d * g + d*
+        h + d * i + d * j + e * f+
+        e * g + e * h + e * i + e*
+        j + f * g + f * h + f * i+
+        f * j + g * h + g * i + g*
+        j + h * i + h * j + i * j+
+        a * k + b * k + c * k + d*
+        k + e * k + f * k + g * k+
+        h * k + i * k + j * k + a*
+        l + b * l + c * l + d * l+
+        e * l + f * l + g * l + h*
+        l + i * l + j * l + k * l+
+        a * m + b * m + c * m + d*
+        m + e * m + f * m + g * m+
+        h * m + i * m + j * m + k*
+        m + l * m + a * n + b * n+
+        c * n + d * n + e * n + f*
+        n + g * n + h * n + i * n+
+        j * n + k * n + l * n + m*
+        n + a * o + b * o + c * o+
+        d * o + e * o + f * o + g*
+        o + h * o + i * o + j * o+
+        k * o + l * o + m * o + n*
+        o + a * p + b * p + c * p+
+        d * p + e * p + f * p + g*
+        p + h * p + i * p + j * p+
+        k * p + l * p + m * p + n*
+        p + o * p + a * q + b * q+
+        c * q + d * q + e * q + f*
+        q + g * q + h * q + i * q+
+        j * q + k * q + l * q + m*
+        q + n * q + o * q + p * q+
+        c * v + d * v + e * t + f*
+        t + g * t + h * t + i * t+
+        j * t + k * t + l * t + m*
+        t + n * t + o * t + p * t+
+        q * t + r * t + s * t + a*
+        u + b * u + c * u + d * u+
+        e * u + f * u + g * u + h*
+        u + i * u + j * u + k * u+
+        l * u + m * u + n * u + o*
+        u + p * u + q * u + r * u+
+        s * u + t * u + a * v + b*
+        v + a * r + b * r + c * r+
+        d * r + e * r + f * r + g*
+        r + h * r + i * r + j * r+
+        k * r + l * r + m * r + n*
+        r + o * r + p * r + q * r+
+        a * s + b * s + c * s + d*
+        s + e * s + f * s + g * s+
+        h * s + i * s + j * s + k*
+        s + l * s + m * s + n * s+
+        o * s + p * s + q * s + r*
+        s + a * t + b * t + c * t+
+        d * t + e * v + f * v + g*
+        v + h * v + i * v + j * v+
+        k * v + l * v + m * v + n*
+        v + o * v + p * v + q * v+
+        r * v + s * v + t * v + u*
+        v)))
 
     target_fitness = None
     variables = 22
@@ -762,7 +762,7 @@ def ex13(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -775,79 +775,79 @@ def ex13(maximize):
 def ex14(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w:(
 
-        abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
-        + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2)
-        * int(h, 2) + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2)
-        + int(b, 2) * int(d, 2) + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2)
-        * int(g, 2) + int(b, 2) * int(h, 2) + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2)
-        + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2) + int(c, 2) * int(f, 2) + int(c, 2)
-        * int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2) + int(c, 2) * int(j, 2)
-        + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2) + int(d, 2)
-        * int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)
-        + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2)
-        * int(j, 2) + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2)
-        + int(f, 2) * int(j, 2) + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2)
-        * int(j, 2) + int(h, 2) * int(i, 2) + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2)
-        + int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2) + int(c, 2) * int(k, 2) + int(d, 2)
-        * int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2) + int(g, 2) * int(k, 2)
-        + int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2) + int(a, 2)
-        * int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2)
-        + int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2)
-        * int(l, 2) + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2)
-        + int(a, 2) * int(m, 2) + int(b, 2) * int(m, 2) + int(c, 2) * int(m, 2) + int(d, 2)
-        * int(m, 2) + int(e, 2) * int(m, 2) + int(f, 2) * int(m, 2) + int(g, 2) * int(m, 2)
-        + int(h, 2) * int(m, 2) + int(i, 2) * int(m, 2) + int(j, 2) * int(m, 2) + int(k, 2)
-        * int(m, 2) + int(l, 2) * int(m, 2) + int(a, 2) * int(n, 2) + int(b, 2) * int(n, 2)
-        + int(c, 2) * int(n, 2) + int(d, 2) * int(n, 2) + int(e, 2) * int(n, 2) + int(f, 2)
-        * int(n, 2) + int(g, 2) * int(n, 2) + int(h, 2) * int(n, 2) + int(i, 2) * int(n, 2)
-        + int(j, 2) * int(n, 2) + int(k, 2) * int(n, 2) + int(l, 2) * int(n, 2) + int(m, 2)
-        * int(n, 2) + int(a, 2) * int(o, 2) + int(b, 2) * int(o, 2) + int(c, 2) * int(o, 2)
-        + int(d, 2) * int(o, 2) + int(e, 2) * int(o, 2) + int(f, 2) * int(o, 2) + int(g, 2)
-        * int(o, 2) + int(h, 2) * int(o, 2) + int(i, 2) * int(o, 2) + int(j, 2) * int(o, 2)
-        + int(k, 2) * int(o, 2) + int(l, 2) * int(o, 2) + int(m, 2) * int(o, 2) + int(n, 2)
-        * int(o, 2) + int(a, 2) * int(p, 2) + int(b, 2) * int(p, 2) + int(c, 2) * int(p, 2)
-        + int(d, 2) * int(p, 2) + int(e, 2) * int(p, 2) + int(f, 2) * int(p, 2) + int(g, 2)
-        * int(p, 2) + int(h, 2) * int(p, 2) + int(i, 2) * int(p, 2) + int(j, 2) * int(p, 2)
-        + int(k, 2) * int(p, 2) + int(l, 2) * int(p, 2) + int(m, 2) * int(p, 2) + int(n, 2)
-        * int(p, 2) + int(o, 2) * int(p, 2) + int(a, 2) * int(q, 2) + int(b, 2) * int(q, 2)
-        + int(c, 2) * int(q, 2) + int(d, 2) * int(q, 2) + int(e, 2) * int(q, 2) + int(f, 2)
-        * int(q, 2) + int(g, 2) * int(q, 2) + int(h, 2) * int(q, 2) + int(i, 2) * int(q, 2)
-        + int(j, 2) * int(q, 2) + int(k, 2) * int(q, 2) + int(l, 2) * int(q, 2) + int(m, 2)
-        * int(q, 2) + int(n, 2) * int(q, 2) + int(o, 2) * int(q, 2) + int(p, 2) * int(q, 2)
-        + int(c, 2) * int(v, 2) + int(d, 2) * int(v, 2) + int(e, 2) * int(t, 2) + int(f, 2)
-        * int(t, 2) + int(g, 2) * int(t, 2) + int(h, 2) * int(t, 2) + int(i, 2) * int(t, 2)
-        + int(j, 2) * int(t, 2) + int(k, 2) * int(t, 2) + int(l, 2) * int(t, 2) + int(m, 2)
-        * int(t, 2) + int(n, 2) * int(t, 2) + int(o, 2) * int(t, 2) + int(p, 2) * int(t, 2)
-        + int(q, 2) * int(t, 2) + int(r, 2) * int(t, 2) + int(s, 2) * int(t, 2) + int(a, 2)
-        * int(u, 2) + int(b, 2) * int(u, 2) + int(c, 2) * int(u, 2) + int(d, 2) * int(u, 2)
-        + int(e, 2) * int(u, 2) + int(f, 2) * int(u, 2) + int(g, 2) * int(u, 2) + int(h, 2)
-        * int(u, 2) + int(i, 2) * int(u, 2) + int(j, 2) * int(u, 2) + int(k, 2) * int(u, 2)
-        + int(l, 2) * int(u, 2) + int(m, 2) * int(u, 2) + int(n, 2) * int(u, 2) + int(o, 2)
-        * int(u, 2) + int(p, 2) * int(u, 2) + int(q, 2) * int(u, 2) + int(r, 2) * int(u, 2)
-        + int(s, 2) * int(u, 2) + int(t, 2) * int(u, 2) + int(a, 2) * int(v, 2) + int(b, 2)
-        * int(v, 2) + int(a, 2) * int(r, 2) + int(b, 2) * int(r, 2) + int(c, 2) * int(r, 2)
-        + int(d, 2) * int(r, 2) + int(e, 2) * int(r, 2) + int(f, 2) * int(r, 2) + int(g, 2)
-        * int(r, 2) + int(h, 2) * int(r, 2) + int(i, 2) * int(r, 2) + int(j, 2) * int(r, 2)
-        + int(k, 2) * int(r, 2) + int(l, 2) * int(r, 2) + int(m, 2) * int(r, 2) + int(n, 2)
-        * int(r, 2) + int(o, 2) * int(r, 2) + int(p, 2) * int(r, 2) + int(q, 2) * int(r, 2)
-        + int(a, 2) * int(s, 2) + int(b, 2) * int(s, 2) + int(c, 2) * int(s, 2) + int(d, 2)
-        * int(s, 2) + int(e, 2) * int(s, 2) + int(f, 2) * int(s, 2) + int(g, 2) * int(s, 2)
-        + int(h, 2) * int(s, 2) + int(i, 2) * int(s, 2) + int(j, 2) * int(s, 2) + int(k, 2)
-        * int(s, 2) + int(l, 2) * int(s, 2) + int(m, 2) * int(s, 2) + int(n, 2) * int(s, 2)
-        + int(o, 2) * int(s, 2) + int(p, 2) * int(s, 2) + int(q, 2) * int(s, 2) + int(r, 2)
-        * int(s, 2) + int(a, 2) * int(t, 2) + int(b, 2) * int(t, 2) + int(c, 2) * int(t, 2)
-        + int(d, 2) * int(t, 2) + int(e, 2) * int(v, 2) + int(f, 2) * int(v, 2) + int(g, 2)
-        * int(v, 2) + int(h, 2) * int(v, 2) + int(i, 2) * int(v, 2) + int(j, 2) * int(v, 2)
-        + int(k, 2) * int(v, 2) + int(l, 2) * int(v, 2) + int(m, 2) * int(v, 2) + int(n, 2)
-        * int(v, 2) + int(o, 2) * int(v, 2) + int(p, 2) * int(v, 2) + int(q, 2) * int(v, 2)
-        + int(r, 2) * int(v, 2) + int(s, 2) * int(v, 2) + int(t, 2) * int(v, 2) + int(u, 2)
-        * int(v, 2) + int(a, 2) * int(w, 2) + int(b, 2) * int(w, 2) + int(c, 2) * int(w, 2)
-        + int(d, 2) * int(w, 2) + int(e, 2) * int(w, 2) + int(f, 2) * int(w, 2) + int(g, 2)
-        * int(w, 2) + int(h, 2) * int(w, 2) + int(i, 2) * int(w, 2) + int(j, 2) * int(w, 2)
-        + int(k, 2) * int(w, 2) + int(l, 2) * int(w, 2) + int(m, 2) * int(w, 2) + int(n, 2)
-        * int(w, 2) + int(o, 2) * int(w, 2) + int(p, 2) * int(w, 2) + int(q, 2) * int(w, 2)
-        + int(r, 2) * int(w, 2) + int(s, 2) * int(w, 2) + int(t, 2) * int(w, 2) + int(u, 2)
-        * int(w, 2) + int(v, 2) * int(w, 2))))
+        abs(a * b + a * c + a * d
+        + a * e + a * f + a * g + a
+        * h + a * i + a * j + b * c
+        + b * d + b * e + b * f + b
+        * g + b * h + b * i + b * j
+        + c * d + c * e + c * f + c
+        * g + c * h + c * i + c * j
+        + d * e + d * f + d * g + d
+        * h + d * i + d * j + e * f
+        + e * g + e * h + e * i + e
+        * j + f * g + f * h + f * i
+        + f * j + g * h + g * i + g
+        * j + h * i + h * j + i * j
+        + a * k + b * k + c * k + d
+        * k + e * k + f * k + g * k
+        + h * k + i * k + j * k + a
+        * l + b * l + c * l + d * l
+        + e * l + f * l + g * l + h
+        * l + i * l + j * l + k * l
+        + a * m + b * m + c * m + d
+        * m + e * m + f * m + g * m
+        + h * m + i * m + j * m + k
+        * m + l * m + a * n + b * n
+        + c * n + d * n + e * n + f
+        * n + g * n + h * n + i * n
+        + j * n + k * n + l * n + m
+        * n + a * o + b * o + c * o
+        + d * o + e * o + f * o + g
+        * o + h * o + i * o + j * o
+        + k * o + l * o + m * o + n
+        * o + a * p + b * p + c * p
+        + d * p + e * p + f * p + g
+        * p + h * p + i * p + j * p
+        + k * p + l * p + m * p + n
+        * p + o * p + a * q + b * q
+        + c * q + d * q + e * q + f
+        * q + g * q + h * q + i * q
+        + j * q + k * q + l * q + m
+        * q + n * q + o * q + p * q
+        + c * v + d * v + e * t + f
+        * t + g * t + h * t + i * t
+        + j * t + k * t + l * t + m
+        * t + n * t + o * t + p * t
+        + q * t + r * t + s * t + a
+        * u + b * u + c * u + d * u
+        + e * u + f * u + g * u + h
+        * u + i * u + j * u + k * u
+        + l * u + m * u + n * u + o
+        * u + p * u + q * u + r * u
+        + s * u + t * u + a * v + b
+        * v + a * r + b * r + c * r
+        + d * r + e * r + f * r + g
+        * r + h * r + i * r + j * r
+        + k * r + l * r + m * r + n
+        * r + o * r + p * r + q * r
+        + a * s + b * s + c * s + d
+        * s + e * s + f * s + g * s
+        + h * s + i * s + j * s + k
+        * s + l * s + m * s + n * s
+        + o * s + p * s + q * s + r
+        * s + a * t + b * t + c * t
+        + d * t + e * v + f * v + g
+        * v + h * v + i * v + j * v
+        + k * v + l * v + m * v + n
+        * v + o * v + p * v + q * v
+        + r * v + s * v + t * v + u
+        * v + a * w + b * w + c * w
+        + d * w + e * w + f * w + g
+        * w + h * w + i * w + j * w
+        + k * w + l * w + m * w + n
+        * w + o * w + p * w + q * w
+        + r * w + s * w + t * w + u
+        * w + v * w)))
 
     target_fitness = None
     variables = 23
@@ -857,7 +857,7 @@ def ex14(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -870,85 +870,85 @@ def ex14(maximize):
 
 def ex15(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x:(
-        abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
-        + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2)
-        * int(h, 2) + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2)
-        + int(b, 2) * int(d, 2) + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2)
-        * int(g, 2) + int(b, 2) * int(h, 2) + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2)
-        + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2) + int(c, 2) * int(f, 2) + int(c, 2)
-        * int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2) + int(c, 2) * int(j, 2)
-        + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2) + int(d, 2)
-        * int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)
-        + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2)
-        * int(j, 2) + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2)
-        + int(f, 2) * int(j, 2) + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2)
-        * int(j, 2) + int(h, 2) * int(i, 2) + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2)
-        + int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2) + int(c, 2) * int(k, 2) + int(d, 2)
-        * int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2) + int(g, 2) * int(k, 2)
-        + int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2) + int(a, 2)
-        * int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2)
-        + int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2)
-        * int(l, 2) + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2)
-        + int(a, 2) * int(m, 2) + int(b, 2) * int(m, 2) + int(c, 2) * int(m, 2) + int(d, 2)
-        * int(m, 2) + int(e, 2) * int(m, 2) + int(f, 2) * int(m, 2) + int(g, 2) * int(m, 2)
-        + int(h, 2) * int(m, 2) + int(i, 2) * int(m, 2) + int(j, 2) * int(m, 2) + int(k, 2)
-        * int(m, 2) + int(l, 2) * int(m, 2) + int(a, 2) * int(n, 2) + int(b, 2) * int(n, 2)
-        + int(c, 2) * int(n, 2) + int(d, 2) * int(n, 2) + int(e, 2) * int(n, 2) + int(f, 2)
-        * int(n, 2) + int(g, 2) * int(n, 2) + int(h, 2) * int(n, 2) + int(i, 2) * int(n, 2)
-        + int(j, 2) * int(n, 2) + int(k, 2) * int(n, 2) + int(l, 2) * int(n, 2) + int(m, 2)
-        * int(n, 2) + int(a, 2) * int(o, 2) + int(b, 2) * int(o, 2) + int(c, 2) * int(o, 2)
-        + int(d, 2) * int(o, 2) + int(e, 2) * int(o, 2) + int(f, 2) * int(o, 2) + int(g, 2)
-        * int(o, 2) + int(h, 2) * int(o, 2) + int(i, 2) * int(o, 2) + int(j, 2) * int(o, 2)
-        + int(k, 2) * int(o, 2) + int(l, 2) * int(o, 2) + int(m, 2) * int(o, 2) + int(n, 2)
-        * int(o, 2) + int(a, 2) * int(p, 2) + int(b, 2) * int(p, 2) + int(c, 2) * int(p, 2)
-        + int(d, 2) * int(p, 2) + int(e, 2) * int(p, 2) + int(f, 2) * int(p, 2) + int(g, 2)
-        * int(p, 2) + int(h, 2) * int(p, 2) + int(i, 2) * int(p, 2) + int(j, 2) * int(p, 2)
-        + int(k, 2) * int(p, 2) + int(l, 2) * int(p, 2) + int(m, 2) * int(p, 2) + int(n, 2)
-        * int(p, 2) + int(o, 2) * int(p, 2) + int(a, 2) * int(q, 2) + int(b, 2) * int(q, 2)
-        + int(c, 2) * int(q, 2) + int(d, 2) * int(q, 2) + int(e, 2) * int(q, 2) + int(f, 2)
-        * int(q, 2) + int(g, 2) * int(q, 2) + int(h, 2) * int(q, 2) + int(i, 2) * int(q, 2)
-        + int(j, 2) * int(q, 2) + int(k, 2) * int(q, 2) + int(l, 2) * int(q, 2) + int(m, 2)
-        * int(q, 2) + int(n, 2) * int(q, 2) + int(o, 2) * int(q, 2) + int(p, 2) * int(q, 2)
-        + int(c, 2) * int(v, 2) + int(d, 2) * int(v, 2) + int(e, 2) * int(t, 2) + int(f, 2)
-        * int(t, 2) + int(g, 2) * int(t, 2) + int(h, 2) * int(t, 2) + int(i, 2) * int(t, 2)
-        + int(j, 2) * int(t, 2) + int(k, 2) * int(t, 2) + int(l, 2) * int(t, 2) + int(m, 2)
-        * int(t, 2) + int(n, 2) * int(t, 2) + int(o, 2) * int(t, 2) + int(p, 2) * int(t, 2)
-        + int(q, 2) * int(t, 2) + int(r, 2) * int(t, 2) + int(s, 2) * int(t, 2) + int(a, 2)
-        * int(u, 2) + int(b, 2) * int(u, 2) + int(c, 2) * int(u, 2) + int(d, 2) * int(u, 2)
-        + int(e, 2) * int(u, 2) + int(f, 2) * int(u, 2) + int(g, 2) * int(u, 2) + int(h, 2)
-        * int(u, 2) + int(i, 2) * int(u, 2) + int(j, 2) * int(u, 2) + int(k, 2) * int(u, 2)
-        + int(l, 2) * int(u, 2) + int(m, 2) * int(u, 2) + int(n, 2) * int(u, 2) + int(o, 2)
-        * int(u, 2) + int(p, 2) * int(u, 2) + int(q, 2) * int(u, 2) + int(r, 2) * int(u, 2)
-        + int(s, 2) * int(u, 2) + int(t, 2) * int(u, 2) + int(a, 2) * int(v, 2) + int(b, 2)
-        * int(v, 2) + int(a, 2) * int(r, 2) + int(b, 2) * int(r, 2) + int(c, 2) * int(r, 2)
-        + int(d, 2) * int(r, 2) + int(e, 2) * int(r, 2) + int(f, 2) * int(r, 2) + int(g, 2)
-        * int(r, 2) + int(h, 2) * int(r, 2) + int(i, 2) * int(r, 2) + int(j, 2) * int(r, 2)
-        + int(k, 2) * int(r, 2) + int(l, 2) * int(r, 2) + int(m, 2) * int(r, 2) + int(n, 2)
-        * int(r, 2) + int(o, 2) * int(r, 2) + int(p, 2) * int(r, 2) + int(q, 2) * int(r, 2)
-        + int(a, 2) * int(s, 2) + int(b, 2) * int(s, 2) + int(c, 2) * int(s, 2) + int(d, 2)
-        * int(s, 2) + int(e, 2) * int(s, 2) + int(f, 2) * int(s, 2) + int(g, 2) * int(s, 2)
-        + int(h, 2) * int(s, 2) + int(i, 2) * int(s, 2) + int(j, 2) * int(s, 2) + int(k, 2)
-        * int(s, 2) + int(l, 2) * int(s, 2) + int(m, 2) * int(s, 2) + int(n, 2) * int(s, 2)
-        + int(o, 2) * int(s, 2) + int(p, 2) * int(s, 2) + int(q, 2) * int(s, 2) + int(r, 2)
-        * int(s, 2) + int(a, 2) * int(t, 2) + int(b, 2) * int(t, 2) + int(c, 2) * int(t, 2)
-        + int(d, 2) * int(t, 2) + int(e, 2) * int(v, 2) + int(f, 2) * int(v, 2) + int(g, 2)
-        * int(v, 2) + int(h, 2) * int(v, 2) + int(i, 2) * int(v, 2) + int(j, 2) * int(v, 2)
-        + int(k, 2) * int(v, 2) + int(l, 2) * int(v, 2) + int(m, 2) * int(v, 2) + int(n, 2)
-        * int(v, 2) + int(o, 2) * int(v, 2) + int(p, 2) * int(v, 2) + int(q, 2) * int(v, 2)
-        + int(r, 2) * int(v, 2) + int(s, 2) * int(v, 2) + int(t, 2) * int(v, 2) + int(u, 2)
-        * int(v, 2) + int(a, 2) * int(w, 2) + int(b, 2) * int(w, 2) + int(c, 2) * int(w, 2)
-        + int(d, 2) * int(w, 2) + int(e, 2) * int(w, 2) + int(f, 2) * int(w, 2) + int(g, 2)
-        * int(w, 2) + int(h, 2) * int(w, 2) + int(i, 2) * int(w, 2) + int(j, 2) * int(w, 2)
-        + int(k, 2) * int(w, 2) + int(l, 2) * int(w, 2) + int(m, 2) * int(w, 2) + int(n, 2)
-        * int(w, 2) + int(o, 2) * int(w, 2) + int(p, 2) * int(w, 2) + int(q, 2) * int(w, 2)
-        + int(r, 2) * int(w, 2) + int(s, 2) * int(w, 2) + int(t, 2) * int(w, 2) + int(u, 2)
-        * int(w, 2) + int(v, 2) * int(w, 2) + int(a, 2) * int(x, 2) + int(b, 2) * int(x, 2)
-        + int(c, 2) * int(x, 2) + int(d, 2) * int(x, 2) + int(e, 2) * int(x, 2) + int(f, 2)
-        * int(x, 2) + int(g, 2) * int(x, 2) + int(h, 2) * int(x, 2) + int(i, 2) * int(x, 2)
-        + int(j, 2) * int(x, 2) + int(k, 2) * int(x, 2) + int(l, 2) * int(x, 2) + int(m, 2)
-        * int(x, 2) + int(n, 2) * int(x, 2) + int(o, 2) * int(x, 2) + int(p, 2) * int(x, 2)
-        + int(q, 2) * int(x, 2) + int(r, 2) * int(x, 2) + int(s, 2) * int(x, 2) + int(t, 2)
-        * int(x, 2) + int(u, 2) * int(x, 2) + int(v, 2) * int(x, 2) + int(w, 2) * int(x, 2))))
+        abs(a * b + a * c + a * d
+        + a * e + a * f + a * g + a
+        * h + a * i + a * j + b * c
+        + b * d + b * e + b * f + b
+        * g + b * h + b * i + b * j
+        + c * d + c * e + c * f + c
+        * g + c * h + c * i + c * j
+        + d * e + d * f + d * g + d
+        * h + d * i + d * j + e * f
+        + e * g + e * h + e * i + e
+        * j + f * g + f * h + f * i
+        + f * j + g * h + g * i + g
+        * j + h * i + h * j + i * j
+        + a * k + b * k + c * k + d
+        * k + e * k + f * k + g * k
+        + h * k + i * k + j * k + a
+        * l + b * l + c * l + d * l
+        + e * l + f * l + g * l + h
+        * l + i * l + j * l + k * l
+        + a * m + b * m + c * m + d
+        * m + e * m + f * m + g * m
+        + h * m + i * m + j * m + k
+        * m + l * m + a * n + b * n
+        + c * n + d * n + e * n + f
+        * n + g * n + h * n + i * n
+        + j * n + k * n + l * n + m
+        * n + a * o + b * o + c * o
+        + d * o + e * o + f * o + g
+        * o + h * o + i * o + j * o
+        + k * o + l * o + m * o + n
+        * o + a * p + b * p + c * p
+        + d * p + e * p + f * p + g
+        * p + h * p + i * p + j * p
+        + k * p + l * p + m * p + n
+        * p + o * p + a * q + b * q
+        + c * q + d * q + e * q + f
+        * q + g * q + h * q + i * q
+        + j * q + k * q + l * q + m
+        * q + n * q + o * q + p * q
+        + c * v + d * v + e * t + f
+        * t + g * t + h * t + i * t
+        + j * t + k * t + l * t + m
+        * t + n * t + o * t + p * t
+        + q * t + r * t + s * t + a
+        * u + b * u + c * u + d * u
+        + e * u + f * u + g * u + h
+        * u + i * u + j * u + k * u
+        + l * u + m * u + n * u + o
+        * u + p * u + q * u + r * u
+        + s * u + t * u + a * v + b
+        * v + a * r + b * r + c * r
+        + d * r + e * r + f * r + g
+        * r + h * r + i * r + j * r
+        + k * r + l * r + m * r + n
+        * r + o * r + p * r + q * r
+        + a * s + b * s + c * s + d
+        * s + e * s + f * s + g * s
+        + h * s + i * s + j * s + k
+        * s + l * s + m * s + n * s
+        + o * s + p * s + q * s + r
+        * s + a * t + b * t + c * t
+        + d * t + e * v + f * v + g
+        * v + h * v + i * v + j * v
+        + k * v + l * v + m * v + n
+        * v + o * v + p * v + q * v
+        + r * v + s * v + t * v + u
+        * v + a * w + b * w + c * w
+        + d * w + e * w + f * w + g
+        * w + h * w + i * w + j * w
+        + k * w + l * w + m * w + n
+        * w + o * w + p * w + q * w
+        + r * w + s * w + t * w + u
+        * w + v * w + a * x + b * x
+        + c * x + d * x + e * x + f
+        * x + g * x + h * x + i * x
+        + j * x + k * x + l * x + m
+        * x + n * x + o * x + p * x
+        + q * x + r * x + s * x + t
+        * x + u * x + v * x + w * x)))
 
     target_fitness = None
     variables = 24
@@ -958,7 +958,7 @@ def ex15(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -970,92 +970,92 @@ def ex15(maximize):
 
 def ex16(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y:(
-        abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
-        + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2)
-        * int(h, 2) + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2)
-        + int(b, 2) * int(d, 2) + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2)
-        * int(g, 2) + int(b, 2) * int(h, 2) + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2)
-        + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2) + int(c, 2) * int(f, 2) + int(c, 2)
-        * int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2) + int(c, 2) * int(j, 2)
-        + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2) + int(d, 2)
-        * int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)
-        + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2)
-        * int(j, 2) + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2)
-        + int(f, 2) * int(j, 2) + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2)
-        * int(j, 2) + int(h, 2) * int(i, 2) + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2)
-        + int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2) + int(c, 2) * int(k, 2) + int(d, 2)
-        * int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2) + int(g, 2) * int(k, 2)
-        + int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2) + int(a, 2)
-        * int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2)
-        + int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2)
-        * int(l, 2) + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2)
-        + int(a, 2) * int(m, 2) + int(b, 2) * int(m, 2) + int(c, 2) * int(m, 2) + int(d, 2)
-        * int(m, 2) + int(e, 2) * int(m, 2) + int(f, 2) * int(m, 2) + int(g, 2) * int(m, 2)
-        + int(h, 2) * int(m, 2) + int(i, 2) * int(m, 2) + int(j, 2) * int(m, 2) + int(k, 2)
-        * int(m, 2) + int(l, 2) * int(m, 2) + int(a, 2) * int(n, 2) + int(b, 2) * int(n, 2)
-        + int(c, 2) * int(n, 2) + int(d, 2) * int(n, 2) + int(e, 2) * int(n, 2) + int(f, 2)
-        * int(n, 2) + int(g, 2) * int(n, 2) + int(h, 2) * int(n, 2) + int(i, 2) * int(n, 2)
-        + int(j, 2) * int(n, 2) + int(k, 2) * int(n, 2) + int(l, 2) * int(n, 2) + int(m, 2)
-        * int(n, 2) + int(a, 2) * int(o, 2) + int(b, 2) * int(o, 2) + int(c, 2) * int(o, 2)
-        + int(d, 2) * int(o, 2) + int(e, 2) * int(o, 2) + int(f, 2) * int(o, 2) + int(g, 2)
-        * int(o, 2) + int(h, 2) * int(o, 2) + int(i, 2) * int(o, 2) + int(j, 2) * int(o, 2)
-        + int(k, 2) * int(o, 2) + int(l, 2) * int(o, 2) + int(m, 2) * int(o, 2) + int(n, 2)
-        * int(o, 2) + int(a, 2) * int(p, 2) + int(b, 2) * int(p, 2) + int(c, 2) * int(p, 2)
-        + int(d, 2) * int(p, 2) + int(e, 2) * int(p, 2) + int(f, 2) * int(p, 2) + int(g, 2)
-        * int(p, 2) + int(h, 2) * int(p, 2) + int(i, 2) * int(p, 2) + int(j, 2) * int(p, 2)
-        + int(k, 2) * int(p, 2) + int(l, 2) * int(p, 2) + int(m, 2) * int(p, 2) + int(n, 2)
-        * int(p, 2) + int(o, 2) * int(p, 2) + int(a, 2) * int(q, 2) + int(b, 2) * int(q, 2)
-        + int(c, 2) * int(q, 2) + int(d, 2) * int(q, 2) + int(e, 2) * int(q, 2) + int(f, 2)
-        * int(q, 2) + int(g, 2) * int(q, 2) + int(h, 2) * int(q, 2) + int(i, 2) * int(q, 2)
-        + int(j, 2) * int(q, 2) + int(k, 2) * int(q, 2) + int(l, 2) * int(q, 2) + int(m, 2)
-        * int(q, 2) + int(n, 2) * int(q, 2) + int(o, 2) * int(q, 2) + int(p, 2) * int(q, 2)
-        + int(c, 2) * int(v, 2) + int(d, 2) * int(v, 2) + int(e, 2) * int(t, 2) + int(f, 2)
-        * int(t, 2) + int(g, 2) * int(t, 2) + int(h, 2) * int(t, 2) + int(i, 2) * int(t, 2)
-        + int(j, 2) * int(t, 2) + int(k, 2) * int(t, 2) + int(l, 2) * int(t, 2) + int(m, 2)
-        * int(t, 2) + int(n, 2) * int(t, 2) + int(o, 2) * int(t, 2) + int(p, 2) * int(t, 2)
-        + int(q, 2) * int(t, 2) + int(r, 2) * int(t, 2) + int(s, 2) * int(t, 2) + int(a, 2)
-        * int(u, 2) + int(b, 2) * int(u, 2) + int(c, 2) * int(u, 2) + int(d, 2) * int(u, 2)
-        + int(e, 2) * int(u, 2) + int(f, 2) * int(u, 2) + int(g, 2) * int(u, 2) + int(h, 2)
-        * int(u, 2) + int(i, 2) * int(u, 2) + int(j, 2) * int(u, 2) + int(k, 2) * int(u, 2)
-        + int(l, 2) * int(u, 2) + int(m, 2) * int(u, 2) + int(n, 2) * int(u, 2) + int(o, 2)
-        * int(u, 2) + int(p, 2) * int(u, 2) + int(q, 2) * int(u, 2) + int(r, 2) * int(u, 2)
-        + int(s, 2) * int(u, 2) + int(t, 2) * int(u, 2) + int(a, 2) * int(v, 2) + int(b, 2)
-        * int(v, 2) + int(a, 2) * int(r, 2) + int(b, 2) * int(r, 2) + int(c, 2) * int(r, 2)
-        + int(d, 2) * int(r, 2) + int(e, 2) * int(r, 2) + int(f, 2) * int(r, 2) + int(g, 2)
-        * int(r, 2) + int(h, 2) * int(r, 2) + int(i, 2) * int(r, 2) + int(j, 2) * int(r, 2)
-        + int(k, 2) * int(r, 2) + int(l, 2) * int(r, 2) + int(m, 2) * int(r, 2) + int(n, 2)
-        * int(r, 2) + int(o, 2) * int(r, 2) + int(p, 2) * int(r, 2) + int(q, 2) * int(r, 2)
-        + int(a, 2) * int(s, 2) + int(b, 2) * int(s, 2) + int(c, 2) * int(s, 2) + int(d, 2)
-        * int(s, 2) + int(e, 2) * int(s, 2) + int(f, 2) * int(s, 2) + int(g, 2) * int(s, 2)
-        + int(h, 2) * int(s, 2) + int(i, 2) * int(s, 2) + int(j, 2) * int(s, 2) + int(k, 2)
-        * int(s, 2) + int(l, 2) * int(s, 2) + int(m, 2) * int(s, 2) + int(n, 2) * int(s, 2)
-        + int(o, 2) * int(s, 2) + int(p, 2) * int(s, 2) + int(q, 2) * int(s, 2) + int(r, 2)
-        * int(s, 2) + int(a, 2) * int(t, 2) + int(b, 2) * int(t, 2) + int(c, 2) * int(t, 2)
-        + int(d, 2) * int(t, 2) + int(e, 2) * int(v, 2) + int(f, 2) * int(v, 2) + int(g, 2)
-        * int(v, 2) + int(h, 2) * int(v, 2) + int(i, 2) * int(v, 2) + int(j, 2) * int(v, 2)
-        + int(k, 2) * int(v, 2) + int(l, 2) * int(v, 2) + int(m, 2) * int(v, 2) + int(n, 2)
-        * int(v, 2) + int(o, 2) * int(v, 2) + int(p, 2) * int(v, 2) + int(q, 2) * int(v, 2)
-        + int(r, 2) * int(v, 2) + int(s, 2) * int(v, 2) + int(t, 2) * int(v, 2) + int(u, 2)
-        * int(v, 2) + int(a, 2) * int(w, 2) + int(b, 2) * int(w, 2) + int(c, 2) * int(w, 2)
-        + int(d, 2) * int(w, 2) + int(e, 2) * int(w, 2) + int(f, 2) * int(w, 2) + int(g, 2)
-        * int(w, 2) + int(h, 2) * int(w, 2) + int(i, 2) * int(w, 2) + int(j, 2) * int(w, 2)
-        + int(k, 2) * int(w, 2) + int(l, 2) * int(w, 2) + int(m, 2) * int(w, 2) + int(n, 2)
-        * int(w, 2) + int(o, 2) * int(w, 2) + int(p, 2) * int(w, 2) + int(q, 2) * int(w, 2)
-        + int(r, 2) * int(w, 2) + int(s, 2) * int(w, 2) + int(t, 2) * int(w, 2) + int(u, 2)
-        * int(w, 2) + int(v, 2) * int(w, 2) + int(a, 2) * int(x, 2) + int(b, 2) * int(x, 2)
-        + int(c, 2) * int(x, 2) + int(d, 2) * int(x, 2) + int(e, 2) * int(x, 2) + int(f, 2)
-        * int(x, 2) + int(g, 2) * int(x, 2) + int(h, 2) * int(x, 2) + int(i, 2) * int(x, 2)
-        + int(j, 2) * int(x, 2) + int(k, 2) * int(x, 2) + int(l, 2) * int(x, 2) + int(m, 2)
-        * int(x, 2) + int(n, 2) * int(x, 2) + int(o, 2) * int(x, 2) + int(p, 2) * int(x, 2)
-        + int(q, 2) * int(x, 2) + int(r, 2) * int(x, 2) + int(s, 2) * int(x, 2) + int(t, 2)
-        * int(x, 2) + int(u, 2) * int(x, 2) + int(v, 2) * int(x, 2) + int(w, 2) * int(x, 2)
-        + int(a, 2) * int(y, 2) + int(b, 2) * int(y, 2) + int(c, 2) * int(y, 2) + int(d, 2)
-        * int(y, 2) + int(e, 2) * int(y, 2) + int(f, 2) * int(y, 2) + int(g, 2) * int(y, 2)
-        + int(h, 2) * int(y, 2) + int(i, 2) * int(y, 2) + int(j, 2) * int(y, 2) + int(k, 2)
-        * int(y, 2) + int(l, 2) * int(y, 2) + int(m, 2) * int(y, 2) + int(n, 2) * int(y, 2)
-        + int(o, 2) * int(y, 2) + int(p, 2) * int(y, 2) + int(q, 2) * int(y, 2) + int(r, 2)
-        * int(y, 2) + int(s, 2) * int(y, 2) + int(t, 2) * int(y, 2) + int(u, 2) * int(y, 2)
-        + int(v, 2) * int(y, 2) + int(w, 2) * int(y, 2) + int(x, 2) * int(y, 2))))
+        abs(a * b + a * c + a * d
+        + a * e + a * f + a * g + a
+        * h + a * i + a * j + b * c
+        + b * d + b * e + b * f + b
+        * g + b * h + b * i + b * j
+        + c * d + c * e + c * f + c
+        * g + c * h + c * i + c * j
+        + d * e + d * f + d * g + d
+        * h + d * i + d * j + e * f
+        + e * g + e * h + e * i + e
+        * j + f * g + f * h + f * i
+        + f * j + g * h + g * i + g
+        * j + h * i + h * j + i * j
+        + a * k + b * k + c * k + d
+        * k + e * k + f * k + g * k
+        + h * k + i * k + j * k + a
+        * l + b * l + c * l + d * l
+        + e * l + f * l + g * l + h
+        * l + i * l + j * l + k * l
+        + a * m + b * m + c * m + d
+        * m + e * m + f * m + g * m
+        + h * m + i * m + j * m + k
+        * m + l * m + a * n + b * n
+        + c * n + d * n + e * n + f
+        * n + g * n + h * n + i * n
+        + j * n + k * n + l * n + m
+        * n + a * o + b * o + c * o
+        + d * o + e * o + f * o + g
+        * o + h * o + i * o + j * o
+        + k * o + l * o + m * o + n
+        * o + a * p + b * p + c * p
+        + d * p + e * p + f * p + g
+        * p + h * p + i * p + j * p
+        + k * p + l * p + m * p + n
+        * p + o * p + a * q + b * q
+        + c * q + d * q + e * q + f
+        * q + g * q + h * q + i * q
+        + j * q + k * q + l * q + m
+        * q + n * q + o * q + p * q
+        + c * v + d * v + e * t + f
+        * t + g * t + h * t + i * t
+        + j * t + k * t + l * t + m
+        * t + n * t + o * t + p * t
+        + q * t + r * t + s * t + a
+        * u + b * u + c * u + d * u
+        + e * u + f * u + g * u + h
+        * u + i * u + j * u + k * u
+        + l * u + m * u + n * u + o
+        * u + p * u + q * u + r * u
+        + s * u + t * u + a * v + b
+        * v + a * r + b * r + c * r
+        + d * r + e * r + f * r + g
+        * r + h * r + i * r + j * r
+        + k * r + l * r + m * r + n
+        * r + o * r + p * r + q * r
+        + a * s + b * s + c * s + d
+        * s + e * s + f * s + g * s
+        + h * s + i * s + j * s + k
+        * s + l * s + m * s + n * s
+        + o * s + p * s + q * s + r
+        * s + a * t + b * t + c * t
+        + d * t + e * v + f * v + g
+        * v + h * v + i * v + j * v
+        + k * v + l * v + m * v + n
+        * v + o * v + p * v + q * v
+        + r * v + s * v + t * v + u
+        * v + a * w + b * w + c * w
+        + d * w + e * w + f * w + g
+        * w + h * w + i * w + j * w
+        + k * w + l * w + m * w + n
+        * w + o * w + p * w + q * w
+        + r * w + s * w + t * w + u
+        * w + v * w + a * x + b * x
+        + c * x + d * x + e * x + f
+        * x + g * x + h * x + i * x
+        + j * x + k * x + l * x + m
+        * x + n * x + o * x + p * x
+        + q * x + r * x + s * x + t
+        * x + u * x + v * x + w * x
+        + a * y + b * y + c * y + d
+        * y + e * y + f * y + g * y
+        + h * y + i * y + j * y + k
+        * y + l * y + m * y + n * y
+        + o * y + p * y + q * y + r
+        * y + s * y + t * y + u * y
+        + v * y + w * y + x * y)))
 
     target_fitness = None
     variables = 25
@@ -1065,7 +1065,7 @@ def ex16(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -1078,99 +1078,99 @@ def ex16(maximize):
 
 def ex17(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z:(
-        abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)+
-        int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2)*
-        int(h, 2) + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2)
-        + int(b, 2) * int(d, 2) + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2)
-        * int(g, 2) + int(b, 2) * int(h, 2) + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2)
-        + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2) + int(c, 2) * int(f, 2) + int(c, 2)
-        * int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2) + int(c, 2) * int(j, 2)
-        + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2) + int(d, 2)
-        * int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)
-        + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2)
-        * int(j, 2) + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2)
-        + int(f, 2) * int(j, 2) + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2)
-        * int(j, 2) + int(h, 2) * int(i, 2) + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2)
-        + int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2) + int(c, 2) * int(k, 2) + int(d, 2)
-        * int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2) + int(g, 2) * int(k, 2)
-        + int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2) + int(a, 2)
-        * int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2)
-        + int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2)
-        * int(l, 2) + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2)
-        + int(a, 2) * int(m, 2) + int(b, 2) * int(m, 2) + int(c, 2) * int(m, 2) + int(d, 2)
-        * int(m, 2) + int(e, 2) * int(m, 2) + int(f, 2) * int(m, 2) + int(g, 2) * int(m, 2)
-        + int(h, 2) * int(m, 2) + int(i, 2) * int(m, 2) + int(j, 2) * int(m, 2) + int(k, 2)
-        * int(m, 2) + int(l, 2) * int(m, 2) + int(a, 2) * int(n, 2) + int(b, 2) * int(n, 2)
-        + int(c, 2) * int(n, 2) + int(d, 2) * int(n, 2) + int(e, 2) * int(n, 2) + int(f, 2)
-        * int(n, 2) + int(g, 2) * int(n, 2) + int(h, 2) * int(n, 2) + int(i, 2) * int(n, 2)
-        + int(j, 2) * int(n, 2) + int(k, 2) * int(n, 2) + int(l, 2) * int(n, 2) + int(m, 2)
-        * int(n, 2) + int(a, 2) * int(o, 2) + int(b, 2) * int(o, 2) + int(c, 2) * int(o, 2)
-        + int(d, 2) * int(o, 2) + int(e, 2) * int(o, 2) + int(f, 2) * int(o, 2) + int(g, 2)
-        * int(o, 2) + int(h, 2) * int(o, 2) + int(i, 2) * int(o, 2) + int(j, 2) * int(o, 2)
-        + int(k, 2) * int(o, 2) + int(l, 2) * int(o, 2) + int(m, 2) * int(o, 2) + int(n, 2)
-        * int(o, 2) + int(a, 2) * int(p, 2) + int(b, 2) * int(p, 2) + int(c, 2) * int(p, 2)
-        + int(d, 2) * int(p, 2) + int(e, 2) * int(p, 2) + int(f, 2) * int(p, 2) + int(g, 2)
-        * int(p, 2) + int(h, 2) * int(p, 2) + int(i, 2) * int(p, 2) + int(j, 2) * int(p, 2)
-        + int(k, 2) * int(p, 2) + int(l, 2) * int(p, 2) + int(m, 2) * int(p, 2) + int(n, 2)
-        * int(p, 2) + int(o, 2) * int(p, 2) + int(a, 2) * int(q, 2) + int(b, 2) * int(q, 2)
-        + int(c, 2) * int(q, 2) + int(d, 2) * int(q, 2) + int(e, 2) * int(q, 2) + int(f, 2)
-        * int(q, 2) + int(g, 2) * int(q, 2) + int(h, 2) * int(q, 2) + int(i, 2) * int(q, 2)
-        + int(j, 2) * int(q, 2) + int(k, 2) * int(q, 2) + int(l, 2) * int(q, 2) + int(m, 2)
-        * int(q, 2) + int(n, 2) * int(q, 2) + int(o, 2) * int(q, 2) + int(p, 2) * int(q, 2)
-        + int(c, 2) * int(v, 2) + int(d, 2) * int(v, 2) + int(e, 2) * int(t, 2) + int(f, 2)
-        * int(t, 2) + int(g, 2) * int(t, 2) + int(h, 2) * int(t, 2) + int(i, 2) * int(t, 2)
-        + int(j, 2) * int(t, 2) + int(k, 2) * int(t, 2) + int(l, 2) * int(t, 2) + int(m, 2)
-        * int(t, 2) + int(n, 2) * int(t, 2) + int(o, 2) * int(t, 2) + int(p, 2) * int(t, 2)
-        + int(q, 2) * int(t, 2) + int(r, 2) * int(t, 2) + int(s, 2) * int(t, 2) + int(a, 2)
-        * int(u, 2) + int(b, 2) * int(u, 2) + int(c, 2) * int(u, 2) + int(d, 2) * int(u, 2)
-        + int(e, 2) * int(u, 2) + int(f, 2) * int(u, 2) + int(g, 2) * int(u, 2) + int(h, 2)
-        * int(u, 2) + int(i, 2) * int(u, 2) + int(j, 2) * int(u, 2) + int(k, 2) * int(u, 2)
-        + int(l, 2) * int(u, 2) + int(m, 2) * int(u, 2) + int(n, 2) * int(u, 2) + int(o, 2)
-        * int(u, 2) + int(p, 2) * int(u, 2) + int(q, 2) * int(u, 2) + int(r, 2) * int(u, 2)
-        + int(s, 2) * int(u, 2) + int(t, 2) * int(u, 2) + int(a, 2) * int(v, 2) + int(b, 2)
-        * int(v, 2) + int(a, 2) * int(r, 2) + int(b, 2) * int(r, 2) + int(c, 2) * int(r, 2)
-        + int(d, 2) * int(r, 2) + int(e, 2) * int(r, 2) + int(f, 2) * int(r, 2) + int(g, 2)
-        * int(r, 2) + int(h, 2) * int(r, 2) + int(i, 2) * int(r, 2) + int(j, 2) * int(r, 2)
-        + int(k, 2) * int(r, 2) + int(l, 2) * int(r, 2) + int(m, 2) * int(r, 2) + int(n, 2)
-        * int(r, 2) + int(o, 2) * int(r, 2) + int(p, 2) * int(r, 2) + int(q, 2) * int(r, 2)
-        + int(a, 2) * int(s, 2) + int(b, 2) * int(s, 2) + int(c, 2) * int(s, 2) + int(d, 2)
-        * int(s, 2) + int(e, 2) * int(s, 2) + int(f, 2) * int(s, 2) + int(g, 2) * int(s, 2)
-        + int(h, 2) * int(s, 2) + int(i, 2) * int(s, 2) + int(j, 2) * int(s, 2) + int(k, 2)
-        * int(s, 2) + int(l, 2) * int(s, 2) + int(m, 2) * int(s, 2) + int(n, 2) * int(s, 2)
-        + int(o, 2) * int(s, 2) + int(p, 2) * int(s, 2) + int(q, 2) * int(s, 2) + int(r, 2)
-        * int(s, 2) + int(a, 2) * int(t, 2) + int(b, 2) * int(t, 2) + int(c, 2) * int(t, 2)
-        + int(d, 2) * int(t, 2) + int(e, 2) * int(v, 2) + int(f, 2) * int(v, 2) + int(g, 2)
-        * int(v, 2) + int(h, 2) * int(v, 2) + int(i, 2) * int(v, 2) + int(j, 2) * int(v, 2)
-        + int(k, 2) * int(v, 2) + int(l, 2) * int(v, 2) + int(m, 2) * int(v, 2) + int(n, 2)
-        * int(v, 2) + int(o, 2) * int(v, 2) + int(p, 2) * int(v, 2) + int(q, 2) * int(v, 2)
-        + int(r, 2) * int(v, 2) + int(s, 2) * int(v, 2) + int(t, 2) * int(v, 2) + int(u, 2)
-        * int(v, 2) + int(a, 2) * int(w, 2) + int(b, 2) * int(w, 2) + int(c, 2) * int(w, 2)
-        + int(d, 2) * int(w, 2) + int(e, 2) * int(w, 2) + int(f, 2) * int(w, 2) + int(g, 2)
-        * int(w, 2) + int(h, 2) * int(w, 2) + int(i, 2) * int(w, 2) + int(j, 2) * int(w, 2)
-        + int(k, 2) * int(w, 2) + int(l, 2) * int(w, 2) + int(m, 2) * int(w, 2) + int(n, 2)
-        * int(w, 2) + int(o, 2) * int(w, 2) + int(p, 2) * int(w, 2) + int(q, 2) * int(w, 2)
-        + int(r, 2) * int(w, 2) + int(s, 2) * int(w, 2) + int(t, 2) * int(w, 2) + int(u, 2)
-        * int(w, 2) + int(v, 2) * int(w, 2) + int(a, 2) * int(x, 2) + int(b, 2) * int(x, 2)
-        + int(c, 2) * int(x, 2) + int(d, 2) * int(x, 2) + int(e, 2) * int(x, 2) + int(f, 2)
-        * int(x, 2) + int(g, 2) * int(x, 2) + int(h, 2) * int(x, 2) + int(i, 2) * int(x, 2)
-        + int(j, 2) * int(x, 2) + int(k, 2) * int(x, 2) + int(l, 2) * int(x, 2) + int(m, 2)
-        * int(x, 2) + int(n, 2) * int(x, 2) + int(o, 2) * int(x, 2) + int(p, 2) * int(x, 2)
-        + int(q, 2) * int(x, 2) + int(r, 2) * int(x, 2) + int(s, 2) * int(x, 2) + int(t, 2)
-        * int(x, 2) + int(u, 2) * int(x, 2) + int(v, 2) * int(x, 2) + int(w, 2) * int(x, 2)
-        + int(a, 2) * int(y, 2) + int(b, 2) * int(y, 2) + int(c, 2) * int(y, 2) + int(d, 2)
-        * int(y, 2) + int(e, 2) * int(y, 2) + int(f, 2) * int(y, 2) + int(g, 2) * int(y, 2)
-        + int(h, 2) * int(y, 2) + int(i, 2) * int(y, 2) + int(j, 2) * int(y, 2) + int(k, 2)
-        * int(y, 2) + int(l, 2) * int(y, 2) + int(m, 2) * int(y, 2) + int(n, 2) * int(y, 2)
-        + int(o, 2) * int(y, 2) + int(p, 2) * int(y, 2) + int(q, 2) * int(y, 2) + int(r, 2)
-        * int(y, 2) + int(s, 2) * int(y, 2) + int(t, 2) * int(y, 2) + int(u, 2) * int(y, 2)
-        + int(v, 2) * int(y, 2) + int(w, 2) * int(y, 2) + int(x, 2) * int(y, 2) + int(a, 2)
-        * int(z, 2) + int(b, 2) * int(z, 2) + int(c, 2) * int(z, 2) + int(d, 2) * int(z, 2)
-        + int(e, 2) * int(z, 2) + int(f, 2) * int(z, 2) + int(g, 2) * int(z, 2) + int(h, 2)
-        * int(z, 2) + int(i, 2) * int(z, 2) + int(j, 2) * int(z, 2) + int(k, 2) * int(z, 2)
-        + int(l, 2) * int(z, 2) + int(m, 2) * int(z, 2) + int(n, 2) * int(z, 2) + int(o, 2)
-        * int(z, 2) + int(p, 2) * int(z, 2) + int(q, 2) * int(z, 2) + int(r, 2) * int(z, 2)
-        + int(s, 2) * int(z, 2) + int(t, 2) * int(z, 2) + int(u, 2) * int(z, 2) + int(v, 2)
-        * int(z, 2) + int(w, 2) * int(z, 2) + int(x, 2) * int(z, 2) + int(y, 2) * int(z, 2))))
+        abs(a * b + a * c + a * d+
+        a * e + a * f + a * g + a*
+        h + a * i + a * j + b * c
+        + b * d + b * e + b * f + b
+        * g + b * h + b * i + b * j
+        + c * d + c * e + c * f + c
+        * g + c * h + c * i + c * j
+        + d * e + d * f + d * g + d
+        * h + d * i + d * j + e * f
+        + e * g + e * h + e * i + e
+        * j + f * g + f * h + f * i
+        + f * j + g * h + g * i + g
+        * j + h * i + h * j + i * j
+        + a * k + b * k + c * k + d
+        * k + e * k + f * k + g * k
+        + h * k + i * k + j * k + a
+        * l + b * l + c * l + d * l
+        + e * l + f * l + g * l + h
+        * l + i * l + j * l + k * l
+        + a * m + b * m + c * m + d
+        * m + e * m + f * m + g * m
+        + h * m + i * m + j * m + k
+        * m + l * m + a * n + b * n
+        + c * n + d * n + e * n + f
+        * n + g * n + h * n + i * n
+        + j * n + k * n + l * n + m
+        * n + a * o + b * o + c * o
+        + d * o + e * o + f * o + g
+        * o + h * o + i * o + j * o
+        + k * o + l * o + m * o + n
+        * o + a * p + b * p + c * p
+        + d * p + e * p + f * p + g
+        * p + h * p + i * p + j * p
+        + k * p + l * p + m * p + n
+        * p + o * p + a * q + b * q
+        + c * q + d * q + e * q + f
+        * q + g * q + h * q + i * q
+        + j * q + k * q + l * q + m
+        * q + n * q + o * q + p * q
+        + c * v + d * v + e * t + f
+        * t + g * t + h * t + i * t
+        + j * t + k * t + l * t + m
+        * t + n * t + o * t + p * t
+        + q * t + r * t + s * t + a
+        * u + b * u + c * u + d * u
+        + e * u + f * u + g * u + h
+        * u + i * u + j * u + k * u
+        + l * u + m * u + n * u + o
+        * u + p * u + q * u + r * u
+        + s * u + t * u + a * v + b
+        * v + a * r + b * r + c * r
+        + d * r + e * r + f * r + g
+        * r + h * r + i * r + j * r
+        + k * r + l * r + m * r + n
+        * r + o * r + p * r + q * r
+        + a * s + b * s + c * s + d
+        * s + e * s + f * s + g * s
+        + h * s + i * s + j * s + k
+        * s + l * s + m * s + n * s
+        + o * s + p * s + q * s + r
+        * s + a * t + b * t + c * t
+        + d * t + e * v + f * v + g
+        * v + h * v + i * v + j * v
+        + k * v + l * v + m * v + n
+        * v + o * v + p * v + q * v
+        + r * v + s * v + t * v + u
+        * v + a * w + b * w + c * w
+        + d * w + e * w + f * w + g
+        * w + h * w + i * w + j * w
+        + k * w + l * w + m * w + n
+        * w + o * w + p * w + q * w
+        + r * w + s * w + t * w + u
+        * w + v * w + a * x + b * x
+        + c * x + d * x + e * x + f
+        * x + g * x + h * x + i * x
+        + j * x + k * x + l * x + m
+        * x + n * x + o * x + p * x
+        + q * x + r * x + s * x + t
+        * x + u * x + v * x + w * x
+        + a * y + b * y + c * y + d
+        * y + e * y + f * y + g * y
+        + h * y + i * y + j * y + k
+        * y + l * y + m * y + n * y
+        + o * y + p * y + q * y + r
+        * y + s * y + t * y + u * y
+        + v * y + w * y + x * y + a
+        * z + b * z + c * z + d * z
+        + e * z + f * z + g * z + h
+        * z + i * z + j * z + k * z
+        + l * z + m * z + n * z + o
+        * z + p * z + q * z + r * z
+        + s * z + t * z + u * z + v
+        * z + w * z + x * z + y * z)))
 
     target_fitness = None
     variables = 26
@@ -1180,7 +1180,7 @@ def ex17(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -1192,108 +1192,108 @@ def ex17(maximize):
 
 def ex18(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, a2:(
-        abs(int(a, 2) * int(b, 2) + int(a, 2) * int(c, 2) + int(a, 2) * int(d, 2)
-        + int(a, 2) * int(e, 2) + int(a, 2) * int(f, 2) + int(a, 2) * int(g, 2) + int(a, 2)
-        * int(h, 2) + int(a, 2) * int(i, 2) + int(a, 2) * int(j, 2) + int(b, 2) * int(c, 2)
-        + int(b, 2) * int(d, 2) + int(b, 2) * int(e, 2) + int(b, 2) * int(f, 2) + int(b, 2)
-        * int(g, 2) + int(b, 2) * int(h, 2) + int(b, 2) * int(i, 2) + int(b, 2) * int(j, 2)
-        + int(c, 2) * int(d, 2) + int(c, 2) * int(e, 2) + int(c, 2) * int(f, 2) + int(c, 2)
-        * int(g, 2) + int(c, 2) * int(h, 2) + int(c, 2) * int(i, 2) + int(c, 2) * int(j, 2)
-        + int(d, 2) * int(e, 2) + int(d, 2) * int(f, 2) + int(d, 2) * int(g, 2) + int(d, 2)
-        * int(h, 2) + int(d, 2) * int(i, 2) + int(d, 2) * int(j, 2) + int(e, 2) * int(f, 2)
-        + int(e, 2) * int(g, 2) + int(e, 2) * int(h, 2) + int(e, 2) * int(i, 2) + int(e, 2)
-        * int(j, 2) + int(f, 2) * int(g, 2) + int(f, 2) * int(h, 2) + int(f, 2) * int(i, 2)
-        + int(f, 2) * int(j, 2) + int(g, 2) * int(h, 2) + int(g, 2) * int(i, 2) + int(g, 2)
-        * int(j, 2) + int(h, 2) * int(i, 2) + int(h, 2) * int(j, 2) + int(i, 2) * int(j, 2)
-        + int(a, 2) * int(k, 2) + int(b, 2) * int(k, 2) + int(c, 2) * int(k, 2) + int(d, 2)
-        * int(k, 2) + int(e, 2) * int(k, 2) + int(f, 2) * int(k, 2) + int(g, 2) * int(k, 2)
-        + int(h, 2) * int(k, 2) + int(i, 2) * int(k, 2) + int(j, 2) * int(k, 2) + int(a, 2)
-        * int(l, 2) + int(b, 2) * int(l, 2) + int(c, 2) * int(l, 2) + int(d, 2) * int(l, 2)
-        + int(e, 2) * int(l, 2) + int(f, 2) * int(l, 2) + int(g, 2) * int(l, 2) + int(h, 2)
-        * int(l, 2) + int(i, 2) * int(l, 2) + int(j, 2) * int(l, 2) + int(k, 2) * int(l, 2)
-        + int(a, 2) * int(m, 2) + int(b, 2) * int(m, 2) + int(c, 2) * int(m, 2) + int(d, 2)
-        * int(m, 2) + int(e, 2) * int(m, 2) + int(f, 2) * int(m, 2) + int(g, 2) * int(m, 2)
-        + int(h, 2) * int(m, 2) + int(i, 2) * int(m, 2) + int(j, 2) * int(m, 2) + int(k, 2)
-        * int(m, 2) + int(l, 2) * int(m, 2) + int(a, 2) * int(n, 2) + int(b, 2) * int(n, 2)
-        + int(c, 2) * int(n, 2) + int(d, 2) * int(n, 2) + int(e, 2) * int(n, 2) + int(f, 2)
-        * int(n, 2) + int(g, 2) * int(n, 2) + int(h, 2) * int(n, 2) + int(i, 2) * int(n, 2)
-        + int(j, 2) * int(n, 2) + int(k, 2) * int(n, 2) + int(l, 2) * int(n, 2) + int(m, 2)
-        * int(n, 2) + int(a, 2) * int(o, 2) + int(b, 2) * int(o, 2) + int(c, 2) * int(o, 2)
-        + int(d, 2) * int(o, 2) + int(e, 2) * int(o, 2) + int(f, 2) * int(o, 2) + int(g, 2)
-        * int(o, 2) + int(h, 2) * int(o, 2) + int(i, 2) * int(o, 2) + int(j, 2) * int(o, 2)
-        + int(k, 2) * int(o, 2) + int(l, 2) * int(o, 2) + int(m, 2) * int(o, 2) + int(n, 2)
-        * int(o, 2) + int(a, 2) * int(p, 2) + int(b, 2) * int(p, 2) + int(c, 2) * int(p, 2)
-        + int(d, 2) * int(p, 2) + int(e, 2) * int(p, 2) + int(f, 2) * int(p, 2) + int(g, 2)
-        * int(p, 2) + int(h, 2) * int(p, 2) + int(i, 2) * int(p, 2) + int(j, 2) * int(p, 2)
-        + int(k, 2) * int(p, 2) + int(l, 2) * int(p, 2) + int(m, 2) * int(p, 2) + int(n, 2)
-        * int(p, 2) + int(o, 2) * int(p, 2) + int(a, 2) * int(q, 2) + int(b, 2) * int(q, 2)
-        + int(c, 2) * int(q, 2) + int(d, 2) * int(q, 2) + int(e, 2) * int(q, 2) + int(f, 2)
-        * int(q, 2) + int(g, 2) * int(q, 2) + int(h, 2) * int(q, 2) + int(i, 2) * int(q, 2)
-        + int(j, 2) * int(q, 2) + int(k, 2) * int(q, 2) + int(l, 2) * int(q, 2) + int(m, 2)
-        * int(q, 2) + int(n, 2) * int(q, 2) + int(o, 2) * int(q, 2) + int(p, 2) * int(q, 2)
-        + int(c, 2) * int(v, 2) + int(d, 2) * int(v, 2) + int(e, 2) * int(t, 2) + int(f, 2)
-        * int(t, 2) + int(g, 2) * int(t, 2) + int(h, 2) * int(t, 2) + int(i, 2) * int(t, 2)
-        + int(j, 2) * int(t, 2) + int(k, 2) * int(t, 2) + int(l, 2) * int(t, 2) + int(m, 2)
-        * int(t, 2) + int(n, 2) * int(t, 2) + int(o, 2) * int(t, 2) + int(p, 2) * int(t, 2)
-        + int(q, 2) * int(t, 2) + int(r, 2) * int(t, 2) + int(s, 2) * int(t, 2) + int(a, 2)
-        * int(u, 2) + int(b, 2) * int(u, 2) + int(c, 2) * int(u, 2) + int(d, 2) * int(u, 2)
-        + int(e, 2) * int(u, 2) + int(f, 2) * int(u, 2) + int(g, 2) * int(u, 2) + int(h, 2)
-        * int(u, 2) + int(i, 2) * int(u, 2) + int(j, 2) * int(u, 2) + int(k, 2) * int(u, 2)
-        + int(l, 2) * int(u, 2) + int(m, 2) * int(u, 2) + int(n, 2) * int(u, 2) + int(o, 2)
-        * int(u, 2) + int(p, 2) * int(u, 2) + int(q, 2) * int(u, 2) + int(r, 2) * int(u, 2)
-        + int(s, 2) * int(u, 2) + int(t, 2) * int(u, 2) + int(a, 2) * int(v, 2) + int(b, 2)
-        * int(v, 2) + int(a, 2) * int(r, 2) + int(b, 2) * int(r, 2) + int(c, 2) * int(r, 2)
-        + int(d, 2) * int(r, 2) + int(e, 2) * int(r, 2) + int(f, 2) * int(r, 2) + int(g, 2)
-        * int(r, 2) + int(h, 2) * int(r, 2) + int(i, 2) * int(r, 2) + int(j, 2) * int(r, 2)
-        + int(k, 2) * int(r, 2) + int(l, 2) * int(r, 2) + int(m, 2) * int(r, 2) + int(n, 2)
-        * int(r, 2) + int(o, 2) * int(r, 2) + int(p, 2) * int(r, 2) + int(q, 2) * int(r, 2)
-        + int(a, 2) * int(s, 2) + int(b, 2) * int(s, 2) + int(c, 2) * int(s, 2) + int(d, 2)
-        * int(s, 2) + int(e, 2) * int(s, 2) + int(f, 2) * int(s, 2) + int(g, 2) * int(s, 2)
-        + int(h, 2) * int(s, 2) + int(i, 2) * int(s, 2) + int(j, 2) * int(s, 2) + int(k, 2)
-        * int(s, 2) + int(l, 2) * int(s, 2) + int(m, 2) * int(s, 2) + int(n, 2) * int(s, 2)
-        + int(o, 2) * int(s, 2) + int(p, 2) * int(s, 2) + int(q, 2) * int(s, 2) + int(r, 2)
-        * int(s, 2) + int(a, 2) * int(t, 2) + int(b, 2) * int(t, 2) + int(c, 2) * int(t, 2)
-        + int(d, 2) * int(t, 2) + int(e, 2) * int(v, 2) + int(f, 2) * int(v, 2) + int(g, 2)
-        * int(v, 2) + int(h, 2) * int(v, 2) + int(i, 2) * int(v, 2) + int(j, 2) * int(v, 2)
-        + int(k, 2) * int(v, 2) + int(l, 2) * int(v, 2) + int(m, 2) * int(v, 2) + int(n, 2)
-        * int(v, 2) + int(o, 2) * int(v, 2) + int(p, 2) * int(v, 2) + int(q, 2) * int(v, 2)
-        + int(r, 2) * int(v, 2) + int(s, 2) * int(v, 2) + int(t, 2) * int(v, 2) + int(u, 2)
-        * int(v, 2) + int(a, 2) * int(w, 2) + int(b, 2) * int(w, 2) + int(c, 2) * int(w, 2)
-        + int(d, 2) * int(w, 2) + int(e, 2) * int(w, 2) + int(f, 2) * int(w, 2) + int(g, 2)
-        * int(w, 2) + int(h, 2) * int(w, 2) + int(i, 2) * int(w, 2) + int(j, 2) * int(w, 2)
-        + int(k, 2) * int(w, 2) + int(l, 2) * int(w, 2) + int(m, 2) * int(w, 2) + int(n, 2)
-        * int(w, 2) + int(o, 2) * int(w, 2) + int(p, 2) * int(w, 2) + int(q, 2) * int(w, 2)
-        + int(r, 2) * int(w, 2) + int(s, 2) * int(w, 2) + int(t, 2) * int(w, 2) + int(u, 2)
-        * int(w, 2) + int(v, 2) * int(w, 2) + int(a, 2) * int(x, 2) + int(b, 2) * int(x, 2)
-        + int(c, 2) * int(x, 2) + int(d, 2) * int(x, 2) + int(e, 2) * int(x, 2) + int(f, 2)
-        * int(x, 2) + int(g, 2) * int(x, 2) + int(h, 2) * int(x, 2) + int(i, 2) * int(x, 2)
-        + int(j, 2) * int(x, 2) + int(k, 2) * int(x, 2) + int(l, 2) * int(x, 2) + int(m, 2)
-        * int(x, 2) + int(n, 2) * int(x, 2) + int(o, 2) * int(x, 2) + int(p, 2) * int(x, 2)
-        + int(q, 2) * int(x, 2) + int(r, 2) * int(x, 2) + int(s, 2) * int(x, 2) + int(t, 2)
-        * int(x, 2) + int(u, 2) * int(x, 2) + int(v, 2) * int(x, 2) + int(w, 2) * int(x, 2)
-        + int(a, 2) * int(y, 2) + int(b, 2) * int(y, 2) + int(c, 2) * int(y, 2) + int(d, 2)
-        * int(y, 2) + int(e, 2) * int(y, 2) + int(f, 2) * int(y, 2) + int(g, 2) * int(y, 2)
-        + int(h, 2) * int(y, 2) + int(i, 2) * int(y, 2) + int(j, 2) * int(y, 2) + int(k, 2)
-        * int(y, 2) + int(l, 2) * int(y, 2) + int(m, 2) * int(y, 2) + int(n, 2) * int(y, 2)
-        + int(o, 2) * int(y, 2) + int(p, 2) * int(y, 2) + int(q, 2) * int(y, 2) + int(r, 2)
-        * int(y, 2) + int(s, 2) * int(y, 2) + int(t, 2) * int(y, 2) + int(u, 2) * int(y, 2)
-        + int(v, 2) * int(y, 2) + int(w, 2) * int(y, 2) + int(x, 2) * int(y, 2) + int(a, 2)
-        * int(z, 2) + int(b, 2) * int(z, 2) + int(c, 2) * int(z, 2) + int(d, 2) * int(z, 2)
-        + int(e, 2) * int(z, 2) + int(f, 2) * int(z, 2) + int(g, 2) * int(z, 2) + int(h, 2)
-        * int(z, 2) + int(i, 2) * int(z, 2) + int(j, 2) * int(z, 2) + int(k, 2) * int(z, 2)
-        + int(l, 2) * int(z, 2) + int(m, 2) * int(z, 2) + int(n, 2) * int(z, 2) + int(o, 2)
-        * int(z, 2) + int(p, 2) * int(z, 2) + int(q, 2) * int(z, 2) + int(r, 2) * int(z, 2)
-        + int(s, 2) * int(z, 2) + int(t, 2) * int(z, 2) + int(u, 2) * int(z, 2) + int(v, 2)
-        * int(z, 2) + int(w, 2) * int(z, 2) + int(x, 2) * int(z, 2) + int(y, 2) * int(z, 2)
-        + int(a, 2) * int(a2, 2) + int(b, 2) * int(a2, 2) + int(c, 2) * int(a2, 2) +
-        int(d, 2) * int(a2, 2) + int(e, 2) * int(a2, 2) + int(f, 2) * int(a2, 2) +
-        int(g, 2) * int(a2, 2) + int(h, 2) * int(a2, 2) + int(i, 2) * int(a2, 2) +
-        int(j, 2) * int(a2, 2) + int(k, 2) * int(a2, 2) + int(l, 2) * int(a2, 2) +
-        int(m, 2) * int(a2, 2) + int(n, 2) * int(a2, 2) + int(o, 2) * int(a2, 2) +
-        int(p, 2) * int(a2, 2) + int(q, 2) * int(a2, 2) + int(r, 2) * int(a2, 2) +
-        int(s, 2) * int(a2, 2) + int(t, 2) * int(a2, 2) + int(u, 2) * int(a2, 2) +
-        int(v, 2) * int(a2, 2) + int(w, 2) * int(a2, 2) + int(x, 2) * int(a2, 2) +
-        int(y, 2) * int(a2, 2) + int(z, 2) * int(a2, 2))))
+        abs(a * b + a * c + a * d
+        + a * e + a * f + a * g + a
+        * h + a * i + a * j + b * c
+        + b * d + b * e + b * f + b
+        * g + b * h + b * i + b * j
+        + c * d + c * e + c * f + c
+        * g + c * h + c * i + c * j
+        + d * e + d * f + d * g + d
+        * h + d * i + d * j + e * f
+        + e * g + e * h + e * i + e
+        * j + f * g + f * h + f * i
+        + f * j + g * h + g * i + g
+        * j + h * i + h * j + i * j
+        + a * k + b * k + c * k + d
+        * k + e * k + f * k + g * k
+        + h * k + i * k + j * k + a
+        * l + b * l + c * l + d * l
+        + e * l + f * l + g * l + h
+        * l + i * l + j * l + k * l
+        + a * m + b * m + c * m + d
+        * m + e * m + f * m + g * m
+        + h * m + i * m + j * m + k
+        * m + l * m + a * n + b * n
+        + c * n + d * n + e * n + f
+        * n + g * n + h * n + i * n
+        + j * n + k * n + l * n + m
+        * n + a * o + b * o + c * o
+        + d * o + e * o + f * o + g
+        * o + h * o + i * o + j * o
+        + k * o + l * o + m * o + n
+        * o + a * p + b * p + c * p
+        + d * p + e * p + f * p + g
+        * p + h * p + i * p + j * p
+        + k * p + l * p + m * p + n
+        * p + o * p + a * q + b * q
+        + c * q + d * q + e * q + f
+        * q + g * q + h * q + i * q
+        + j * q + k * q + l * q + m
+        * q + n * q + o * q + p * q
+        + c * v + d * v + e * t + f
+        * t + g * t + h * t + i * t
+        + j * t + k * t + l * t + m
+        * t + n * t + o * t + p * t
+        + q * t + r * t + s * t + a
+        * u + b * u + c * u + d * u
+        + e * u + f * u + g * u + h
+        * u + i * u + j * u + k * u
+        + l * u + m * u + n * u + o
+        * u + p * u + q * u + r * u
+        + s * u + t * u + a * v + b
+        * v + a * r + b * r + c * r
+        + d * r + e * r + f * r + g
+        * r + h * r + i * r + j * r
+        + k * r + l * r + m * r + n
+        * r + o * r + p * r + q * r
+        + a * s + b * s + c * s + d
+        * s + e * s + f * s + g * s
+        + h * s + i * s + j * s + k
+        * s + l * s + m * s + n * s
+        + o * s + p * s + q * s + r
+        * s + a * t + b * t + c * t
+        + d * t + e * v + f * v + g
+        * v + h * v + i * v + j * v
+        + k * v + l * v + m * v + n
+        * v + o * v + p * v + q * v
+        + r * v + s * v + t * v + u
+        * v + a * w + b * w + c * w
+        + d * w + e * w + f * w + g
+        * w + h * w + i * w + j * w
+        + k * w + l * w + m * w + n
+        * w + o * w + p * w + q * w
+        + r * w + s * w + t * w + u
+        * w + v * w + a * x + b * x
+        + c * x + d * x + e * x + f
+        * x + g * x + h * x + i * x
+        + j * x + k * x + l * x + m
+        * x + n * x + o * x + p * x
+        + q * x + r * x + s * x + t
+        * x + u * x + v * x + w * x
+        + a * y + b * y + c * y + d
+        * y + e * y + f * y + g * y
+        + h * y + i * y + j * y + k
+        * y + l * y + m * y + n * y
+        + o * y + p * y + q * y + r
+        * y + s * y + t * y + u * y
+        + v * y + w * y + x * y + a
+        * z + b * z + c * z + d * z
+        + e * z + f * z + g * z + h
+        * z + i * z + j * z + k * z
+        + l * z + m * z + n * z + o
+        * z + p * z + q * z + r * z
+        + s * z + t * z + u * z + v
+        * z + w * z + x * z + y * z
+        + a * a2 + b * a2 + c * a2 +
+        d * a2 + e * a2 + f * a2 +
+        g * a2 + h * a2 + i * a2 +
+        j * a2 + k * a2 + l * a2 +
+        m * a2 + n * a2 + o * a2 +
+        p * a2 + q * a2 + r * a2 +
+        s * a2 + t * a2 + u * a2 +
+        v * a2 + w * a2 + x * a2 +
+        y * a2 + z * a2)))
 
     target_fitness = None
     variables = 27
@@ -1303,7 +1303,7 @@ def ex18(maximize):
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(10),
+        "constraint_range": range(1000000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
