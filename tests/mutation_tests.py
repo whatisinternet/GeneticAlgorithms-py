@@ -7,6 +7,7 @@ black_box = (lambda x, y: y + x ** 2)
 mutation_probability = 0.5
 params = {'objective_function': black_box,
           'pool': seeding.pool(8, range(255), 2),
+          "constraint_range": range(-6, 6),
           'pool_size': 8,
           'number_of_variables': 2,
           'carry_over': 2,
