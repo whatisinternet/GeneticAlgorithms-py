@@ -1,5 +1,6 @@
 import random
 import debug
+import encoder
 
 
 # Select next generation based on objective function's weighted random
@@ -8,9 +9,11 @@ def reproduce(reproduction_params):
 
     carry_over = reproduction_params['carry_over']
 
-    sorted_pool = _sort_dictionary(_build_dictionary(reproduction_params))
+    sorted_pool = _reject_outliers(
+        _sort_dictionary(
+            _build_dictionary(reproduction_params)), reproduction_params)
 
-    debug._debug_chart(reproduction_params, sorted_pool)
+    debug._debug_chart(reproduction_params, sorted_pool, reproduction_params['function_name'])
 
     total_fitness = _total_fitness(sorted_pool)
 
@@ -40,7 +43,8 @@ def _build_dictionary(dictionary_params):
 # Big help from: http://stackoverflow.com/questions/22571259/split-a-string-into-n-equal-parts
 # for this bit
 def _build_params(test, pool_size, number_of_variables):
-    return map("".join, zip(*[iter(test)] * (len(test) / number_of_variables)))
+    a = map("".join, zip(*[iter(test)] * (len(test) / number_of_variables)))
+    return map(lambda x: encoder.d(x), a)
 
 
 # Sort dictionary weights for quicker selection
@@ -51,8 +55,16 @@ def _sort_dictionary(dictionary):
 # Sum total fitness sum and output it
 def _total_fitness(dictionary):
     weights = list(map((lambda x: x['weight']), dictionary))
-    return reduce((lambda x, y: x+abs(y)), weights, 0)
+    return reduce((lambda x, y: x+y), weights, 0)
 
+
+def _reject_outliers(dictionary, params):
+    safe_range = params['constraint_range']
+    safe = [x for x in dictionary if int(encoder.d(x['seed'])) in safe_range]
+    if len(safe) == 0:
+        return dictionary
+    else:
+        return safe
 
 # Select string based on objective funstion's probability of being chosen
 # TODO: Refactor -- THIS IS BAD
@@ -62,18 +74,15 @@ def _select_child(dictionary, total_fitness, params):
     else:
         selector = -1
 
-    if total_fitness is 0:
-        return dictionary[selector]['seed']
-    else:
-        sorted_children = sorted(dictionary, key=lambda x: (x['weight']),
-                                 reverse=True)
+    sorted_children = sorted(dictionary, key=lambda x: (x['weight']),
+                                reverse=True)
 
-        max_weight = sorted_children[0]['weight'] / total_fitness
-        min_weight = sorted_children[-1]['weight'] / total_fitness
-        if max_weight == min_weight:
-            return sorted_children[selector]['seed']
-        else:
-            random_weight = random.uniform(min_weight, max_weight)
-            child = list(filter((lambda x: x['weight'] / total_fitness <= random_weight),
-                                sorted_children))
-            return child[selector]['seed']
+    max_weight = sorted_children[0]['weight'] / total_fitness
+    min_weight = sorted_children[-1]['weight'] / total_fitness
+    if max_weight == min_weight:
+        return sorted_children[selector]['seed']
+    else:
+        random_weight = random.uniform(min_weight, max_weight)
+        child = list(filter((lambda x: x['weight'] / total_fitness <= random_weight),
+                            sorted_children))
+        return child[selector]['seed']

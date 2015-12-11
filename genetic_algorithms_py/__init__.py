@@ -7,7 +7,7 @@ import debug
 
 def __init__(params):
 
-    debug._remove_fitness_data()
+    debug._remove_fitness_data(params['function_name'])
 
     seeding_pool = seeding.pool(
         params['pool_size'],
@@ -19,8 +19,6 @@ def __init__(params):
     final_pool = _aux(params)
 
     if debug._is_debugging():
-        print _final(seeding_pool)
-        print _final(final_pool)
         debug._chart(params['pool_size'], params['function_name'])
     return final_pool
 
@@ -36,22 +34,19 @@ def _aux(aux_params):
         test_params['pool'] = reproduction.reproduce(test_params)
         solved, pool = _is_solved(test_params)
         if solved:
-            print solved, pool
-            return reproduction_pool
+            return test_params['pool']
         debug._format_output(['reproduction'] + test_params['pool'], number_of_variables)
 
         test_params['pool'] = crossover.crossover(test_params)
         solved, pool = _is_solved(test_params)
         if solved:
-            print solved, pool
-            return crossed_over
+            return test_params['pool']
         debug._format_output(['crossover'] + test_params['pool'], number_of_variables)
 
         test_params['pool'] = mutation.mutate_pool(test_params['pool'], test_params['mutation_probability'])
         solved, pool = _is_solved(test_params)
         if solved:
-            print solved, pool
-            return mutated
+            return test_params['pool']
         debug._format_output(['mutated'] + test_params['pool'], number_of_variables)
 
         aux_params['pool'] = test_params['pool']
@@ -62,8 +57,6 @@ def _is_solved(params):
 
     dictionary = reproduction._build_dictionary(params)
     sorted_pool = reproduction._sort_dictionary(dictionary)
-    if debug._is_debugging():
-        print sorted_pool
     if params['target'] is not None:
         return _find_target(sorted_pool, params['target'])
     else:

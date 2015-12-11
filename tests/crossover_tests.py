@@ -3,13 +3,15 @@ from genetic_algorithms_py import reproduction
 from genetic_algorithms_py import crossover
 
 
-black_box = (lambda x, y: int(y) + int(x) ** 2)
+black_box = (lambda x, y: y + x ** 2)
 params = {'objective_function': black_box,
           'pool': seeding.pool(8, range(255), 2),
+          "constraint_range": range(-6, 6),
           'pool_size': 8,
           'number_of_variables': 2,
           'carry_over': 2,
           'max': True,
+          'function_name': 'NoseTests',
           'crossover_rate': 0.7}
 
 def test_it_should_return_an_array_of_size_2():
