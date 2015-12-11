@@ -12,6 +12,7 @@ params = {'objective_function': black_box,
           'number_of_variables': 2,
           'carry_over': 2,
           'max': True,
+          'function_name': 'NoseTests',
           'crossover_rate': 0.7}
 
 

@@ -31,21 +31,21 @@ def _remove_fitness_data():
             pass
 
 
-def _debug_chart(reproduction_params, sorted_pool):
+def _debug_chart(reproduction_params, sorted_pool, function_name):
     number_of_variables = reproduction_params['number_of_variables']
 
     if _is_debugging():
-        _save_fitnesses(sorted_pool, number_of_variables)
+        _save_fitnesses(sorted_pool, number_of_variables, function_name)
 
 
-def _save_fitnesses(data, number_of_variables):
+def _save_fitnesses(data, number_of_variables, function_name):
     if _is_debugging():
         x = list(map(lambda x: reproduction._build_params(x['seed'],
                                                           0,
                                                           number_of_variables),
                      data))
         y = list(map(lambda x: x['weight'], data))
-        f = open('./fitness_data.csv', 'a+')
+        f = open('./fitness_data{a}.csv'.format(a=function_name), 'a+')
 
         for i in range(len(x)):
             for xi in range(len(x[i])):

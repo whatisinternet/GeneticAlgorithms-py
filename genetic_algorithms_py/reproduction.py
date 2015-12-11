@@ -13,7 +13,7 @@ def reproduce(reproduction_params):
         _sort_dictionary(
             _build_dictionary(reproduction_params)), reproduction_params)
 
-    debug._debug_chart(reproduction_params, sorted_pool)
+    debug._debug_chart(reproduction_params, sorted_pool, reproduction_params['function_name'])
 
     total_fitness = _total_fitness(sorted_pool)
 

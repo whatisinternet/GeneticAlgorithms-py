@@ -10,6 +10,7 @@ params = {'objective_function': black_box,
           "constraint_range": range(-6, 6),
           'number_of_variables': 2,
           'max': True,
+          'function_name': 'NoseTests',
           'carry_over': 2}
 
 
