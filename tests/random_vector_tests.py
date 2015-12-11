@@ -12,7 +12,7 @@ def test_it_should_only_return_a_string_of_1_and_0():
         assert (i == "1" or i == "0")
 
 
-def test_it_should_return_a_string_of_128_characters():
+def test_it_should_return_a_string_of_96_characters():
     for i in range(1000):
         asserted_string = random_vector.initialization_vector(range(255), 2)
-        assert len(asserted_string) == 128
+        assert len(asserted_string) == 96
