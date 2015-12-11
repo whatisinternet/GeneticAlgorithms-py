@@ -9,9 +9,9 @@ def _is_debugging():
     else:
         return False
 
-iterations = 100
+iterations = 10
 debug = _is_debugging()
-initial_pool = 200
+initial_pool = 20
 mutation_probability = 0.001
 crossover_rate = 0.7
 carry_over = initial_pool / 2
@@ -21,13 +21,13 @@ def ex1(maximize):
     black_box = (lambda a, b, c, d, e, f, g, h, i, j: (abs(a * b + a * c + a * d + a * e + a * f + a * g + a * h + a * i + a * j + b * c + b * d + b * e + b * f + b * g + b * h + b * i + b * j + c * d + c * e + c * f + c * g + c * h + c * i + c * j + d * e + d * f + d * g + d * h + d * i + d * j + e * f + e * g + e * h + e * i + e * j + f * g + f * h + f * i + f * j + g * h + g * i + g * j + h * i + h * j + i * j)))
     target_fitness = None
     variables = 10
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -58,13 +58,13 @@ def ex2(maximize):
 
     target_fitness = None
     variables = 11
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -98,13 +98,13 @@ def ex3(maximize):
 
     target_fitness = None
     variables = 12
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -141,13 +141,13 @@ def ex4(maximize):
 
     target_fitness = None
     variables = 13
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -190,13 +190,13 @@ def ex5(maximize):
 
     target_fitness = None
     variables = 14
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -243,13 +243,13 @@ def ex6(maximize):
 
     target_fitness = None
     variables = 15
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -300,13 +300,13 @@ def ex7(maximize):
 
     target_fitness = None
     variables = 16
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -362,13 +362,13 @@ def ex8(maximize):
 
     target_fitness = None
     variables = 17
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -428,13 +428,13 @@ def ex9(maximize):
 
     target_fitness = None
     variables = 18
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -503,13 +503,13 @@ def ex10(maximize):
 
     target_fitness = None
     variables = 19
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -581,13 +581,13 @@ def ex11(maximize):
 
     target_fitness = None
     variables = 20
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -665,13 +665,13 @@ def ex12(maximize):
 
     target_fitness = None
     variables = 21
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -756,13 +756,13 @@ def ex13(maximize):
 
     target_fitness = None
     variables = 22
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -851,13 +851,13 @@ def ex14(maximize):
 
     target_fitness = None
     variables = 23
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -952,13 +952,13 @@ def ex15(maximize):
 
     target_fitness = None
     variables = 24
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -1059,13 +1059,13 @@ def ex16(maximize):
 
     target_fitness = None
     variables = 25
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -1174,13 +1174,13 @@ def ex17(maximize):
 
     target_fitness = None
     variables = 26
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,
@@ -1297,13 +1297,13 @@ def ex18(maximize):
 
     target_fitness = None
     variables = 27
-    carry_over = 64
+    carry_over = 10
     params = {
         'objective_function': black_box,
         'iterations': iterations,
         'mutation_probability': mutation_probability,
         "crossover_rate": crossover_rate,
-        "constraint_range": range(1000000),
+        "constraint_range": range(-1000, 1000),
         "number_of_variables": variables,
         "carry_over": carry_over,
         "pool_size": initial_pool,

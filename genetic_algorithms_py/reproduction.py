@@ -55,7 +55,7 @@ def _sort_dictionary(dictionary):
 # Sum total fitness sum and output it
 def _total_fitness(dictionary):
     weights = list(map((lambda x: x['weight']), dictionary))
-    return reduce((lambda x, y: x+y), weights, 0)
+    return reduce((lambda x, y: x+abs(y)), weights, 0)
 
 
 def _reject_outliers(dictionary, params):
