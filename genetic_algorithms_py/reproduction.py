@@ -60,7 +60,11 @@ def _total_fitness(dictionary):
 
 def _reject_outliers(dictionary, params):
     safe_range = params['constraint_range']
-    return [x for x in dictionary if int(encoder.d(x['seed'])) in safe_range]
+    safe = [x for x in dictionary if int(encoder.d(x['seed'])) in safe_range]
+    if len(safe) == 0:
+        return dictionary
+    else:
+        return safe
 
 # Select string based on objective funstion's probability of being chosen
 # TODO: Refactor -- THIS IS BAD

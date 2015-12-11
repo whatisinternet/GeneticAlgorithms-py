@@ -7,14 +7,14 @@ def chart(target, function_name="test"):
 
     for i in data:
         split_input = i.split(",")
-        y = (int(split_input[0]))
-        x = (int(split_input[1].strip()))
+        y = (float(split_input[0]))
+        x = (float(split_input[1].strip()))
         plt.scatter(x, y, color="#085DAD",
                     label=y, alpha=0.3, edgecolors='none')
 
     plt.axes().set_ylabel("Value")
     plt.axes().set_xlabel("Fitness")
     plt.grid(True)
-    plt.show()
+    # plt.show()
 
-    fig.savefig("{a}.png".format(a=function_name))
+    fig.savefig("images/{a}.png".format(a=function_name))

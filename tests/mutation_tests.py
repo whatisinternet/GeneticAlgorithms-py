@@ -3,7 +3,7 @@ from genetic_algorithms_py import seeding
 from genetic_algorithms_py import reproduction
 from genetic_algorithms_py import crossover
 
-black_box = (lambda x, y: int(y) + int(x) ** 2)
+black_box = (lambda x, y: y + x ** 2)
 mutation_probability = 0.5
 params = {'objective_function': black_box,
           'pool': seeding.pool(8, range(255), 2),

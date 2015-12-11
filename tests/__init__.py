@@ -1,6 +1,6 @@
 import genetic_algorithms_py
 
-black_box = (lambda x, y: int(y, 2) + int(x, 2) ** 2)
+black_box = (lambda x, y: y + x ** 2)
 
 
 '''
