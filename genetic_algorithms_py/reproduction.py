@@ -50,13 +50,13 @@ def _build_params(test, pool_size, number_of_variables):
 
 # Sort dictionary weights for quicker selection
 def _sort_dictionary(dictionary):
-    return sorted(dictionary, key=lambda x: x['weight'], reverse=True)
+    return sorted(dictionary, key=lambda x: x['weight'] / _total_fitness(dictionary), reverse=True)
 
 
 # Sum total fitness sum and output it
 def _total_fitness(dictionary):
     weights = list(map((lambda x: x['weight']), dictionary))
-    return reduce((lambda x, y: x+abs(y)), weights, 0)
+    return reduce((lambda x, y: x + y), weights, 0)
 
 
 def _reject_outliers(dictionary, params):
@@ -70,20 +70,21 @@ def _reject_outliers(dictionary, params):
 # Select string based on objective funstion's probability of being chosen
 # TODO: Refactor -- THIS IS BAD
 def _select_child(dictionary, total_fitness, params):
-    if params['max'] == True:
-        selector = 0
-    else:
-        selector = -1
 
     sorted_children = sorted(dictionary, key=lambda x: (x['weight']),
-                                reverse=True)
+                                reverse=params['max'])
 
-    max_weight = sorted_children[0]['weight'] / total_fitness
-    min_weight = sorted_children[-1]['weight'] / total_fitness
+    if params['max']:
+        max_weight = sorted_children[0]['weight'] / total_fitness
+        min_weight = sorted_children[-1]['weight'] / total_fitness
+    else:
+        max_weight = sorted_children[-1]['weight'] / total_fitness
+        min_weight = sorted_children[0]['weight'] / total_fitness
+
     if max_weight == min_weight:
-        return sorted_children[selector]['seed']
+        return sorted_children[0]['seed']
     else:
         random_weight = random.uniform(float(min_weight), float(max_weight))
         child = list(filter((lambda x: x['weight'] / total_fitness <= random_weight),
                             sorted_children))
-        return child[selector]['seed']
+        return child[0]['seed']

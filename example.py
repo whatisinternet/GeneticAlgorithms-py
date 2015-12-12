@@ -42,9 +42,8 @@ def dejong(maximize):
 
 def rosenbrock(maximize):
     print 'Blackbox: Rosenbrock function'
-    reducer_size = 100
     black_box = (lambda x, y: (reduce(
-        (lambda p, q: q + (100 * ((x - (y ** 2) ) ** 2) + (1 - y) ** 2)), range(1,5), 0)))
+        (lambda p, q: q + (100 * ((x - (y ** 2) ) ** 2) + (1 - y) ** 2)), range(1,2), 0)))
     target_fitness = None
     variables = 2
     carry_over = 64
@@ -86,8 +85,8 @@ def himmelblau(maximize):
         }
     genetic_algorithms_py.__init__(params)
 
-dejong(True)
 dejong(False)
+dejong(True)
 
 rosenbrock(True)
 rosenbrock(False)
