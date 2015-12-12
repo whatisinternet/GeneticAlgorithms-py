@@ -13,6 +13,6 @@ def test_it_should_only_return_a_string_of_1_and_0():
 
 
 def test_it_should_return_a_string_of_96_characters():
-    for i in range(1000):
+    for i in range(10):
         asserted_string = random_vector.initialization_vector(range(255), 2)
         assert len(asserted_string) == 96
