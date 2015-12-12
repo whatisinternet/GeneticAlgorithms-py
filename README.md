@@ -7,21 +7,18 @@ All example functions are implemented as lambda functions that are passed into t
 ```python
   def dejong(maximize):
       print 'Blackbox: deJongSphere function'
-      black_box = (lambda x, y: (reduce(
-          (lambda r, q: q + (int(x, 2) ** 2)), range(int(y, 2)), 0)))
-      target_fitness = None
-      variables = 2
-      carry_over = 64
+      black_box = (lambda x: (reduce(
+          (lambda r, q: q + x ** 2)), range(4), 0)))
       params = {
           'objective_function': black_box,
           'iterations': 500,
           'mutation_probability': 0.01,
           "crossover_rate": 0.7,
-          "constraint_range": range(5),
-          "number_of_variables": variables,
-          "carry_over": carry_over,
+          "constraint_range": range(-5, 5),
+          "number_of_variables": 1,
+          "carry_over": 64,
           "pool_size": 500,
-          "target": target_fitness,
+          "target": None,
           "max": maximize,
           "function_name": "deJong Sphere maximized: {a}".format(a=maximize)
           }
