@@ -1,20 +1,6 @@
 import genetic_algorithms_py
 
 black_box = (lambda x, y: y + x ** 2)
-
-
-'''
-Init values:
-    black_box
-    iterations
-    constraint_range
-    pool_size
-    mutation_probability
-    crossover_rate
-    target fitness
-    number_of_variables in black box
-'''
-
 params = {
     'objective_function': black_box,
     'iterations': 1,
@@ -30,5 +16,5 @@ params = {
     }
 
 
-def test_it_should_get_an_initialization_vector():
+def test_it_should_return():
     assert isinstance(genetic_algorithms_py.__init__(params), list)

@@ -21,7 +21,7 @@ def __init__(params):
 
     if debug._is_debugging():
         debug._chart(params['pool_size'], params['function_name'])
-    return final_pool
+    return list(final_pool)
 
 
 def _aux(aux_params):

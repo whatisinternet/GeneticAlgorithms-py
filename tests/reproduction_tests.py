@@ -22,7 +22,7 @@ def test_it_should_return_an_array_of_strings():
 
 def test_it_should_return_an_array_of_strings_of_length_8():
     params['carry_over'] = 32
-    for i in range(1000):
+    for i in range(10):
         asserted_pool = reproduction.reproduce(params)
         assert len(asserted_pool) == 32
 
