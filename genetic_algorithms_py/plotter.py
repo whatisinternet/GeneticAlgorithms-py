@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 from decimal import *
 
+# Parts of plotter came from the examples found here:
+# http://matplotlib.org/examples/pylab_examples/scatter_demo2.html
 def chart(target, function_name="test"):
     f = open('./data/fitness_data{a}.csv'.format(a=function_name), 'r')
     data = f.readlines()
